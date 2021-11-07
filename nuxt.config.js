@@ -38,7 +38,7 @@ export default {
 	css: [],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	plugins: [{ src: '~/plugins/prismicLinks', mode: 'client' }],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -66,6 +66,11 @@ export default {
 		// extractCSS: process.env.NODE_ENV !== 'development',
 	},
 
+	// Generate: https://nuxtjs.org/docs/directory-structure/nuxt-config/#generate
+	generate: {
+		fallback: '404.html',
+	},
+
 	gtm: {
 		enabled: true,
 		id: process.env.GTM_ID,
@@ -75,8 +80,10 @@ export default {
 	prismic: {
 		endpoint: process.env.PRISMIC_ENDPOINT,
 		modern: true,
+		linkResolver: '@/plugins/link-resolver',
+		htmlSerializer: '@/plugins/html-serializer',
 	},
-}
+};
 
 /*
 vuetify: {
