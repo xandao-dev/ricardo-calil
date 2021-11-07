@@ -66,11 +66,6 @@ export default {
 		// extractCSS: process.env.NODE_ENV !== 'development',
 	},
 
-	router: {
-		// Publish to github pages: https://nuxtjs.org/deployments/github-pages/
-		base: '/ricardo-calil/',
-	},
-
 	// Generate: https://nuxtjs.org/docs/directory-structure/nuxt-config/#generate
 	generate: {
 		fallback: '404.html',
