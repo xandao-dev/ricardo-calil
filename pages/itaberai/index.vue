@@ -9,7 +9,13 @@
 		name: 'Home',
 		head() {
 			return {
-				title: 'Home',
+				title: 'Ricardo Calil | Advogado em Itaberaí',
+				link: [
+					{
+						rel: 'canonical',
+						href: this.$config.websiteHomeDomain,
+					},
+				],
 			};
 		},
 	};

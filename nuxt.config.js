@@ -5,7 +5,9 @@ export default {
 	target: 'static',
 
 	// Runtime Configs: https://nuxtjs.org/tutorials/moving-from-nuxtjs-dotenv-to-runtime-config/
-	publicRuntimeConfig: {},
+	publicRuntimeConfig: {
+		websiteHomeDomain: process.env.WEBSITE_HOME_DOMAIN,
+	},
 	privateRuntimeConfig: {},
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
