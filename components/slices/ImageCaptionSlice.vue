@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<template v-if="size === 'full'">
-			<div class="blog-header single" :style="{ 'background-image': 'url(' + img.url + ')' }">
-				<template v-if="$prismic.asText(caption) != ''">
+			<div class="blog-header single" :style="{ 'background-image': `url('${img.url}')` }">
+				<template v-if="$prismic.asText(caption)">
 					<div class="wrapper">
 						<h1>{{ $prismic.asText(caption) }}</h1>
 					</div>
@@ -14,7 +14,7 @@
 				<p class="block-img" :class="size">
 					<prismic-image :field="img" />
 				</p>
-				<template v-if="$prismic.asText(caption) != ''">
+				<template v-if="$prismic.asText(caption)">
 					<p>
 						<span class="image-label">{{ $prismic.asText(caption) }}</span>
 					</p>
