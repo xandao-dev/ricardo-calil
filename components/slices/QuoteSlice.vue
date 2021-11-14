@@ -39,8 +39,6 @@
 	}
 	@media screen and (min-width: 975px) {
 		.block-quotation {
-			width: 130%;
-			margin: 0 -15% 2rem -15%;
 			font-size: 30px;
 			padding: 0;
 		}

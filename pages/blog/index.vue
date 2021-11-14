@@ -1,17 +1,13 @@
 <template>
-	<section class="home">
-		<article>
-			<div v-if="posts.length !== 0" class="blog-main">
-				<!-- Template for blog posts -->
-				<section v-for="post in posts" :key="post.id" :post="post" class="blog-post">
-					<!-- Here :post="post" passes the data to the component -->
-					<blog-widget :post="post"></blog-widget>
-				</section>
-			</div>
-			<div v-else class="blog-main">
-				<p>No Posts published at this time.</p>
-			</div>
-		</article>
+	<section class="blog">
+		<div v-if="posts.length !== 0" class="blog-main">
+			<section v-for="post in posts" :key="post.id" :post="post" class="blog-post">
+				<blog-widget :post="post"></blog-widget>
+			</section>
+		</div>
+		<div v-else class="blog-main">
+			<p>Nenhuma publicação até o momento</p>
+		</div>
 	</section>
 </template>
 
@@ -36,19 +32,19 @@
 		},
 		head() {
 			return {
-				title: 'Prismic Nuxt.js Blog',
+				title: 'Artigos - Ricardo Calil | Advogado em Itaberaí',
 			};
 		},
 	};
 </script>
 
 <style scoped>
-	.home {
+	.blog {
 		max-width: 1200px;
 		margin: auto;
 		text-align: center;
 	}
-	.home .blog-avatar {
+	.blog .blog-avatar {
 		height: 140px;
 		width: 140px;
 		border-radius: 50%;
@@ -56,7 +52,7 @@
 		background-size: cover;
 		margin: 1em auto;
 	}
-	.home .blog-description {
+	.blog .blog-description {
 		font-size: 18px;
 		color: #9a9a9a;
 		line-height: 30px;
@@ -87,7 +83,7 @@
 		margin-bottom: 3rem;
 	}
 	@media (max-width: 767px) {
-		.home {
+		.blog {
 			padding: 0 20px;
 		}
 		.blog-main {
