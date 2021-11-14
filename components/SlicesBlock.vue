@@ -20,7 +20,6 @@
 </template>
 
 <script>
-	// Imports for all slices
 	const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
 	const TextSlice = () => import('../components/slices/TextSlice.vue');
 	const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');

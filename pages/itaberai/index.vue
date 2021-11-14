@@ -1,7 +1,12 @@
 <template>
-	<section class="home">
-		<h1>Hello from Itaberaí</h1>
-	</section>
+	<div>
+		<Hero></Hero>
+		<Office></Office>
+		<Lawyers></Lawyers>
+		<Expertise></Expertise>
+		<Contact></Contact>
+		<FAQ></FAQ>
+	</div>
 </template>
 
 <script>
