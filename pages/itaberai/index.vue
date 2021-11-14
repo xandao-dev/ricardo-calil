@@ -1,6 +1,9 @@
 <template>
 	<div>
 		<Hero></Hero>
+		<Office></Office>
+		<Lawyers></Lawyers>
+		<Contact></Contact>
 	</div>
 </template>
 
