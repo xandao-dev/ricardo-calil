@@ -26,7 +26,7 @@
 				<img
 					src="hero/hero.webp"
 					alt="hero-escritorio"
-					class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 bg-coolGray-500"
+					class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 				/>
 			</div>
 		</div>

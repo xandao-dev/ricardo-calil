@@ -3,6 +3,7 @@
 		<Hero></Hero>
 		<Office></Office>
 		<Lawyers></Lawyers>
+		<Expertise></Expertise>
 		<Contact></Contact>
 	</div>
 </template>
