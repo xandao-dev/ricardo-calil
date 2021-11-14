@@ -13,27 +13,33 @@
 					marginheight="0"
 					marginwidth="0"
 					scrolling="no"
-					src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-					style="filter: grayscale(1) contrast(1.2) opacity(0.4)"
+					loading="lazy"
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7669.849964307218!2d-49.8079523!3d-16.0174202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5f2f774f3b2d9abc!2sRicardo%20Calil%20%26%20Advogados%20Associados!5e0!3m2!1spt-BR!2sbr!4v1636910106771!5m2!1spt-BR!2sbr"
+					style="filter: grayscale(1) contrast(1.2) opacity(0.65)"
 				></iframe>
 				<div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
 					<div class="lg:w-1/2 px-6">
-						<h2 class="title-font font-semibold tracking-widest text-xs">ADDRESS</h2>
-						<p class="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+						<h2 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h2>
+						<p class="mt-1" v-text="street"></p>
 					</div>
 					<div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
 						<h2 class="title-font font-semibold tracking-widest text-xs">EMAIL</h2>
-						<a class="leading-relaxed">example@email.com</a>
-						<h2 class="title-font font-semibold tracking-widest text-xs mt-4">PHONE</h2>
-						<p class="leading-relaxed">123-456-7890</p>
+						<a class="leading-relaxed" :href="'mailto:' + social.email" v-text="social.email"></a>
+						<h2 class="title-font font-semibold tracking-widest text-xs mt-4">TELEFONE</h2>
+						<a
+							class="leading-relaxed"
+							:href="'tel:' + social.phone"
+							rel="noopener noreferrer"
+							v-text="social.phone"
+						></a>
 					</div>
 				</div>
 			</div>
 			<div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-				<h2 class="text-lg mb-1 font-medium title-font">Feedback</h2>
-				<p class="leading-relaxed mb-5">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+				<h2 class="text-lg mb-1 font-medium title-font">Contato</h2>
+				<p class="leading-relaxed mb-5">Converse agora com um advogado</p>
 				<div class="relative mb-4">
-					<label for="name" class="leading-7 text-sm">Name</label>
+					<label for="name" class="leading-7 text-sm">Nome</label>
 					<input
 						id="name"
 						type="text"
@@ -57,20 +63,18 @@
 					/>
 				</div>
 				<div class="relative mb-4">
-					<label for="email" class="leading-7 text-sm">Email</label>
+					<label for="phone" class="leading-7 text-sm">Telefone</label>
 					<input
-						id="email"
-						type="email"
-						name="email"
+						id="phone"
+						type="tel"
+						name="phone"
 						class="
 							w-full
-							bg-white
 							rounded
 							border
 							focus:ring-2
 							text-base
 							outline-none
-							text-gray-700
 							py-1
 							px-3
 							leading-8
@@ -81,20 +85,40 @@
 					/>
 				</div>
 				<div class="relative mb-4">
-					<label for="message" class="leading-7 text-sm">Message</label>
+					<label for="email" class="leading-7 text-sm">Email</label>
+					<input
+						id="email"
+						type="email"
+						name="email"
+						class="
+							w-full
+							rounded
+							border
+							focus:ring-2
+							text-base
+							outline-none
+							py-1
+							px-3
+							leading-8
+							transition-colors
+							duration-200
+							ease-in-out
+						"
+					/>
+				</div>
+				<div class="relative mb-4">
+					<label for="message" class="leading-7 text-sm">Mensagem</label>
 					<textarea
 						id="message"
 						name="message"
 						class="
 							w-full
-							bg-white
 							rounded
 							border
 							focus:ring-2
 							h-32
 							text-base
 							outline-none
-							text-gray-700
 							py-1
 							px-3
 							resize-none
@@ -105,13 +129,23 @@
 						"
 					></textarea>
 				</div>
-				<button class="border-0 py-2 px-6 focus:outline-none rounded text-lg">Button</button>
-				<p class="text-xs mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+				<button class="border-0 py-2 px-6 focus:outline-none rounded text-lg">Enviar</button>
 			</div>
 		</div>
 	</section>
 </template>
 
 <script>
-	export default {};
+	export default {
+		data: () => ({
+			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
+			social: {
+				whatsapp: '556233752216',
+				facebook: 'ricardocaliladv',
+				instagram: 'dr.ricardocalil',
+				phone: '+55 62 3375-2216',
+				email: 'ricardocalil@hotmail.com',
+			},
+		}),
+	};
 </script>
