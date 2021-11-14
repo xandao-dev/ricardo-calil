@@ -5,6 +5,7 @@
 		<Lawyers></Lawyers>
 		<Expertise></Expertise>
 		<Contact></Contact>
+		<FAQ></FAQ>
 	</div>
 </template>
 
