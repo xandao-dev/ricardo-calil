@@ -1,7 +1,7 @@
 <template>
-	<section class="home">
-		<h1>Hello from Itaberaí</h1>
-	</section>
+	<div>
+		<Hero></Hero>
+	</div>
 </template>
 
 <script>
