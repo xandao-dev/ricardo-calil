@@ -1,7 +1,6 @@
 <template>
 	<section class="home">
 		<article>
-			<!-- Check blog posts exist -->
 			<div v-if="posts.length !== 0" class="blog-main">
 				<!-- Template for blog posts -->
 				<section v-for="post in posts" :key="post.id" :post="post" class="blog-post">
@@ -9,7 +8,6 @@
 					<blog-widget :post="post"></blog-widget>
 				</section>
 			</div>
-			<!-- If no blog posts return message -->
 			<div v-else class="blog-main">
 				<p>No Posts published at this time.</p>
 			</div>
@@ -18,14 +16,8 @@
 </template>
 
 <script>
-	// Importing blog posts widget
-	import BlogWidget from '@/components/BlogWidget.vue';
-
 	export default {
 		name: 'Blog',
-		components: {
-			BlogWidget,
-		},
 		async asyncData({ $prismic, error }) {
 			try {
 				// Query to get posts content to preview
@@ -52,7 +44,7 @@
 
 <style scoped>
 	.home {
-		max-width: 700px;
+		max-width: 1200px;
 		margin: auto;
 		text-align: center;
 	}
@@ -74,7 +66,7 @@
 		border-bottom: 1px solid #dadada;
 	}
 	.blog-main {
-		max-width: 700px;
+		max-width: 1200px;
 		margin: auto;
 		text-align: left;
 	}
