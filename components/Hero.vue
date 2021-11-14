@@ -12,14 +12,19 @@
 					resolver seus problemas de maneira eficiente e simplificada.
 				</p>
 				<div
-					class="flex flex-col space-y-4  sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+					class="
+						flex flex-col
+						space-y-4
+						sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4
+						lg:justify-start
+					"
 				>
 					<a href="#" class="px-8 py-3 text-lg font-semibold border rounded">Fale agora com um advogado</a>
 				</div>
 			</div>
 			<div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
 				<img
-					src="https://picsum.photos/600"
+					src="hero/hero.webp"
 					alt="hero-escritorio"
 					class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 bg-coolGray-500"
 				/>
