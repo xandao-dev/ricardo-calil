@@ -13,7 +13,7 @@
 
 <script>
 	export default {
-		name: 'Blog',
+		name: 'Articles',
 		async asyncData({ $prismic, error }) {
 			try {
 				// Query to get posts content to preview
