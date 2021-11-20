@@ -33,6 +33,7 @@
 							group
 							hover:bg-gray-100 hover:text-gray-900
 						"
+						@click="toggleSection(section)"
 					>
 						<div class="flex items-center">
 							<img v-if="section.icon" :src="section.icon" />
@@ -51,7 +52,7 @@
 							/>
 						</svg>
 					</div>
-					<div class="mb-4">
+					<div v-show="section.open" class="mb-4">
 						<NuxtLink
 							v-for="subSection in section.subSections"
 							:key="subSection.target"
@@ -102,6 +103,7 @@
 					hasSubSections: true,
 					title: 'Atuação',
 					icon: '/icons/expertise.svg',
+					open: false,
 					subSections: [
 						{
 							title: 'Trabalhista',
@@ -161,5 +163,10 @@
 				menuOpen: '/icons/menu-open.svg',
 			},
 		}),
+		methods: {
+			toggleSection(section) {
+				section.open = !section.open;
+			},
+		},
 	};
 </script>
