@@ -1,5 +1,5 @@
 <template>
-	<nav class="">
+	<nav v-if="isSidebarOpen" class="">
 		<div class="text-sm font-medium text-gray-600">
 			<div v-for="section in sections" :key="section.target">
 				<NuxtLink
@@ -77,8 +77,24 @@
 	</nav>
 </template>
 
-<script>
-	export default {
+<script lang="ts">
+	import Vue from 'vue';
+	import { mapState } from 'vuex';
+
+	interface SubSection {
+		title: string;
+		target: string;
+	}
+	interface Section {
+		title: string;
+		icon: string;
+		target?: string;
+		hasSubSections: boolean;
+		open?: boolean;
+		subSections?: SubSection[];
+	}
+
+	export default Vue.extend({
 		data: () => ({
 			sections: [
 				{
@@ -111,7 +127,7 @@
 						},
 						{
 							title: 'Previdenciário',
-							target: '/itaberai/criminal',
+							target: '/itaberai/previdenciario',
 						},
 						{
 							title: 'Cívil',
@@ -163,10 +179,15 @@
 				menuOpen: '/icons/menu-open.svg',
 			},
 		}),
+		computed: {
+			...mapState('Hamburger', {
+				isSidebarOpen: 'isSidebarOpen',
+			}),
+		},
 		methods: {
-			toggleSection(section) {
+			toggleSection(section: Section) {
 				section.open = !section.open;
 			},
 		},
-	};
+	});
 </script>
