@@ -24,6 +24,10 @@
 			</div>
 		</div>
 	</div>
+	<!--div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-5 md:-mx-5 lg:-mx-3 xl:-mx-5">
+		<div class="my-2 px-2 w-1/2 overflow-hidden sm:my-5 sm:px-5 sm:w-1/2 md:my-5 md:px-5 md:w-1/2 lg:my-3 lg:px-3 lg:w-1/4 xl:my-5 xl:px-5 xl:w-1/4">
+  		</div>
+	</div-->
 </template>
 
 <script>
