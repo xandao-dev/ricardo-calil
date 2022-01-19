@@ -1,69 +1,174 @@
-# ricardo-calil
+<br />
+<p align="center">
+  <h3 align="center">Ricardo Calil & Advogados Associados</h3>
 
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+  <p align="center">
+	Ricardo Calil & Advogados Associados is a law firm based in Itaberaí, Goiás, Brazil.
+	This project is a landing page for the website of the firm.
+	<br />
+	:construction: Currently this website is under construction. The preview is available on the <a href="https://new.ricardocalil.adv.br">new Ricardo Calil website</a> :construction:
+    <br />
+	<br />
+    <a href="https://github.com/xandao6/ricardo-calil"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/xandao6/ricardo-calil/issue">Report Bug</a>
+    ·
+    <a href="https://github.com/xandao6/ricardo-calil/issues">Request Feature</a>
+  </p>
+</p>
 
 
-### `pages`
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
 
-### `plugins`
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+<div align="center">
+  <a href="https://github.com/xandao6/ricardo-calil">
+    <img src="static/ricardocalil-adv-br.png" alt="Ricardo Calil Website">
+  </a>
+</div>
 
-### `static`
+### Features
 
-This directory contains your static files. Each file inside this directory is mapped to `/`.
+* Hero section
+* Office section
+* Lawyers section
+* Expertise area section
+* Map section with contact information
+* Contact form
+* Frequently asked questions section
+* Articles page (blog)
+* Expertise areas pages (coming soon)
+* Dark mode toggle (coming soon)
+* Responsive design (coming soon)
+* Calculators for lawyers (coming soon)
+* SEO friendly (coming soon)
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+### Built With
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+* [Nuxt.js](https://nuxtjs.org/) - The intuitive Vue Framework
+* [Vue.js 2](https://vuejs.org/) - A progressive framework for web development
+* [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 
-### `store`
 
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+<!-- GETTING STARTED -->
+## Getting Started
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+To get a local copy up and running follow these simple steps.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/xandao6/ricardo-calil.git
+   ```
+2. Install dependencies
+   ```sh
+	cd ricardo-calil
+	npm install # or yarn install
+	```
+3. Set environment variables. Create a ".env" file based on ".env.example".
+   * GTM_ID for Google Tag Manager
+   * PRISMIC_ENDPOINT for the blog
+   * WEBSITE_HOME_DOMAIN used to set canonical URL
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+* Starts the development server
+	```sh
+  npm run dev # or yarn dev
+  ```
+* Launch production server
+  ```sh
+  npm run build # or yarn build
+  npm run start # or yarn start
+  ```
+* Generate a static version of the website
+  ```sh
+  npm run generate # or yarn generate
+  ```
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/xandao6/ricardo-calil/issues) for a list of proposed features (and known issues).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+## License
+
+All rights reserved.
+
+<!-- CONTACT -->
+## Contact
+
+Alexandre Calil - [@xandao6](https://www.linkedin.com/in/xandao6/) - alexandrecalilmf@gmail.com
+
+Project Link: [https://github.com/xandao6/ricardo-calil](https://github.com/xandao6/ricardo-calil)
+
+## Acknowledgements
+
+* [TypeScript](https://www.typescriptlang.org/) - strongly typed JavaScript
+* [eslint](https://github.com/eslint/eslint) - code quality linter
+* [prettier](https://github.com/prettier/prettier) with [eslint plugin](https://github.com/prettier/eslint-plugin-prettier) and [eslint config](https://github.com/prettier/eslint-config-prettier) - formatter linter with eslint integration
+* [stylelint](https://stylelint.io/) - linter for css
+* [mdi](https://materialdesignicons.com/) - icons used in the project
+* [jest](https://jestjs.io/) - unit testing framework
+* [babel](https://babeljs.io/) - converts modern JavaScript into backwards compatible code
+* [dotenv](https://github.com/motdotla/dotenv) - environment variables
+
+
+<!-- LINKS & IMAGES Variables-->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/xandao6/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/xandao6/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/xandao6/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/xandao6/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/xandao6/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/xandao6/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/xandao6/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/xandao6/repo/issues
+[license-shield]: https://img.shields.io/github/license/xandao6/repo.svg?style=for-the-badge
+[license-url]: https://github.com/xandao6/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/xandao6
