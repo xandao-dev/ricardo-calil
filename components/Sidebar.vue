@@ -1,5 +1,5 @@
 <template>
-	<nav v-if="isSidebarOpen" class="block md:hidden">
+	<nav v-if="isSidebarOpen" class="absolute min-h-screen min-w-full bg-gray-100 md:hidden">
 		<div class="text-sm font-medium text-gray-600">
 			<div v-for="section in sections" :key="section.target">
 				<NuxtLink

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="{ 'overflow-hidden': isSidebarOpen }">
 		<header class="sticky top-0 z-50">
 			<Navbar></Navbar>
 		</header>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex';
 	export default {
 		data() {
 			return {
@@ -37,6 +38,11 @@
 					map: '/icons/map.svg',
 				},
 			};
+		},
+		computed: {
+			...mapState('Hamburger', {
+				isSidebarOpen: 'isSidebarOpen',
+			}),
 		},
 	};
 </script>
