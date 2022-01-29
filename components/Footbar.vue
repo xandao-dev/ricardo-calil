@@ -69,9 +69,9 @@
 </template>
 
 <script>
-	export default {
-		data: () => ({
-			logo: '/logos/logo_sem_fundo2.svg',
-		}),
-	};
+export default {
+	data: () => ({
+		logo: '/logos/logo_sem_fundo2.svg',
+	}),
+};
 </script>

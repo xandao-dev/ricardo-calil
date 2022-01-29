@@ -20,22 +20,22 @@
 </template>
 
 <script>
-	const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
-	const TextSlice = () => import('../components/slices/TextSlice.vue');
-	const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');
+const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
+const TextSlice = () => import('../components/slices/TextSlice.vue');
+const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');
 
-	export default {
-		name: 'SlicesBlock',
-		components: {
-			QuoteSlice,
-			TextSlice,
-			ImageCaptionSlice,
+export default {
+	name: 'SlicesBlock',
+	components: {
+		QuoteSlice,
+		TextSlice,
+		ImageCaptionSlice,
+	},
+	props: {
+		slices: {
+			type: Array,
+			required: true,
 		},
-		props: {
-			slices: {
-				type: Array,
-				required: true,
-			},
-		},
-	};
+	},
+};
 </script>

@@ -78,116 +78,116 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import { mapState } from 'vuex';
+import Vue from 'vue';
+import { mapState } from 'vuex';
 
-	interface SubSection {
-		title: string;
-		target: string;
-	}
-	interface Section {
-		title: string;
-		icon: string;
-		target?: string;
-		hasSubSections: boolean;
-		open?: boolean;
-		subSections?: SubSection[];
-	}
+interface SubSection {
+	title: string;
+	target: string;
+}
+interface Section {
+	title: string;
+	icon: string;
+	target?: string;
+	hasSubSections: boolean;
+	open?: boolean;
+	subSections?: SubSection[];
+}
 
-	export default Vue.extend({
-		data: () => ({
-			sections: [
-				{
-					hasSubSections: false,
-					title: 'Início',
-					target: '/itaberai#inicio',
-					icon: '/icons/home.svg',
-				},
-				{
-					hasSubSections: false,
-					title: 'Escritório',
-					target: '/itaberai#escritorio',
-					icon: '/icons/office.svg',
-				},
-				{
-					hasSubSections: false,
-					title: 'Advogados',
-					target: '/itaberai#advogados',
-					icon: '/icons/lawyers.svg',
-				},
-				{
-					hasSubSections: true,
-					title: 'Atuação',
-					icon: '/icons/expertise.svg',
-					open: false,
-					subSections: [
-						{
-							title: 'Trabalhista',
-							target: '/itaberai/trabalhista',
-						},
-						{
-							title: 'Previdenciário',
-							target: '/itaberai/previdenciario',
-						},
-						{
-							title: 'Cívil',
-							target: '/itaberai/civil',
-						},
-						{
-							title: 'Consumidor',
-							target: '/itaberai/consumidor',
-						},
-						{
-							title: 'Família',
-							target: '/itaberai/familia',
-						},
-						{
-							title: 'Imobiliário',
-							target: '/itaberai/imobiliario',
-						},
-						{
-							title: 'Contratual',
-							target: '/itaberai/contratual',
-						},
-						{
-							title: 'Criminal',
-							target: '/itaberai/criminal',
-						},
-					],
-				},
-				{
-					hasSubSections: false,
-					title: 'Contato',
-					target: '/itaberai#contato',
-					icon: '/icons/contact.svg',
-				},
-				{
-					hasSubSections: false,
-					title: 'Perguntas',
-					target: '/itaberai#perguntas',
-					icon: '/icons/faq.svg',
-				},
-				{
-					hasSubSections: false,
-					title: 'Artigos',
-					target: '/artigos',
-					icon: '/icons/articles.svg',
-				},
-			],
-			icons: {
-				menu: '/icons/menu.svg',
-				menuOpen: '/icons/menu-open.svg',
+export default Vue.extend({
+	data: () => ({
+		sections: [
+			{
+				hasSubSections: false,
+				title: 'Início',
+				target: '/itaberai#inicio',
+				icon: '/icons/home.svg',
 			},
+			{
+				hasSubSections: false,
+				title: 'Escritório',
+				target: '/itaberai#escritorio',
+				icon: '/icons/office.svg',
+			},
+			{
+				hasSubSections: false,
+				title: 'Advogados',
+				target: '/itaberai#advogados',
+				icon: '/icons/lawyers.svg',
+			},
+			{
+				hasSubSections: true,
+				title: 'Atuação',
+				icon: '/icons/expertise.svg',
+				open: false,
+				subSections: [
+					{
+						title: 'Trabalhista',
+						target: '/itaberai/trabalhista',
+					},
+					{
+						title: 'Previdenciário',
+						target: '/itaberai/previdenciario',
+					},
+					{
+						title: 'Cívil',
+						target: '/itaberai/civil',
+					},
+					{
+						title: 'Consumidor',
+						target: '/itaberai/consumidor',
+					},
+					{
+						title: 'Família',
+						target: '/itaberai/familia',
+					},
+					{
+						title: 'Imobiliário',
+						target: '/itaberai/imobiliario',
+					},
+					{
+						title: 'Contratual',
+						target: '/itaberai/contratual',
+					},
+					{
+						title: 'Criminal',
+						target: '/itaberai/criminal',
+					},
+				],
+			},
+			{
+				hasSubSections: false,
+				title: 'Contato',
+				target: '/itaberai#contato',
+				icon: '/icons/contact.svg',
+			},
+			{
+				hasSubSections: false,
+				title: 'Perguntas',
+				target: '/itaberai#perguntas',
+				icon: '/icons/faq.svg',
+			},
+			{
+				hasSubSections: false,
+				title: 'Artigos',
+				target: '/artigos',
+				icon: '/icons/articles.svg',
+			},
+		],
+		icons: {
+			menu: '/icons/menu.svg',
+			menuOpen: '/icons/menu-open.svg',
+		},
+	}),
+	computed: {
+		...mapState('Hamburger', {
+			isSidebarOpen: 'isSidebarOpen',
 		}),
-		computed: {
-			...mapState('Hamburger', {
-				isSidebarOpen: 'isSidebarOpen',
-			}),
+	},
+	methods: {
+		toggleSection(section: Section) {
+			section.open = !section.open;
 		},
-		methods: {
-			toggleSection(section: Section) {
-				section.open = !section.open;
-			},
-		},
-	});
+	},
+});
 </script>

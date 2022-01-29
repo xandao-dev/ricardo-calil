@@ -5,19 +5,19 @@
 </template>
 
 <script>
-	export default {
-		name: 'TextSlice',
-		props: {
-			slice: {
-				type: Object,
-				required: true,
-			},
+export default {
+	name: 'TextSlice',
+	props: {
+		slice: {
+			type: Object,
+			required: true,
 		},
-	};
+	},
+};
 </script>
 
 <style scoped>
-	.textslice a {
-		text-decoration: underline;
-	}
+.textslice a {
+	text-decoration: underline;
+}
 </style>

@@ -44,46 +44,46 @@
 </template>
 
 <script>
-	export default {
-		name: 'Post',
-		async asyncData({ $prismic, params, error }) {
-			try {
-				const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
+export default {
+	name: 'Post',
+	async asyncData({ $prismic, params, error }) {
+		try {
+			const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
 
-				const document = post;
-				const slices = post.body;
-				const formattedDate = Intl.DateTimeFormat('pt-BR', {
-					year: 'numeric',
-					month: 'short',
-					day: '2-digit',
-				}).format(new Date(post.post_date));
-				const category = post.post_category;
-				let author = post.post_author;
-				let authorImageSrc = '';
-				if (author === 'Ricardo Calil') {
-					author = 'Dr. Ricardo Calil';
-					authorImageSrc = '/lawyers/ricardo_small.webp';
-				}
-				if (author === 'Lucilo Neto') {
-					author = 'Dr. Lucilo Neto';
-					authorImageSrc = '/lawyers/lucilo_small.webp';
-				}
-				return {
-					document,
-					slices,
-					formattedDate,
-					category,
-					author,
-					authorImageSrc,
-				};
-			} catch (e) {
-				error({ statusCode: 404, message: 'Artigo não encontrado' });
+			const document = post;
+			const slices = post.body;
+			const formattedDate = Intl.DateTimeFormat('pt-BR', {
+				year: 'numeric',
+				month: 'short',
+				day: '2-digit',
+			}).format(new Date(post.post_date));
+			const category = post.post_category;
+			let author = post.post_author;
+			let authorImageSrc = '';
+			if (author === 'Ricardo Calil') {
+				author = 'Dr. Ricardo Calil';
+				authorImageSrc = '/lawyers/ricardo_small.webp';
 			}
-		},
-		head({ $prismic }) {
+			if (author === 'Lucilo Neto') {
+				author = 'Dr. Lucilo Neto';
+				authorImageSrc = '/lawyers/lucilo_small.webp';
+			}
 			return {
-				title: `Artigos - Ricardo Calil | ${$prismic.asText(this.document.title)}`,
+				document,
+				slices,
+				formattedDate,
+				category,
+				author,
+				authorImageSrc,
 			};
-		},
-	};
+		} catch (e) {
+			error({ statusCode: 404, message: 'Artigo não encontrado' });
+		}
+	},
+	head({ $prismic }) {
+		return {
+			title: `Artigos - Ricardo Calil | ${$prismic.asText(this.document.title)}`,
+		};
+	},
+};
 </script>

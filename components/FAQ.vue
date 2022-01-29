@@ -48,27 +48,27 @@
 </template>
 
 <script>
-	export default {
-		data: () => ({
-			questions: [
-				{
-					id: 'faq-question-0',
-					ask: 'Fui demitido por justa causa, tenho algum direito?',
-					answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat quam elit, id sodales felis eleifend at. Phasellus auctor pellentesque sem, rutrum rhoncus nisl ultricies gravida. Vestibulum luctus risus tortor, quis rutrum arcu fermentum id. Duis commodo pretium libero finibus venenatis.',
-					closed: true,
-				},
-				{
-					id: 'faq-question-1',
-					ask: 'Como é feito a cobrança dos honorários?',
-					answer: 'Os honorários são calculados caso a caso. Existem várias formas para se mensurar honorários: por hora, em valor fixo por ação ou mensal, no êxito. Dependerá do tipo de caso e dos custos envolvidos.',
-					closed: true,
-				},
-			],
-		}),
-		methods: {
-			toggleQuestion(question) {
-				question.closed = !question.closed;
+export default {
+	data: () => ({
+		questions: [
+			{
+				id: 'faq-question-0',
+				ask: 'Fui demitido por justa causa, tenho algum direito?',
+				answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat quam elit, id sodales felis eleifend at. Phasellus auctor pellentesque sem, rutrum rhoncus nisl ultricies gravida. Vestibulum luctus risus tortor, quis rutrum arcu fermentum id. Duis commodo pretium libero finibus venenatis.',
+				closed: true,
 			},
+			{
+				id: 'faq-question-1',
+				ask: 'Como é feito a cobrança dos honorários?',
+				answer: 'Os honorários são calculados caso a caso. Existem várias formas para se mensurar honorários: por hora, em valor fixo por ação ou mensal, no êxito. Dependerá do tipo de caso e dos custos envolvidos.',
+				closed: true,
+			},
+		],
+	}),
+	methods: {
+		toggleQuestion(question) {
+			question.closed = !question.closed;
 		},
-	};
+	},
+};
 </script>

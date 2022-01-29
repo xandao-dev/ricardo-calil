@@ -136,16 +136,16 @@
 </template>
 
 <script>
-	export default {
-		data: () => ({
-			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
-			social: {
-				whatsapp: '556233752216',
-				facebook: 'ricardocaliladv',
-				instagram: 'dr.ricardocalil',
-				phone: '+55 62 3375-2216',
-				email: 'ricardocalil@hotmail.com',
-			},
-		}),
-	};
+export default {
+	data: () => ({
+		street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
+		social: {
+			whatsapp: '556233752216',
+			facebook: 'ricardocaliladv',
+			instagram: 'dr.ricardocalil',
+			phone: '+55 62 3375-2216',
+			email: 'ricardocalil@hotmail.com',
+		},
+	}),
+};
 </script>

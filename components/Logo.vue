@@ -6,10 +6,10 @@
 </template>
 
 <script>
-	export default {
-		data: () => ({
-			logo: '/logos/logo_sem_fundo2.svg',
-			logoText: '/logos/logo_texto_sem_fundo_black.svg',
-		}),
-	};
+export default {
+	data: () => ({
+		logo: '/logos/logo_sem_fundo2.svg',
+		logoText: '/logos/logo_texto_sem_fundo_black.svg',
+	}),
+};
 </script>

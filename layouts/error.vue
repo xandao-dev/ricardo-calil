@@ -47,13 +47,13 @@
 </template>
 
 <script>
-	export default {
-		layout: 'error',
-		props: {
-			error: {
-				type: Object,
-				required: true,
-			},
+export default {
+	layout: 'error',
+	props: {
+		error: {
+			type: Object,
+			required: true,
 		},
-	};
+	},
+};
 </script>

@@ -31,66 +31,66 @@
 </template>
 
 <script>
-	export default {
-		data: () => ({
-			areas: [
-				{
-					id: 0,
-					src: '/expertise_areas/trabalhista.svg',
-					lazyUrl: '/expertise_areas/trabalhista_lqip.webp',
-					title: 'Trabalhista',
-					description: '',
-				},
-				{
-					id: 1,
-					src: '/expertise_areas/previdenciario.svg',
-					lazyUrl: '/expertise_areas/previdenciario_lqip.webp',
-					title: 'Previdenciário',
-					description: '',
-				},
-				{
-					id: 2,
-					src: '/expertise_areas/civil.svg',
-					lazyUrl: '/expertise_areas/civil_lqip.webp',
-					title: 'Cívil',
-					description: '',
-				},
-				{
-					id: 3,
-					src: '/expertise_areas/consumidor.svg',
-					lazyUrl: '/expertise_areas/consumidor_lqip.webp',
-					title: 'Consumidor',
-					description: '',
-				},
-				{
-					id: 4,
-					src: '/expertise_areas/familia.svg',
-					lazyUrl: '/expertise_areas/familia_lqip.webp',
-					title: 'Família',
-					description: '',
-				},
-				{
-					id: 5,
-					src: '/expertise_areas/imobiliario.svg',
-					lazyUrl: '/expertise_areas/imobiliario_lqip.webp',
-					title: 'Imobiliário',
-					description: '',
-				},
-				{
-					id: 6,
-					src: '/expertise_areas/contratual.svg',
-					lazyUrl: '/expertise_areas/contratual_lqip.webp',
-					title: 'Contratual',
-					description: '',
-				},
-				{
-					id: 7,
-					src: '/expertise_areas/criminal.svg',
-					lazyUrl: '/expertise_areas/criminal_lqip.webp',
-					title: 'Criminal',
-					description: '',
-				},
-			],
-		}),
-	};
+export default {
+	data: () => ({
+		areas: [
+			{
+				id: 0,
+				src: '/expertise_areas/trabalhista.svg',
+				lazyUrl: '/expertise_areas/trabalhista_lqip.webp',
+				title: 'Trabalhista',
+				description: '',
+			},
+			{
+				id: 1,
+				src: '/expertise_areas/previdenciario.svg',
+				lazyUrl: '/expertise_areas/previdenciario_lqip.webp',
+				title: 'Previdenciário',
+				description: '',
+			},
+			{
+				id: 2,
+				src: '/expertise_areas/civil.svg',
+				lazyUrl: '/expertise_areas/civil_lqip.webp',
+				title: 'Cívil',
+				description: '',
+			},
+			{
+				id: 3,
+				src: '/expertise_areas/consumidor.svg',
+				lazyUrl: '/expertise_areas/consumidor_lqip.webp',
+				title: 'Consumidor',
+				description: '',
+			},
+			{
+				id: 4,
+				src: '/expertise_areas/familia.svg',
+				lazyUrl: '/expertise_areas/familia_lqip.webp',
+				title: 'Família',
+				description: '',
+			},
+			{
+				id: 5,
+				src: '/expertise_areas/imobiliario.svg',
+				lazyUrl: '/expertise_areas/imobiliario_lqip.webp',
+				title: 'Imobiliário',
+				description: '',
+			},
+			{
+				id: 6,
+				src: '/expertise_areas/contratual.svg',
+				lazyUrl: '/expertise_areas/contratual_lqip.webp',
+				title: 'Contratual',
+				description: '',
+			},
+			{
+				id: 7,
+				src: '/expertise_areas/criminal.svg',
+				lazyUrl: '/expertise_areas/criminal_lqip.webp',
+				title: 'Criminal',
+				description: '',
+			},
+		],
+	}),
+};
 </script>

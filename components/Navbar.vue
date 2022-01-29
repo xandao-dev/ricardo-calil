@@ -46,60 +46,60 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import { mapState, mapMutations } from 'vuex';
-	import { Mutations as HamburgerMutations } from '@/store/Hamburger/types';
-	export default Vue.extend({
-		data: () => ({
-			sections: [
-				{
-					title: 'Início',
-					target: '/itaberai#inicio',
-				},
-				{
-					title: 'Escritório',
-					target: '/itaberai#escritorio',
-				},
-				{
-					title: 'Advogados',
-					target: '/itaberai#advogados',
-				},
-				{
-					title: 'Atuação',
-					target: '/itaberai#atuacao',
-				},
-				{
-					title: 'Contato',
-					target: '/itaberai#contato',
-				},
-				{
-					title: 'Perguntas',
-					target: '/itaberai#perguntas',
-				},
-				{
-					title: 'Artigos',
-					target: '/artigos',
-				},
-			],
-			icons: {
-				menu: '/icons/menu.svg',
-				menuOpen: '/icons/menu-open.svg',
+import Vue from 'vue';
+import { mapState, mapMutations } from 'vuex';
+import { Mutations as HamburgerMutations } from '@/store/Hamburger/types';
+export default Vue.extend({
+	data: () => ({
+		sections: [
+			{
+				title: 'Início',
+				target: '/itaberai#inicio',
 			},
-			logo: '/logos/logo_sem_fundo2.svg',
-			logoText: '/logos/logo_texto_sem_fundo_black.svg',
+			{
+				title: 'Escritório',
+				target: '/itaberai#escritorio',
+			},
+			{
+				title: 'Advogados',
+				target: '/itaberai#advogados',
+			},
+			{
+				title: 'Atuação',
+				target: '/itaberai#atuacao',
+			},
+			{
+				title: 'Contato',
+				target: '/itaberai#contato',
+			},
+			{
+				title: 'Perguntas',
+				target: '/itaberai#perguntas',
+			},
+			{
+				title: 'Artigos',
+				target: '/artigos',
+			},
+		],
+		icons: {
+			menu: '/icons/menu.svg',
+			menuOpen: '/icons/menu-open.svg',
+		},
+		logo: '/logos/logo_sem_fundo2.svg',
+		logoText: '/logos/logo_texto_sem_fundo_black.svg',
+	}),
+	computed: {
+		...mapState('Hamburger', {
+			isSidebarOpen: 'isSidebarOpen',
 		}),
-		computed: {
-			...mapState('Hamburger', {
-				isSidebarOpen: 'isSidebarOpen',
-			}),
+	},
+	methods: {
+		...mapMutations({
+			toggleSidebar: `Hamburger/${HamburgerMutations.TOGGLE_SIDEBAR}`,
+		}),
+		toggleSidebarStatus() {
+			this.toggleSidebar(!this.isSidebarOpen);
 		},
-		methods: {
-			...mapMutations({
-				toggleSidebar: `Hamburger/${HamburgerMutations.TOGGLE_SIDEBAR}`,
-			}),
-			toggleSidebarStatus() {
-				this.toggleSidebar(!this.isSidebarOpen);
-			},
-		},
-	});
+	},
+});
 </script>

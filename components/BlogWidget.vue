@@ -57,70 +57,70 @@
 </template>
 
 <script>
-	import LinkResolver from '~/plugins/link-resolver.js';
+import LinkResolver from '~/plugins/link-resolver.js';
 
-	export default {
-		name: 'BlogWidget',
-		props: {
-			post: {
-				type: Object,
-				required: true,
-			},
+export default {
+	name: 'BlogWidget',
+	props: {
+		post: {
+			type: Object,
+			required: true,
 		},
-		data() {
-			return {
-				link: '',
-				formattedDate: '',
-				category: '',
-				author: '',
-				authorImageSrc: '',
-			};
-		},
-		created() {
-			this.link = LinkResolver(this.post);
-			this.formattedDate = Intl.DateTimeFormat('pt-BR', {
-				year: 'numeric',
-				month: 'short',
-				day: '2-digit',
-			}).format(new Date(this.post.data.post_date));
-			this.category = this.post.data.post_category;
-			this.author = this.post.data.post_author;
-			if (this.author === 'Ricardo Calil') {
-				this.author = 'Dr. Ricardo Calil';
-				this.authorImageSrc = '/lawyers/ricardo_small.webp';
-			}
-			if (this.author === 'Lucilo Neto') {
-				this.author = 'Dr. Lucilo Neto';
-				this.authorImageSrc = '/lawyers/lucilo_small.webp';
-			}
-		},
-		methods: {
-			// Function to get the first paragraph of text in a blog post and limit the displayed text at 300 characters
-			getFirstParagraph(post) {
-				const textLimit = 300;
-				const slices = post.data.body;
-				let firstParagraph = '';
-				let haveFirstParagraph = false;
+	},
+	data() {
+		return {
+			link: '',
+			formattedDate: '',
+			category: '',
+			author: '',
+			authorImageSrc: '',
+		};
+	},
+	created() {
+		this.link = LinkResolver(this.post);
+		this.formattedDate = Intl.DateTimeFormat('pt-BR', {
+			year: 'numeric',
+			month: 'short',
+			day: '2-digit',
+		}).format(new Date(this.post.data.post_date));
+		this.category = this.post.data.post_category;
+		this.author = this.post.data.post_author;
+		if (this.author === 'Ricardo Calil') {
+			this.author = 'Dr. Ricardo Calil';
+			this.authorImageSrc = '/lawyers/ricardo_small.webp';
+		}
+		if (this.author === 'Lucilo Neto') {
+			this.author = 'Dr. Lucilo Neto';
+			this.authorImageSrc = '/lawyers/lucilo_small.webp';
+		}
+	},
+	methods: {
+		// Function to get the first paragraph of text in a blog post and limit the displayed text at 300 characters
+		getFirstParagraph(post) {
+			const textLimit = 300;
+			const slices = post.data.body;
+			let firstParagraph = '';
+			let haveFirstParagraph = false;
 
-				slices.forEach((slice) => {
-					if (!haveFirstParagraph && slice.slice_type === 'post_content') {
-						slice.primary.post_content.forEach(function (block) {
-							if (block.type === 'paragraph' && !haveFirstParagraph) {
-								firstParagraph += block.text;
-								haveFirstParagraph = true;
-							}
-						});
-					}
-				});
-
-				const limitedText = firstParagraph.substr(0, textLimit);
-
-				if (firstParagraph.length > textLimit) {
-					return limitedText.substr(0, limitedText.lastIndexOf(' ')) + '...';
-				} else {
-					return firstParagraph;
+			slices.forEach((slice) => {
+				if (!haveFirstParagraph && slice.slice_type === 'post_content') {
+					slice.primary.post_content.forEach(function (block) {
+						if (block.type === 'paragraph' && !haveFirstParagraph) {
+							firstParagraph += block.text;
+							haveFirstParagraph = true;
+						}
+					});
 				}
-			},
+			});
+
+			const limitedText = firstParagraph.substr(0, textLimit);
+
+			if (firstParagraph.length > textLimit) {
+				return limitedText.substr(0, limitedText.lastIndexOf(' ')) + '...';
+			} else {
+				return firstParagraph;
+			}
 		},
-	};
+	},
+};
 </script>
