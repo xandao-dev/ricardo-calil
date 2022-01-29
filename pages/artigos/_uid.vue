@@ -81,8 +81,10 @@ export default {
 		}
 	},
 	head({ $prismic }) {
+		// Title with 60 characters max, 44 for post and 16 for site name
+		const postTitle = String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo';
 		return {
-			title: `Artigos - Ricardo Calil | ${$prismic.asText(this.document.title)}`,
+			title: `${postTitle} | Ricardo Calil`,
 		};
 	},
 };

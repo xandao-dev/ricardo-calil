@@ -32,7 +32,7 @@ export default {
 	},
 	head() {
 		return {
-			title: 'Artigos - Ricardo Calil | Advogado em Itaberaí',
+			title: 'Artigos Jurídicos | Ricardo Calil - Advogado em Itaberaí',
 		};
 	},
 };

@@ -14,7 +14,7 @@ export default {
 	name: 'Home',
 	head() {
 		return {
-			title: 'Ricardo Calil | Advogado em Itaberaí',
+			title: 'Advogado em Itaberaí | Ricardo Calil',
 			link: [
 				{
 					rel: 'canonical',
