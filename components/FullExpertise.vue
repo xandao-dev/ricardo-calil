@@ -5,30 +5,19 @@
 </template>
 
 <script lang="ts">
-import { areas, IExpertiseArea } from '~/utils/data/expertise';
+import type { PropType } from 'vue';
+import { IExpertiseArea } from '~/utils/data/expertise';
 
 export default {
 	props: {
-		target: {
-			type: String,
+		area: {
+			type: Object as PropType<IExpertiseArea>,
 			required: true,
 		},
 	},
-	data: () => ({
-		areas,
-		area: null as IExpertiseArea | null,
-	}),
 	computed: {
 		title(): string {
-			return this.area?.title || 'Área não encontrada';
-		},
-	},
-	watch: {
-		target: {
-			immediate: true,
-			handler(target: string) {
-				this.area = this.areas.find((area) => area.target === target) || null;
-			},
+			return (this as any).area.title;
 		},
 	},
 };

@@ -74,4 +74,5 @@ const areas: IExpertiseArea[] =  [
     },
 ];
 
-export { areas, IExpertiseArea };
+export { areas };
+export type { IExpertiseArea };

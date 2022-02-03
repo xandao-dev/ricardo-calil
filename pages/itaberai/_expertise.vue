@@ -3,20 +3,28 @@
 		<div class="back">
 			<NuxtLink to="./">Voltar</NuxtLink>
 		</div>
-		<full-expertise :target="target"> </full-expertise>
+		<full-expertise :area="area"> </full-expertise>
 	</div>
 </template>
 
-<script>
+<script land="ts">
 import FullExpertise from '~/components/FullExpertise.vue';
+import { areas } from '~/utils/data/expertise';
+
 export default {
 	name: 'Expertise',
 	components: { FullExpertise },
 	data: () => ({
-		target: '',
+		area: areas[0],
 	}),
-	mounted() {
-		this.target = this.$route?.path || '';
+	head() {
+		return {
+			title: `Advogado ${this.area.title} em Itaberaí | Ricardo Calil`,
+		};
+	},
+	created() {
+		const target = this.$route?.path || '';
+		this.area = areas.find((area) => area.target === target) || areas[0];
 	},
 };
 </script>
