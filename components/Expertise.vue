@@ -30,67 +30,11 @@
 	</div-->
 </template>
 
-<script>
+<script land="ts">
+import { areas } from '~/utils/data/expertise';
 export default {
 	data: () => ({
-		areas: [
-			{
-				id: 0,
-				src: '/expertise-areas/trabalhista.svg',
-				lazyUrl: '/expertise-areas/trabalhista_lqip.webp',
-				title: 'Trabalhista',
-				description: '',
-			},
-			{
-				id: 1,
-				src: '/expertise-areas/previdenciario.svg',
-				lazyUrl: '/expertise-areas/previdenciario_lqip.webp',
-				title: 'Previdenciário',
-				description: '',
-			},
-			{
-				id: 2,
-				src: '/expertise-areas/civil.svg',
-				lazyUrl: '/expertise-areas/civil_lqip.webp',
-				title: 'Cívil',
-				description: '',
-			},
-			{
-				id: 3,
-				src: '/expertise-areas/consumidor.svg',
-				lazyUrl: '/expertise-areas/consumidor_lqip.webp',
-				title: 'Consumidor',
-				description: '',
-			},
-			{
-				id: 4,
-				src: '/expertise-areas/familia.svg',
-				lazyUrl: '/expertise-areas/familia_lqip.webp',
-				title: 'Família',
-				description: '',
-			},
-			{
-				id: 5,
-				src: '/expertise-areas/imobiliario.svg',
-				lazyUrl: '/expertise-areas/imobiliario_lqip.webp',
-				title: 'Imobiliário',
-				description: '',
-			},
-			{
-				id: 6,
-				src: '/expertise-areas/contratual.svg',
-				lazyUrl: '/expertise-areas/contratual_lqip.webp',
-				title: 'Contratual',
-				description: '',
-			},
-			{
-				id: 7,
-				src: '/expertise-areas/criminal.svg',
-				lazyUrl: '/expertise-areas/criminal_lqip.webp',
-				title: 'Criminal',
-				description: '',
-			},
-		],
+		areas,
 	}),
 };
 </script>
