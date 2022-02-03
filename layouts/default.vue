@@ -12,33 +12,34 @@
 		<footer>
 			<Footbar></Footbar>
 		</footer>
+		<whatsapp-fab :whatsapp="social.whatsapp"></whatsapp-fab>
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapState } from 'vuex';
+import WhatsappFab from '~/components/WhatsappFab.vue';
 export default {
-	data() {
-		return {
-			social: {
-				whatsapp: '556233752216',
-				facebook: 'ricardocaliladv',
-				instagram: 'dr.ricardocalil',
-				phone: '+55 62 3375-2216',
-			},
-			icons: {
-				menu: '/icons/menu.svg',
-				menuOpen: '/icons/menu-open.svg',
-				phone: '/icons/phone.svg',
-				whatsapp: '/icons/whatsapp.svg',
-				facebook: '/icons/facebook.svg',
-				instagram: '/icons/instagram.svg',
-				linkedin: '/icons/linkedin.svg',
-				location: '/icons/location.svg',
-				map: '/icons/map.svg',
-			},
-		};
-	},
+	components: { WhatsappFab },
+	data: () => ({
+		social: {
+			whatsapp: '556233752216',
+			facebook: 'ricardocaliladv',
+			instagram: 'dr.ricardocalil',
+			phone: '+55 62 3375-2216',
+		},
+		icons: {
+			menu: '/icons/menu.svg',
+			menuOpen: '/icons/menu-open.svg',
+			phone: '/icons/phone.svg',
+			whatsapp: '/icons/whatsapp.svg',
+			facebook: '/icons/facebook.svg',
+			instagram: '/icons/instagram.svg',
+			linkedin: '/icons/linkedin.svg',
+			location: '/icons/location.svg',
+			map: '/icons/map.svg',
+		},
+	}),
 	head() {
 		return {
 			bodyAttrs: {
