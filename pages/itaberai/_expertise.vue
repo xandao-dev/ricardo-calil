@@ -3,11 +3,20 @@
 		<div class="back">
 			<NuxtLink to="./">Voltar</NuxtLink>
 		</div>
+		<full-expertise :target="target"> </full-expertise>
 	</div>
 </template>
 
 <script>
+import FullExpertise from '~/components/FullExpertise.vue';
 export default {
 	name: 'Expertise',
+	components: { FullExpertise },
+	data: () => ({
+		target: '',
+	}),
+	mounted() {
+		this.target = this.$route?.path || '';
+	},
 };
 </script>
