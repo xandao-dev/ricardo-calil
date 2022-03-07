@@ -150,8 +150,9 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import ahoy from 'ahoy.js';
-export default {
+export default Vue.extend({
 	data: () => ({
 		street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
 		social: {
@@ -207,5 +208,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

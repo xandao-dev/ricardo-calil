@@ -17,11 +17,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { mapState } from 'vuex';
 import { MetaInfo } from 'vue-meta';
 import WhatsappFab from '~/components/WhatsappFab.vue';
 
-export default {
+export default Vue.extend({
 	components: { WhatsappFab },
 	data: () => ({
 		social: {
@@ -41,7 +42,6 @@ export default {
 			location: '/icons/location.svg',
 			map: '/icons/map.svg',
 		},
-		isSidebarOpen: false,
 	}),
 	head(): MetaInfo {
 		return {
@@ -55,5 +55,5 @@ export default {
 			isSidebarOpen: 'isSidebarOpen',
 		}),
 	},
-};
+});
 </script>

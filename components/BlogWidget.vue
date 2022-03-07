@@ -57,9 +57,10 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import LinkResolver from '~/plugins/link-resolver.js';
 
-export default {
+export default Vue.extend({
 	name: 'BlogWidget',
 	props: {
 		post: {
@@ -122,5 +123,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

@@ -7,7 +7,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	name: 'QuoteSlice',
 	props: {
 		slice: {
@@ -15,7 +16,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style scoped>

@@ -20,11 +20,12 @@
 </template>
 
 <script>
+import Vue from 'vue';
 const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
 const TextSlice = () => import('../components/slices/TextSlice.vue');
 const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');
 
-export default {
+export default Vue.extend({
 	name: 'SlicesBlock',
 	components: {
 		QuoteSlice,
@@ -37,5 +38,5 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>

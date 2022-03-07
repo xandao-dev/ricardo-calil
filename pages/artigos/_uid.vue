@@ -44,7 +44,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	name: 'Post',
 	async asyncData({ $prismic, params, error }) {
 		try {
@@ -87,5 +88,5 @@ export default {
 			title: `${postTitle} | Ricardo Calil`,
 		};
 	},
-};
+});
 </script>

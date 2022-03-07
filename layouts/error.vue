@@ -47,7 +47,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	layout: 'error',
 	props: {
 		error: {
@@ -55,5 +56,5 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
