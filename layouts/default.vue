@@ -18,7 +18,9 @@
 
 <script lang="ts">
 import { mapState } from 'vuex';
+import { MetaInfo } from 'vue-meta';
 import WhatsappFab from '~/components/WhatsappFab.vue';
+
 export default {
 	components: { WhatsappFab },
 	data: () => ({
@@ -39,8 +41,9 @@ export default {
 			location: '/icons/location.svg',
 			map: '/icons/map.svg',
 		},
+		isSidebarOpen: false,
 	}),
-	head() {
+	head(): MetaInfo {
 		return {
 			bodyAttrs: {
 				class: this.isSidebarOpen ? 'overflow-hidden' : '',
