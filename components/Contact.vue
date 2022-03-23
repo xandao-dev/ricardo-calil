@@ -1,6 +1,6 @@
 <template>
 	<section class="body-font relative">
-		<div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+		<form class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
 			<div
 				class="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative"
 			>
@@ -41,7 +41,6 @@
 				<div class="relative mb-4">
 					<label for="name" class="leading-7 text-sm">Nome</label>
 					<input
-						id="name"
 						v-model="contactForm.name"
 						type="text"
 						name="name"
@@ -64,10 +63,34 @@
 						placeholder="Nome"
 					/>
 				</div>
+				<div class="hidden relative mb-4">
+					<label for="surname" class="leading-7 text-sm">Sobrenome</label>
+					<input
+						v-model="contactForm.surname"
+						type="text"
+						name="surname"
+						class="
+							w-full
+							bg-white
+							rounded
+							border
+							focus:ring-2
+							text-base
+							outline-none
+							text-gray-700
+							py-1
+							px-3
+							leading-8
+							transition-colors
+							duration-200
+							ease-in-out
+						"
+						placeholder="Nome"
+					/>
+				</div>
 				<div class="relative mb-4">
 					<label for="phone" class="leading-7 text-sm">Telefone</label>
 					<input
-						id="phone"
 						v-model="contactForm.phone"
 						type="tel"
 						name="phone"
@@ -91,7 +114,6 @@
 				<div class="relative mb-4">
 					<label for="email" class="leading-7 text-sm">Email</label>
 					<input
-						id="email"
 						v-model="contactForm.email"
 						type="email"
 						name="email"
@@ -109,13 +131,12 @@
 							duration-200
 							ease-in-out
 						"
-						placeholder="email@dominio.com"
+						placeholder="nome@gmail.com"
 					/>
 				</div>
 				<div class="relative mb-4">
 					<label for="message" class="leading-7 text-sm">Mensagem</label>
 					<textarea
-						id="message"
 						v-model="contactForm.message"
 						name="message"
 						class="
@@ -137,21 +158,16 @@
 						placeholder="Gostaria de saber mais sobre ..."
 					></textarea>
 				</div>
-				<button
-					id="#submit-contact-form"
-					class="border-0 py-2 px-6 focus:outline-none rounded text-lg"
-					@click="submitContactForm"
-				>
+				<button class="border-0 py-2 px-6 focus:outline-none rounded text-lg" @click="submitContactForm">
 					Enviar
 				</button>
 			</div>
-		</div>
+		</form>
 	</section>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
-import ahoy from 'ahoy.js';
 export default Vue.extend({
 	data: () => ({
 		street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
@@ -164,38 +180,24 @@ export default Vue.extend({
 		},
 		contactForm: {
 			name: '',
+			surname: '',
 			phone: '',
 			email: '',
 			message: '',
 		},
 	}),
-	mounted() {
-		this.trackBasinForm();
-	},
+	mounted() {},
 	methods: {
-		trackBasinForm() {
-			ahoy.configure({
-				visitsUrl: 'https://usebasin.com/ahoy/visits',
-				eventsUrl: 'https://usebasin.com/ahoy/events',
-				page: 'e40dbe79fbce',
-			});
-			ahoy.trackView();
-			ahoy.trackClicks('#submit-contact-form');
-		},
-		async submitContactForm() {
-			const formData = new FormData()
-				.append('name', this.name)
-				.append('phone', this.phone)
-				.append('email', this.email)
-				.append('message', this.message);
-
+		async submitContactForm(e: Event) {
+			e.preventDefault();
 			try {
 				const response = await fetch('https://usebasin.com/f/e40dbe79fbce', {
 					method: 'POST',
 					headers: {
-						Accept: 'application/json',
+						'Accept': 'application/json',
+						'Content-Type': 'application/json',
 					},
-					body: formData,
+					body: JSON.stringify(this.contactForm),
 				});
 
 				if (response.status === 200) {
