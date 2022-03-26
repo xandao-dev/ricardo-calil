@@ -5,7 +5,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	name: 'TextSlice',
 	props: {
 		slice: {
@@ -13,7 +14,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style scoped>

@@ -12,7 +12,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	name: 'Articles',
 	async asyncData({ $prismic, error }) {
 		try {
@@ -35,7 +36,7 @@ export default {
 			title: 'Artigos Jurídicos - Advogado em Itaberaí | Ricardo Calil',
 		};
 	},
-};
+});
 </script>
 
 <style scoped>

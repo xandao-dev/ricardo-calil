@@ -31,10 +31,11 @@
 </template>
 
 <script land="ts">
+import Vue from 'vue';
 import { areas } from '~/utils/data/expertise';
-export default {
+export default Vue.extend({
 	data: () => ({
 		areas,
 	}),
-};
+});
 </script>

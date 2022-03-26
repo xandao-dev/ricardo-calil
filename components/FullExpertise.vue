@@ -5,10 +5,11 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import type { PropType } from 'vue';
 import { IExpertiseArea } from '~/utils/data/expertise';
 
-export default {
+export default Vue.extend({
 	props: {
 		area: {
 			type: Object as PropType<IExpertiseArea>,
@@ -20,5 +21,5 @@ export default {
 			return (this as any).area.title;
 		},
 	},
-};
+});
 </script>

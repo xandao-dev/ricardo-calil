@@ -25,7 +25,8 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	name: 'ImageCaptionSlice',
 	props: {
 		slice: {
@@ -45,7 +46,7 @@ export default {
 		this.caption = this.slice.primary.image_caption;
 		this.size = this.slice.slice_label;
 	},
-};
+});
 </script>
 
 <style scoped>

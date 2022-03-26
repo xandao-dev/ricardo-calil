@@ -8,10 +8,11 @@
 </template>
 
 <script land="ts">
+import Vue from 'vue';
 import FullExpertise from '~/components/FullExpertise.vue';
 import { areas } from '~/utils/data/expertise';
 
-export default {
+export default Vue.extend({
 	name: 'Expertise',
 	components: { FullExpertise },
 	data: () => ({
@@ -26,5 +27,5 @@ export default {
 		const target = this.$route?.path || '';
 		this.area = areas.find((area) => area.target === target) || areas[0];
 	},
-};
+});
 </script>

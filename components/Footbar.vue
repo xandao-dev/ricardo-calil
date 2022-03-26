@@ -69,9 +69,10 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
 	data: () => ({
 		logo: '/logos/logo_sem_fundo2.svg',
 	}),
-};
+});
 </script>
