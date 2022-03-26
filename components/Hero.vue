@@ -5,14 +5,14 @@
 			hero-bg
 			px-8
 			py-24
-			lg:px-12 lg:py-36 lg:flex-row lg:justify-between
+			lg:px-12 lg:py-48 lg:flex lg:justify-between lg:align-middle lg:before:hidden
 		"
 	>
-		<div class="relative flex flex-col justify-center text-center lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28">
-				30 anos de <span class="text-sky-600">advocacia</span> para te ajudar
+		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12">
+				30 anos de <span class="text-black">advocacia</span> para te ajudar
 			</h1>
-			<p class="text-gray-200 mt-6 mb-12 sm:px-12 md:text-lg md:px-28">
+			<p class="text-gray-200 mt-6 mb-12 sm:px-12 md:text-lg md:px-28 lg:text-black lg:px-12">
 				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
 				simplificada.
 			</p>
@@ -29,6 +29,7 @@
 					mx-auto
 					focus:outline-none
 					sm:px-8 sm:py-4 sm:text-xl
+					lg:px-12
 				"
 			>
 				Fale agora com um advogado
@@ -36,8 +37,8 @@
 		</div>
 		<img
 			src="/hero/hero.webp"
-			alt="hero-escritorio"
-			class="hidden object-contain lg:mt-0 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+			alt="Imagem de um advogado apertando a mão de um cliente"
+			class="hidden object-contain h-96 lg:block xl:h-112 2xl:h-128"
 		/>
 	</section>
 </template>
