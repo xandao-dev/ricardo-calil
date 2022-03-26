@@ -6,13 +6,24 @@
 			px-8
 			py-24
 			lg:px-12 lg:py-48 lg:flex lg:justify-between lg:align-middle lg:before:hidden
+			xl:px-16 xl:py-64
 		"
 	>
 		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12">
-				30 anos de <span class="text-black">advocacia</span> para te ajudar
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12 xl:px-16">
+				30 anos de <span class="text-sky-600 lg:text-black">advocacia</span> para te ajudar
 			</h1>
-			<p class="text-gray-200 mt-6 mb-12 sm:px-12 md:text-lg md:px-28 lg:text-black lg:px-12">
+			<p
+				class="
+					text-gray-200
+					pt-6
+					pb-12
+					sm:px-12
+					md:text-lg md:px-28
+					lg:text-black lg:px-12
+					xl:px-16 xl:pt-12 xl:pb-18
+				"
+			>
 				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
 				simplificada.
 			</p>
@@ -38,7 +49,7 @@
 		<img
 			src="/hero/hero.webp"
 			alt="Imagem de um advogado apertando a mão de um cliente"
-			class="hidden object-contain h-96 lg:block xl:h-112 2xl:h-128"
+			class="hidden object-contain h-96 lg:block"
 		/>
 	</section>
 </template>
