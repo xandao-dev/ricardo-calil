@@ -43,7 +43,7 @@
 					lg:px-12
 				"
 			>
-				Fale agora com um advogado
+				<NuxtLink to="/itaberai#contato">Fale agora com um advogado</NuxtLink>
 			</button>
 		</div>
 		<img
