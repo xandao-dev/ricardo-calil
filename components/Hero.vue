@@ -4,17 +4,17 @@
 			before:absolute before:inset-0 before:h-full before:w-full
 			hero-bg
 			px-8
-			py-12
-			lg:py-24 lg:flex-row lg:justify-between
+			py-24
+			lg:px-12 lg:py-36 lg:flex-row lg:justify-between
 		"
 	>
 		<div class="relative flex flex-col justify-center text-center lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl">
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28">
 				30 anos de <span class="text-sky-600">advocacia</span> para te ajudar
 			</h1>
-			<p class="text-gray-200 mt-6 mb-12 sm:px-6">
-				Somos altamente qualificados <br class="hidden md:inline lg:hidden" />e estamos prontos para resolver
-				seus problemas de maneira eficiente e simplificada.
+			<p class="text-gray-200 mt-6 mb-12 sm:px-12 md:text-lg md:px-28">
+				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
+				simplificada.
 			</p>
 			<button
 				class="
