@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="max-w-screen-2xl mx-auto">
 		<Hero></Hero>
 		<Office></Office>
 		<Lawyers></Lawyers>
