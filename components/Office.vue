@@ -1,5 +1,5 @@
 <template>
-	<section class="px-8 py-24 grid gap-4 mx-4 sm:grid-cols-12 lg:px-12 lg:py-48 xl:px-16 xl:py-64">
+	<section class="px-8 py-12 grid gap-4 mx-4 sm:grid-cols-12 lg:px-12 xl:px-16">
 		<div
 			class="
 				col-span-12
@@ -42,11 +42,13 @@
 						sm:before:z-[1]
 					"
 				>
-					<h3 class="text-xl font-semibold tracking-wide">Donec porta enim vel</h3>
-					<time class="text-xs tracking-wide uppercase text-coolGray-600">Dec 2020</time>
+					<h3 class="text-xl font-semibold tracking-wide">Fundação</h3>
+					<time class="text-xs tracking-wide uppercase text-coolGray-600">fev 1992</time>
 					<p class="mt-3">
-						Pellentesque feugiat ante at nisl efficitur, in mollis orci scelerisque. Interdum et malesuada
-						fames ac ante ipsum primis in faucibus.
+						Fundado em 1992, pelo advogado Dr. Ricardo Calil Fonseca, o escritório de advocacia atua em
+						diversos segmentos, com foco em causas trabalhistas e previdenciárias. Com sede em Itaberaí, mas
+						atendendo em diversas cidades como a cidade de Goiás, Mossâmedes, Itapuranga, Heitoraí,
+						Itaguaru, Inhumas e Goiânia.
 					</p>
 				</div>
 				<div
@@ -62,11 +64,11 @@
 						sm:before:z-[1]
 					"
 				>
-					<h3 class="text-xl font-semibold tracking-wide">Aliquam sit amet nunc ut</h3>
-					<time class="text-xs tracking-wide uppercase text-coolGray-600">Jul 2019</time>
+					<h3 class="text-xl font-semibold tracking-wide">Associação</h3>
+					<time class="text-xs tracking-wide uppercase text-coolGray-600">jan 2015</time>
 					<p class="mt-3">
-						Morbi vulputate aliquam libero non dictum. Aliquam sit amet nunc ut diam aliquet tincidunt nec
-						nec dui. Donec mollis turpis eget egestas sodales.
+						Em janeiro de 2015 iniciou-se a carreira do Dr. Lucilo Fonseca Neto no escritório, atuando ao
+						lado de seu pai, o advogado Dr.Ricardo Calil.
 					</p>
 				</div>
 				<div
@@ -82,11 +84,12 @@
 						sm:before:z-[1]
 					"
 				>
-					<h3 class="text-xl font-semibold tracking-wide">Pellentesque habitant morbi</h3>
+					<h3 class="text-xl font-semibold tracking-wide">Conquistas</h3>
 					<time class="text-xs tracking-wide uppercase">Jan 2016</time>
 					<p class="mt-3">
-						Suspendisse tincidunt, arcu nec faucibus efficitur, justo velit consectetur nisl, sit amet
-						condimentum lacus orci nec purus. Mauris quis quam suscipit, vehicula felis id, vehicula enim.
+						Durante a caminhada de Dr. Ricardo Calil na advocacia, recebeu a honrosa missão de ser o
+						presidente a OAB subseção de Itaberaí, no período de 2016 a 2018. Uma conquista que lhe trouxe
+						muitas experiências.
 					</p>
 				</div>
 			</div>
