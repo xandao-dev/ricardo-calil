@@ -5,7 +5,7 @@
 			hero-bg
 			px-8
 			py-24
-			lg:px-12 lg:flex lg:justify-between lg:align-middle lg:before:hidden
+			lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:align-middle lg:before:hidden
 			xl:px-16
 		"
 	>

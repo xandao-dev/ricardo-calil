@@ -1,10 +1,10 @@
 <template>
 	<section class="px-8 py-12 grid sm:grid-cols-12 lg:px-12 xl:px-16">
-		<div class="col-span-12 text-center sm:text-left sm:col-span-4 mb-12">
-			<h1 class="text-4xl font-bold text-black">Escritório</h1>
+		<div class="col-span-12 text-center mb-12 sm:mb-0 sm:col-span-4">
+			<h1 class="text-4xl font-bold text-black lg:text-5xl">Escritório</h1>
 			<span class="text-sm font-bold tracking-wider uppercase">Conheça nossa história</span>
 		</div>
-		<div class="col-span-12 space-y-8 px-2 sm:col-span-8">
+		<div class="col-span-12 space-y-8 px-2 sm:col-span-8 sm:px-0">
 			<div class="flex flex-col">
 				<h3 class="text-xl font-semibold tracking-wide">Origem</h3>
 				<time class="text-xs tracking-wide uppercase text-coolGray-600">fev 1992</time>
