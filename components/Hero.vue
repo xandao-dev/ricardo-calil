@@ -5,8 +5,8 @@
 			hero-bg
 			px-8
 			py-24
-			lg:px-12 lg:py-48 lg:flex lg:justify-between lg:align-middle lg:before:hidden
-			xl:px-16 xl:py-64
+			lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:align-middle lg:before:hidden
+			xl:px-16
 		"
 	>
 		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
