@@ -4,7 +4,7 @@
 			<h1 class="text-4xl font-bold text-black lg:text-5xl">Escritório</h1>
 			<span class="text-sm font-bold tracking-wider uppercase">Conheça nossa história</span>
 		</div>
-		<div class="col-span-12 space-y-8 px-2 sm:col-span-8 sm:px-0">
+		<div class="col-span-12 space-y-8 sm:col-span-8 sm:px-0">
 			<div class="flex flex-col">
 				<h3 class="text-xl font-semibold tracking-wide">Origem</h3>
 				<time class="text-xs tracking-wide uppercase text-coolGray-600">fev 1992</time>
