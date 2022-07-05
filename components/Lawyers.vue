@@ -1,84 +1,16 @@
 <template>
-	<section class="bg-white dark:bg-gray-800">
-		<div class="container px-6 py-8 mx-auto">
-			<div v-for="lawyer in lawyers" :key="lawyer.id" class="items-center lg:flex">
-				<div class="lg:w-1/2">
-					<h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100" v-text="lawyer.name"></h2>
-					<span v-text="lawyer.oab"></span>
-					<p class="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md" v-text="lawyer.summary"></p>
-					<div class="flex items-center mt-6 -mx-2">
-						<a class="mx-2" href="#" aria-label="Twitter">
-							<svg
-								class="
-									w-5
-									h-5
-									text-gray-700
-									fill-current
-									dark:text-gray-200
-									hover:text-gray-600
-									dark:hover:text-gray-400
-								"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6-18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6.8 15 2.5 22.1-80.5-4-151.9-42.6-199.6-101.3-8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7-16-.4-31-4.8-44-12.1v1.2c0 47 33.4 86.1 77.7 95-8.1 2.2-16.7 3.4-25.5 3.4-6.2 0-12.3-.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3-33.1 26-74.9 41.5-120.3 41.5-7.8 0-15.5-.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-.1-8.4-.3-12.5C462.6 146 479 129 492 109.5z"
-								/>
-							</svg>
-						</a>
-						<a class="mx-2" href="#" aria-label="Facebook">
-							<svg
-								class="
-									w-5
-									h-5
-									text-gray-700
-									fill-current
-									dark:text-gray-200
-									hover:text-gray-600
-									dark:hover:text-gray-400
-								"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									d="M426.8 64H85.2C73.5 64 64 73.5 64 85.2v341.6c0 11.7 9.5 21.2 21.2 21.2H256V296h-45.9v-56H256v-41.4c0-49.6 34.4-76.6 78.7-76.6 21.2 0 44 1.6 49.3 2.3v51.8h-35.3c-24.1 0-28.7 11.4-28.7 28.2V240h57.4l-7.5 56H320v152h106.8c11.7 0 21.2-9.5 21.2-21.2V85.2c0-11.7-9.5-21.2-21.2-21.2z"
-								/>
-							</svg>
-						</a>
-						<a class="mx-2" href="#" aria-label="Linkden">
-							<svg
-								class="
-									w-5
-									h-5
-									text-gray-700
-									fill-current
-									dark:text-gray-200
-									hover:text-gray-600
-									dark:hover:text-gray-400
-								"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"
-								/>
-							</svg>
-						</a>
-					</div>
-				</div>
-
-				<div class="mt-8 lg:mt-0 lg:w-1/2">
-					<div class="flex items-center justify-center lg:justify-end">
-						<div class="max-w-lg">
-							<img
-								class="object-cover object-center w-full h-64 rounded-md shadow"
-								:src="lawyer.src"
-								:alt="'Advogado: ' + lawyer.name"
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
+	<section class="px-8 py-12 flex flex-col gap-12 lg:px-12 lg:pb-12 xl:px-16">
+		<div v-for="lawyer in lawyers" :key="lawyer.id" class="grid grid-cols-12">
+			<img
+				class="col-span-12 object-contain w-full h-64 md:order-2 md:col-span-4 lg:col-span-3 xl:col-span-2"
+				:src="lawyer.src"
+				:alt="'Foto do Advogado: ' + lawyer.name"
+			/>
+			<div class="col-span-12 pt-6 md:order-1 md:col-span-8 lg:col-span-9 xl:col-span-10">
+				<h1 class="text-4xl font-bold text-gray-800" v-text="lawyer.name"></h1>
+				<span class="text-xs tracking-wide uppercase text-coolGray-600">OAB {{ lawyer.oab }}</span>
+				<p class="mt-3 text-gray-800" v-text="lawyer.summary"></p>
+			</div>	
 		</div>
 	</section>
 </template>
@@ -109,3 +41,29 @@ export default Vue.extend({
 	}),
 });
 </script>
+<style scoped>
+	.margin-wrapper {
+		/* Dynamic Margin */
+
+		/* Center the container and keep adding margin after the width reach 1400px */
+    	margin: 0 auto;
+
+		/* Padding from 0.875rem to 2.5rem. 2.5vw in a viewport of 1366 is more or less 34px */
+		padding: 0 clamp(0.875rem, 2.5vw, 2.5rem);
+
+		/* After 1200px of pure content the margin starts to act. 
+			 min(2.5vw, 2.5rem) * 2 -> Means 2 times the current padding, 
+			 with this we can guarantee that the content will have the maximum of 1400px ignoring the padding.
+		*/
+    	width: min(100%, 1200px + min(2.5vw, 2.5rem) * 2);
+	}
+	.auto-grid {
+		/* Dynamic Grid Columns */
+
+		/* https://blog.logrocket.com/flexible-layouts-without-media-queries/ */
+		grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+	}
+	.dynamic-img {
+		width: clamp(min(200px, 100%), 20vw, 350px);
+	}
+</style>
