@@ -3,14 +3,14 @@
 		class="
 			before:absolute before:inset-0 before:h-full before:w-full
 			hero-bg
+			relative
 			px-8
 			py-24
 			lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:align-middle lg:before:hidden
-			xl:px-16
 		"
 	>
 		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12 xl:px-16">
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12">
 				30 anos de <span class="text-sky-600 lg:text-black">advocacia</span> para te ajudar
 			</h1>
 			<p
@@ -21,7 +21,6 @@
 					sm:px-12
 					md:text-lg md:px-28
 					lg:text-black lg:px-12
-					xl:px-16 xl:pt-12 xl:pb-18
 				"
 			>
 				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
@@ -54,14 +53,7 @@
 	</section>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
-.hero-bg {
-	position: relative;
-}
 .hero-bg::before {
 	content: '';
 	background-image: url('/hero/hero.webp');

@@ -6,7 +6,7 @@
 		<aside>
 			<Sidebar></Sidebar>
 		</aside>
-		<main>
+		<main class="max-w-screen-xl mx-auto">
 			<nuxt />
 		</main>
 		<footer>
