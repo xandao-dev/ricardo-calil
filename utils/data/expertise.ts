@@ -3,73 +3,64 @@ interface IExpertiseArea {
 	title: string;
 	description: string;
     src: string;
-    iconSrc: string;
     target: string;
 }
 
 const areas: IExpertiseArea[] =  [
     {
         id: 0,
-        iconSrc: '/expertise-areas/icon-trabalhista.svg',
         src: '',
         title: 'Trabalhista',
-        description: '',
+        description: 'Somos especialistas nas causas trabalhistas que ocorrem entre o empregado e o empregador',
         target: '/itaberai/trabalhista',
     },
     {
         id: 1,
-        iconSrc: '/expertise-areas/icon-previdenciario.svg',
         src: '',
         title: 'Previdenciário',
-        description: '',
+        description: 'Garantimos os direitos quanto à assistência e Previdência Social, relacionadas a morte, idade e doenças',
         target: '/itaberai/previdenciario',
     },
     {
         id: 2,
-        iconSrc: '/expertise-areas/icon-civil.svg',
         src: '',
-        title: 'Cívil',
-        description: '',
+        title: 'Civil',
+        description: 'Cuidamos dos direitos do cidadão, pessoas físicas ou jurídicas, perante a sociedade',
         target: '/itaberai/civil',
     },
     {
         id: 3,
-        iconSrc: '/expertise-areas/icon-consumidor.svg',
         src: '',
         title: 'Consumidor',
-        description: '',
+        description: 'Tratamos das relações e problemas entre o consumidor e o fornecedor de bens ou de serviços',
         target: '/itaberai/consumidor',
     },
     {
         id: 4,
-        iconSrc: '/expertise-areas/icon-familia.svg',
         src: '',
         title: 'Família',
-        description: '',
+        description: 'Cuidamos das relações familiares e das obrigações e direitos decorrentes dessas relações',
         target: '/itaberai/familia',
     },
     {
         id: 5,
-        iconSrc: '/expertise-areas/icon-imobiliario.svg',
         src: '',
         title: 'Imobiliário',
-        description: '',
+        description: 'Lidamos com o direito que envolva a compra, venda, doação, sucessão e troca de bens imóveis',
         target: '/itaberai/imobiliario',
     },
     {
         id: 6,
-        iconSrc: '/expertise-areas/icon-contratual.svg',
         src: '',
         title: 'Contratual',
-        description: '',
+        description: 'Tratamos das relações que surgem em todos os tipos de contratos para garantir seus direitos',
         target: '/itaberai/contratual',
     },
     {
         id: 7,
-        iconSrc: '/expertise-areas/icon-criminal.svg',
         src: '',
         title: 'Criminal',
-        description: '',
+        description: 'Prestamos serviços na área criminal com dedicação e excelência em defesa de nossos clientes',
         target: '/itaberai/criminal',
     },
 ];
