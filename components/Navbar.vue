@@ -134,7 +134,7 @@ export default Vue.extend({
 						target: '/itaberai/previdenciario',
 					},
 					{
-						title: 'Cívil',
+						title: 'Civil',
 						target: '/itaberai/civil',
 					},
 					{
