@@ -1,5 +1,5 @@
 <template>
-	<section class="px-8 py-12 grid sm:grid-cols-12 lg:px-12 xl:px-16">
+	<section class="px-8 py-12 grid sm:grid-cols-12 lg:px-12">
 		<div class="col-span-12 text-center mb-12 sm:mb-0 sm:col-span-4">
 			<h1 class="text-4xl font-bold text-black lg:text-5xl">Escritório</h1>
 			<span class="text-sm font-bold tracking-wider uppercase">Conheça nossa história</span>
@@ -35,7 +35,3 @@
 		</div>
 	</section>
 </template>
-
-<script>
-export default {};
-</script>
