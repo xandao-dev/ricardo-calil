@@ -5,7 +5,7 @@
 			<div v-for="expertise in areas" :key="expertise.id">
 				<h6 class="mb-2 font-semibold leading-5" v-text="expertise.title"></h6>
 				<p class="mb-3 text-sm line-clamp-3" v-text="expertise.description"></p>
-				<a href="/" class="hidden items-center font-semibold">Saiba mais</a>
+				<a :href="expertise.target" class="font-medium">Saiba mais</a>
 			</div>
 		</div>
 	</div>
