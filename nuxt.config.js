@@ -7,6 +7,7 @@ export default {
 	// Runtime Configs: https://nuxtjs.org/tutorials/moving-from-nuxtjs-dotenv-to-runtime-config/
 	publicRuntimeConfig: {
 		websiteHomeDomain: process.env.WEBSITE_HOME_DOMAIN,
+		contactFormEndpoint: process.env.CONTACT_FORM_ENDPOINT,
 	},
 	privateRuntimeConfig: {},
 
@@ -86,32 +87,3 @@ export default {
 		htmlSerializer: '@/plugins/html-serializer',
 	},
 };
-
-/*
-vuetify: {
-		customVariables: ['~/assets/variables.scss'],
-		treeShake: true,
-		theme: {
-			dark: true,
-			themes: {
-				dark: {
-					secondary: '#084d6e', // Azul Petróleo
-
-					error: colors.red.accent3,
-					info: colors.blue.base,
-					success: colors.green.accent3,
-					warning: colors.amber.base,
-				},
-				light: {
-					secondary: '#084d6e', // Azul Petróleo
-
-					error: colors.red.darken2,
-					info: colors.blue.accent4,
-					success: colors.green.accent3,
-					warning: colors.amber.base,
-				},
-			},
-		},
-		defaultAssets: false,
-	},
-*/
