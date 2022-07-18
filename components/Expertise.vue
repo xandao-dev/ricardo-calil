@@ -1,5 +1,5 @@
 <template>
-	<div class="px-8 py-12 gap-12 lg:px-12">
+	<section class="px-8 py-12 lg:px-12">
 		<h2 class="text-3xl font-bold mb-10 text-center lg:text-4xl">Áreas de atuação</h2>
 		<div class="grid gap-8 row-gap-5 sm:row-gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			<div v-for="expertise in areas" :key="expertise.id">
@@ -8,15 +8,15 @@
 				<!--a :href="expertise.target" class="font-medium">Saiba mais</a-->
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script land="ts">
-import Vue from 'vue';
-import { areas } from '~/utils/data/expertise';
-export default Vue.extend({
-	data: () => ({
-		areas,
-	}),
-});
+	import Vue from 'vue';
+	import { areas } from '~/utils/data/expertise';
+	export default Vue.extend({
+		data: () => ({
+			areas,
+		}),
+	});
 </script>

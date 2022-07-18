@@ -41,22 +41,7 @@
 					v-model="contactForm.name"
 					type="text"
 					name="name"
-					class="
-						w-full
-						bg-white
-						rounded
-						border
-						focus:ring-2
-						text-base
-						outline-none
-						text-gray-700
-						py-1
-						px-3
-						leading-8
-						transition-colors
-						duration-200
-						ease-in-out
-					"
+					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
 			</div>
@@ -66,22 +51,7 @@
 					v-model="contactForm.surname"
 					type="text"
 					name="surname"
-					class="
-						w-full
-						bg-white
-						rounded
-						border
-						focus:ring-2
-						text-base
-						outline-none
-						text-gray-700
-						py-1
-						px-3
-						leading-8
-						transition-colors
-						duration-200
-						ease-in-out
-					"
+					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
 			</div>
@@ -91,20 +61,7 @@
 					v-model="contactForm.phone"
 					type="tel"
 					name="phone"
-					class="
-						w-full
-						rounded
-						border
-						focus:ring-2
-						text-base
-						outline-none
-						py-1
-						px-3
-						leading-8
-						transition-colors
-						duration-200
-						ease-in-out
-					"
+					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
 			</div>
@@ -114,20 +71,7 @@
 					v-model="contactForm.email"
 					type="email"
 					name="email"
-					class="
-						w-full
-						rounded
-						border
-						focus:ring-2
-						text-base
-						outline-none
-						py-1
-						px-3
-						leading-8
-						transition-colors
-						duration-200
-						ease-in-out
-					"
+					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="nome@gmail.com"
 				/>
 			</div>
@@ -136,26 +80,14 @@
 				<textarea
 					v-model="contactForm.message"
 					name="message"
-					class="
-						w-full
-						rounded
-						border
-						focus:ring-2
-						h-32
-						text-base
-						outline-none
-						py-1
-						px-3
-						resize-none
-						leading-6
-						transition-colors
-						duration-200
-						ease-in-out
-					"
+					class="w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
 			</div>
-			<button class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 py-2 px-8 focus:outline-none rounded text-lg self-end w-48" @click="submitContactForm">
+			<button
+				class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
+				@click="submitContactForm"
+			>
 				Enviar
 			</button>
 		</form>
@@ -163,48 +95,48 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
-	data: () => ({
-		street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
-		social: {
-			whatsapp: '556233752216',
-			facebook: 'ricardocaliladv',
-			instagram: 'dr.ricardocalil',
-			phone: '+55 62 3375-2216',
-			email: 'ricardocalil@hotmail.com',
-		},
-		contactForm: {
-			name: '',
-			surname: '',
-			phone: '',
-			email: '',
-			message: '',
-		},
-	}),
-	mounted() {},
-	methods: {
-		async submitContactForm(e: Event) {
-			e.preventDefault();
-			try {
-				const response = await fetch(this.$config.contactFormEndpoint, {
-					method: 'POST',
-					headers: {
-						'Accept': 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(this.contactForm),
-				});
+	import Vue from 'vue';
+	export default Vue.extend({
+		data: () => ({
+			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
+			social: {
+				whatsapp: '556233752216',
+				facebook: 'ricardocaliladv',
+				instagram: 'dr.ricardocalil',
+				phone: '+55 62 3375-2216',
+				email: 'ricardocalil@hotmail.com',
+			},
+			contactForm: {
+				name: '',
+				surname: '',
+				phone: '',
+				email: '',
+				message: '',
+			},
+		}),
+		mounted() {},
+		methods: {
+			async submitContactForm(e: Event) {
+				e.preventDefault();
+				try {
+					const response = await fetch(this.$config.contactFormEndpoint, {
+						method: 'POST',
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(this.contactForm),
+					});
 
-				if (response.status === 200) {
-					console.log('success');
-				} else {
-					console.log('fail');
+					if (response.status === 200) {
+						console.log('success');
+					} else {
+						console.log('fail');
+					}
+				} catch (error) {
+					console.log(error);
 				}
-			} catch (error) {
-				console.log(error);
-			}
+			},
 		},
-	},
-});
+	});
 </script>

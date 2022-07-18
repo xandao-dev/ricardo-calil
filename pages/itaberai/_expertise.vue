@@ -8,24 +8,24 @@
 </template>
 
 <script land="ts">
-import Vue from 'vue';
-import FullExpertise from '~/components/FullExpertise.vue';
-import { areas } from '~/utils/data/expertise';
+	import Vue from 'vue';
+	import FullExpertise from '~/components/FullExpertise.vue';
+	import { areas } from '~/utils/data/expertise';
 
-export default Vue.extend({
-	name: 'Expertise',
-	components: { FullExpertise },
-	data: () => ({
-		area: areas[0],
-	}),
-	head() {
-		return {
-			title: `Advogado ${this.area.title} em Itaberaí | Ricardo Calil`,
-		};
-	},
-	created() {
-		const target = this.$route?.path || '';
-		this.area = areas.find((area) => area.target === target) || areas[0];
-	},
-});
+	export default Vue.extend({
+		name: 'Expertise',
+		components: { FullExpertise },
+		data: () => ({
+			area: areas[0],
+		}),
+		head() {
+			return {
+				title: `Advogado ${this.area.title} em Itaberaí | Ricardo Calil`,
+			};
+		},
+		created() {
+			const target = this.$route?.path || '';
+			this.area = areas.find((area) => area.target === target) || areas[0];
+		},
+	});
 </script>

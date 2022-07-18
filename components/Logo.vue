@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
-	data: () => ({
-		logo: '/logos/logo_sem_fundo2.svg',
-		logoText: '/logos/logo_texto_sem_fundo_black.svg',
-	}),
-});
+	import Vue from 'vue';
+	export default Vue.extend({
+		data: () => ({
+			logo: '/logos/logo_sem_fundo2.svg',
+			logoText: '/logos/logo_texto_sem_fundo_black.svg',
+		}),
+	});
 </script>
