@@ -1,5 +1,5 @@
 <template>
-	<nav class="bg-white shadow dark:bg-gray-800">
+	<nav id="navbar" class="bg-white shadow h-16">
 		<div class="container px-4 py-4 mx-auto md:flex md:justify-between md:items-center">
 			<div class="flex justify-between">
 				<Logo></Logo>
@@ -41,10 +41,7 @@
 									/>
 								</svg>
 							</div>
-							<div
-								v-show="section.open"
-								class="absolute bg-white border-2 my-4 navbar__submenu--position"
-							>
+							<div v-show="section.open" class="absolute bg-white border-2 my-4">
 								<NuxtLink
 									v-for="subSection in section.subSections"
 									:key="subSection.target"
@@ -78,53 +75,15 @@
 	}
 
 	export default Vue.extend({
-		data: () => ({
+		data: (vm) => ({
 			isSidebarOpen: false,
 			sections: [
-				{ hasSubSections: false, title: 'Início', target: '/itaberai#inicio' },
-				{ hasSubSections: false, title: 'Escritório', target: '/itaberai#escritorio' },
-				{ hasSubSections: false, title: 'Advogados', target: '/itaberai#advogados' },
-				{
-					hasSubSections: true,
-					title: 'Atuação',
-					open: false,
-					subSections: [
-						{
-							title: 'Trabalhista',
-							target: '/itaberai/trabalhista',
-						},
-						{
-							title: 'Previdenciário',
-							target: '/itaberai/previdenciario',
-						},
-						{
-							title: 'Civil',
-							target: '/itaberai/civil',
-						},
-						{
-							title: 'Consumidor',
-							target: '/itaberai/consumidor',
-						},
-						{
-							title: 'Família',
-							target: '/itaberai/familia',
-						},
-						{
-							title: 'Imobiliário',
-							target: '/itaberai/imobiliario',
-						},
-						{
-							title: 'Contratual',
-							target: '/itaberai/contratual',
-						},
-						{
-							title: 'Criminal',
-							target: '/itaberai/criminal',
-						},
-					],
-				},
-				{ hasSubSections: false, title: 'Contato', target: '/itaberai#contato' },
-				{ hasSubSections: false, title: 'Perguntas', target: '/itaberai#perguntas' },
+				{ hasSubSections: false, title: 'Início', target: `${vm.$route.path}#inicio` },
+				{ hasSubSections: false, title: 'Escritório', target: `${vm.$route.path}#escritorio` },
+				{ hasSubSections: false, title: 'Advogados', target: `${vm.$route.path}#advogados` },
+				{ hasSubSections: false, title: 'Atuação', target: `${vm.$route.path}#atuacao` },
+				{ hasSubSections: false, title: 'Contato', target: `${vm.$route.path}#contato` },
+				{ hasSubSections: false, title: 'Perguntas', target: `${vm.$route.path}#perguntas` },
 				{ hasSubSections: false, title: 'Artigos', target: '/artigos' },
 			],
 			icons: {
@@ -145,9 +104,3 @@
 		},
 	});
 </script>
-
-<style>
-	.navbar__submenu--position {
-		transform: translate(-23px);
-	}
-</style>

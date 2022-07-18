@@ -1,5 +1,5 @@
 <template>
-	<section class="px-8 py-12 flex flex-col gap-12 lg:px-12">
+	<section id="advogados" class="px-8 py-12 flex flex-col gap-12 lg:px-12">
 		<div v-for="lawyer in lawyers" :key="lawyer.id" class="grid grid-cols-12">
 			<img
 				class="col-span-12 object-contain w-full h-64 md:order-2 md:col-span-4 lg:col-span-3"

@@ -1,5 +1,5 @@
 <template>
-	<section class="px-8 py-12 lg:px-12">
+	<section id="perguntas" class="px-8 py-12 lg:px-12">
 		<h2 class="text-3xl font-bold mb-10 lg:text-4xl">Perguntas Frequentes</h2>
 		<div class="text-sm border-t border-b border-gray-200 divide-y divide-gray-200">
 			<div v-for="question in questions" :key="question.id">
