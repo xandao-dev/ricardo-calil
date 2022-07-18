@@ -1,6 +1,6 @@
 <template>
 	<nav id="navbar" class="bg-white shadow h-16">
-		<div class="container px-4 py-4 mx-auto md:flex md:justify-between md:items-center">
+		<div class="max-w-screen-xl px-4 py-4 mx-auto md:flex md:justify-between md:items-center lg:px-12">
 			<div class="flex justify-between">
 				<Logo></Logo>
 				<button
@@ -14,17 +14,17 @@
 			</div>
 
 			<div class="items-center hidden md:flex">
-				<div class="flex flex-col items-center md:flex-row md:mx-6">
-					<div v-for="section in sections" :key="section.target">
+				<div class="flex flex-col items-center md:flex-row md:gap-x-4 lg:gap-x-8">
+					<div v-for="section in sections" :key="section.target" class="contents">
 						<NuxtLink
 							v-if="!section.hasSubSections"
-							class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
+							class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:my-0 lg:text-base"
 							:to="section.target"
 							v-text="section.title"
 						></NuxtLink>
 						<template v-else>
 							<div
-								class="flex my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0 cursor-pointer"
+								class="flex my-1 text-sm font-medium text-gray-700 hover:text-indigo-500 md:my-0 cursor-pointer"
 								@click="toggleSection(section)"
 							>
 								<span v-text="section.title"></span>
