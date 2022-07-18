@@ -3,13 +3,13 @@
 		<div class="flex flex-col relative lg:col-span-6">
 			<div class="bg-white flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
 				<div class="px-6 lg:w-1/2">
-					<h2 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h2>
+					<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
 					<p class="mt-1" v-text="street"></p>
 				</div>
 				<div class="px-6 mt-4 lg:w-1/2 lg:mt-0">
-					<h2 class="title-font font-semibold tracking-widest text-xs">EMAIL</h2>
+					<h3 class="title-font font-semibold tracking-widest text-xs">EMAIL</h3>
 					<a class="leading-relaxed underline" :href="'mailto:' + social.email" v-text="social.email"></a>
-					<h2 class="title-font font-semibold tracking-widest text-xs mt-4">TELEFONE</h2>
+					<h3 class="title-font font-semibold tracking-widest text-xs mt-4">TELEFONE</h3>
 					<a
 						class="leading-relaxed underline"
 						:href="'tel:' + social.phone"
@@ -33,7 +33,7 @@
 			></iframe>
 		</div>
 		<form class="hidden lg:col-span-6 lg:order-1 lg:flex lg:flex-col">
-			<h1 class="text-4xl font-bold text-gray-800 mb-1">Contato</h1>
+			<h2 class="text-3xl font-bold mb-1 lg:text-4xl">Contato</h2>
 			<p class="mb-5">Converse com um advogado</p>
 			<div class="relative mb-4">
 				<label for="name" class="leading-7 text-sm">Nome</label>

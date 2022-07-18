@@ -1,6 +1,6 @@
 <template>
 	<section class="px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2">
-		<h2 class="mb-6 text-xl font-bold md:text-3xl">Perguntas Frequentes</h2>
+		<h2 class="text-3xl font-bold mb-10 lg:text-4xl">Perguntas Frequentes</h2>
 		<div class="text-sm border-t border-b border-gray-200 divide-y divide-gray-200">
 			<div v-for="question in questions" :key="question.id">
 				<button
