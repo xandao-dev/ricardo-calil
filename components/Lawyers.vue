@@ -7,7 +7,7 @@
 				:alt="'Foto do Advogado: ' + lawyer.name"
 			/>
 			<div class="col-span-12 pt-6 md:order-1 md:col-span-8 lg:col-span-9">
-				<h1 class="text-4xl font-bold text-gray-800" v-text="lawyer.name"></h1>
+				<h2 class="text-3xl font-bold lg:text-4xl" v-text="lawyer.name"></h2>
 				<span class="text-xs tracking-wide uppercase text-coolGray-600">OAB {{ lawyer.oab }}</span>
 				<p class="mt-3 text-gray-800" v-text="lawyer.summary"></p>
 			</div>
