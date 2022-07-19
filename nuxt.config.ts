@@ -16,12 +16,12 @@ export default defineNuxtConfig({
 	},
 
 	modules: [
-		// https://github.com/Maronato/vue-toastification
-		// 'vue-toastification/nuxt',
 		// https://tailwindcss.nuxtjs.org/
 		'@nuxtjs/tailwindcss',
 		// https://prismic.nuxtjs.org/
 		// '@nuxtjs/prismic',
+		// https://pinia.vuejs.org/
+		'@pinia/nuxt',
 	],
 
 	nitro: {
