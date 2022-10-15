@@ -19,11 +19,12 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import { MetaInfo } from 'vue-meta';
+	import { sidebarEventBus } from '~/utils/events/sidebarEventBus.js';
 	import WhatsappFab from '~/components/WhatsappFab.vue';
-
 	export default Vue.extend({
 		components: { WhatsappFab },
 		data: () => ({
+			isSidebarOpen: false,
 			social: {
 				whatsapp: '556233752216',
 				facebook: 'ricardocaliladv',
@@ -48,6 +49,11 @@
 					class: this.isSidebarOpen ? 'overflow-hidden' : '',
 				},
 			};
+		},
+		mounted() {
+			sidebarEventBus.$on('isOpen', (isSidebarOpen: boolean) => {
+				this.isSidebarOpen = isSidebarOpen;
+			});
 		},
 	});
 </script>

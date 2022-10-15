@@ -51,6 +51,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import { sidebarEventBus } from '~/utils/events/sidebarEventBus';
 
 	interface SubSection {
 		title: string;
@@ -67,6 +68,7 @@
 
 	export default Vue.extend({
 		data: () => ({
+			isSidebarOpen: false,
 			sections: [
 				{
 					hasSubSections: false,
@@ -150,6 +152,11 @@
 				menuOpen: '/icons/menu-open.svg',
 			},
 		}),
+		mounted() {
+			sidebarEventBus.$on('isOpen', (isSidebarOpen: boolean) => {
+				this.isSidebarOpen = isSidebarOpen;
+			});
+		},
 		methods: {
 			toggleSection(section: Section) {
 				section.open = !section.open;

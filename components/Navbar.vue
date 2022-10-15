@@ -63,6 +63,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import { sidebarEventBus } from '~/utils/events/sidebarEventBus.js';
 
 	interface SubSection {
 		title: string;
@@ -78,6 +79,7 @@
 
 	export default Vue.extend({
 		data: () => ({
+			isSidebarOpen: false,
 			sections: [
 				{ hasSubSections: false, title: 'Início', target: '/itaberai#inicio' },
 				{ hasSubSections: false, title: 'Escritório', target: '/itaberai#escritorio' },
@@ -134,7 +136,8 @@
 		}),
 		methods: {
 			toggleSidebarStatus() {
-				this.toggleSidebar(!this.isSidebarOpen);
+				this.isSidebarOpen = !this.isSidebarOpen;
+				sidebarEventBus.$emit('isOpen', this.isSidebarOpen);
 			},
 			toggleSection(section: Section) {
 				section.open = !section.open;
