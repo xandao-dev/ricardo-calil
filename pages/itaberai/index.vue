@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="contents">
 		<Hero></Hero>
 		<Office></Office>
 		<Lawyers></Lawyers>
@@ -10,19 +10,19 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
-	name: 'Home',
-	head() {
-		return {
-			title: 'Advogado em Itaberaí | Ricardo Calil',
-			link: [
-				{
-					rel: 'canonical',
-					href: this.$config.websiteHomeDomain,
-				},
-			],
-		};
-	},
-});
+	import Vue from 'vue';
+	export default Vue.extend({
+		name: 'Home',
+		head() {
+			return {
+				title: 'Advogado em Itaberaí | Ricardo Calil',
+				link: [
+					{
+						rel: 'canonical',
+						href: this.$config.websiteHomeDomain,
+					},
+				],
+			};
+		},
+	});
 </script>

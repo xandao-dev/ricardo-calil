@@ -11,18 +11,7 @@
 	<section v-else class="flex items-center h-full p-16">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
 			<div
-				class="
-					container
-					flex flex-col
-					items-center
-					justify-center
-					px-5
-					mx-auto
-					my-8
-					space-y-8
-					text-center
-					sm:max-w-md
-				"
+				class="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-40 h-40">
 					<path
@@ -47,14 +36,14 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
-	layout: 'error',
-	props: {
-		error: {
-			type: Object,
-			required: true,
+	import Vue from 'vue';
+	export default Vue.extend({
+		layout: 'error',
+		props: {
+			error: {
+				type: Object,
+				required: true,
+			},
 		},
-	},
-});
+	});
 </script>

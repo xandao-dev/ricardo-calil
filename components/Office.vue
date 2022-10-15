@@ -1,5 +1,5 @@
 <template>
-	<section class="px-8 py-12 grid sm:grid-cols-12 lg:px-12">
+	<section id="escritorio" class="px-8 py-12 grid sm:grid-cols-12 lg:px-12">
 		<div class="col-span-12 text-left mb-12 sm:mb-0 sm:col-span-4">
 			<h2 class="text-3xl font-bold text-black lg:text-4xl">Escritório</h2>
 			<span class="text-sm font-bold tracking-wider uppercase">Conheça nossa história</span>

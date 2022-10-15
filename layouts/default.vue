@@ -17,43 +17,43 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
-import { MetaInfo } from 'vue-meta';
-import WhatsappFab from '~/components/WhatsappFab.vue';
-
-export default Vue.extend({
-	components: { WhatsappFab },
-	data: () => ({
-		social: {
-			whatsapp: '556233752216',
-			facebook: 'ricardocaliladv',
-			instagram: 'dr.ricardocalil',
-			phone: '+55 62 3375-2216',
-		},
-		icons: {
-			menu: '/icons/menu.svg',
-			menuOpen: '/icons/menu-open.svg',
-			phone: '/icons/phone.svg',
-			whatsapp: '/icons/whatsapp.svg',
-			facebook: '/icons/facebook.svg',
-			instagram: '/icons/instagram.svg',
-			linkedin: '/icons/linkedin.svg',
-			location: '/icons/location.svg',
-			map: '/icons/map.svg',
-		},
-	}),
-	head(): MetaInfo {
-		return {
-			bodyAttrs: {
-				class: this.isSidebarOpen ? 'overflow-hidden' : '',
+	import Vue from 'vue';
+	import { MetaInfo } from 'vue-meta';
+	import { sidebarEventBus } from '~/utils/events/sidebarEventBus.js';
+	import WhatsappFab from '~/components/WhatsappFab.vue';
+	export default Vue.extend({
+		components: { WhatsappFab },
+		data: () => ({
+			isSidebarOpen: false,
+			social: {
+				whatsapp: '556233752216',
+				facebook: 'ricardocaliladv',
+				instagram: 'dr.ricardocalil',
+				phone: '+55 62 3375-2216',
 			},
-		};
-	},
-	computed: {
-		...mapState('Hamburger', {
-			isSidebarOpen: 'isSidebarOpen',
+			icons: {
+				menu: '/icons/menu.svg',
+				menuOpen: '/icons/menu-open.svg',
+				phone: '/icons/phone.svg',
+				whatsapp: '/icons/whatsapp.svg',
+				facebook: '/icons/facebook.svg',
+				instagram: '/icons/instagram.svg',
+				linkedin: '/icons/linkedin.svg',
+				location: '/icons/location.svg',
+				map: '/icons/map.svg',
+			},
 		}),
-	},
-});
+		head(): MetaInfo {
+			return {
+				bodyAttrs: {
+					class: this.isSidebarOpen ? 'overflow-hidden' : '',
+				},
+			};
+		},
+		mounted() {
+			sidebarEventBus.$on('isOpen', (isSidebarOpen: boolean) => {
+				this.isSidebarOpen = isSidebarOpen;
+			});
+		},
+	});
 </script>
