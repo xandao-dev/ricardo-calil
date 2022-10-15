@@ -5,15 +5,7 @@
 				<Logo></Logo>
 				<button
 					type="button"
-					class="
-						text-gray-500
-						dark:text-gray-200
-						hover:text-gray-600
-						dark:hover:text-gray-400
-						focus:outline-none focus:text-gray-600
-						dark:focus:text-gray-400
-						md:hidden
-					"
+					class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400 md:hidden"
 					aria-label="Alternar menu lateral"
 					@click="toggleSidebarStatus"
 				>
@@ -26,33 +18,13 @@
 					<div v-for="section in sections" :key="section.target">
 						<NuxtLink
 							v-if="!section.hasSubSections"
-							class="
-								my-1
-								text-sm
-								font-medium
-								text-gray-700
-								dark:text-gray-200
-								hover:text-indigo-500
-								dark:hover:text-indigo-400
-								md:mx-4 md:my-0
-							"
+							class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
 							:to="section.target"
 							v-text="section.title"
 						></NuxtLink>
 						<template v-else>
 							<div
-								class="
-									flex
-									my-1
-									text-sm
-									font-medium
-									text-gray-700
-									dark:text-gray-200
-									hover:text-indigo-500
-									dark:hover:text-indigo-400
-									md:mx-4 md:my-0
-									cursor-pointer
-								"
+								class="flex my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0 cursor-pointer"
 								@click="toggleSection(section)"
 							>
 								<span v-text="section.title"></span>
@@ -76,15 +48,7 @@
 								<NuxtLink
 									v-for="subSection in section.subSections"
 									:key="subSection.target"
-									class="
-										flex
-										items-center
-										py-1
-										px-4
-										transition
-										cursor-pointer
-										hover:bg-gray-100 hover:text-gray-900
-									"
+									class="flex items-center py-1 px-4 transition cursor-pointer hover:bg-gray-100 hover:text-gray-900"
 									:to="subSection.target"
 									v-text="subSection.title"
 								></NuxtLink>
@@ -98,99 +62,89 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState, mapMutations } from 'vuex';
-import { Mutations as HamburgerMutations } from '@/store/Hamburger/types';
+	import Vue from 'vue';
 
-interface SubSection {
-	title: string;
-	target: string;
-}
-interface Section {
-	title: string;
-	target?: string;
-	hasSubSections: boolean;
-	open?: boolean;
-	subSections?: SubSection[];
-}
+	interface SubSection {
+		title: string;
+		target: string;
+	}
+	interface Section {
+		title: string;
+		target?: string;
+		hasSubSections: boolean;
+		open?: boolean;
+		subSections?: SubSection[];
+	}
 
-export default Vue.extend({
-	data: () => ({
-		sections: [
-			{ hasSubSections: false, title: 'Início', target: '/itaberai#inicio' },
-			{ hasSubSections: false, title: 'Escritório', target: '/itaberai#escritorio' },
-			{ hasSubSections: false, title: 'Advogados', target: '/itaberai#advogados' },
-			{
-				hasSubSections: true,
-				title: 'Atuação',
-				open: false,
-				subSections: [
-					{
-						title: 'Trabalhista',
-						target: '/itaberai/trabalhista',
-					},
-					{
-						title: 'Previdenciário',
-						target: '/itaberai/previdenciario',
-					},
-					{
-						title: 'Civil',
-						target: '/itaberai/civil',
-					},
-					{
-						title: 'Consumidor',
-						target: '/itaberai/consumidor',
-					},
-					{
-						title: 'Família',
-						target: '/itaberai/familia',
-					},
-					{
-						title: 'Imobiliário',
-						target: '/itaberai/imobiliario',
-					},
-					{
-						title: 'Contratual',
-						target: '/itaberai/contratual',
-					},
-					{
-						title: 'Criminal',
-						target: '/itaberai/criminal',
-					},
-				],
+	export default Vue.extend({
+		data: () => ({
+			sections: [
+				{ hasSubSections: false, title: 'Início', target: '/itaberai#inicio' },
+				{ hasSubSections: false, title: 'Escritório', target: '/itaberai#escritorio' },
+				{ hasSubSections: false, title: 'Advogados', target: '/itaberai#advogados' },
+				{
+					hasSubSections: true,
+					title: 'Atuação',
+					open: false,
+					subSections: [
+						{
+							title: 'Trabalhista',
+							target: '/itaberai/trabalhista',
+						},
+						{
+							title: 'Previdenciário',
+							target: '/itaberai/previdenciario',
+						},
+						{
+							title: 'Civil',
+							target: '/itaberai/civil',
+						},
+						{
+							title: 'Consumidor',
+							target: '/itaberai/consumidor',
+						},
+						{
+							title: 'Família',
+							target: '/itaberai/familia',
+						},
+						{
+							title: 'Imobiliário',
+							target: '/itaberai/imobiliario',
+						},
+						{
+							title: 'Contratual',
+							target: '/itaberai/contratual',
+						},
+						{
+							title: 'Criminal',
+							target: '/itaberai/criminal',
+						},
+					],
+				},
+				{ hasSubSections: false, title: 'Contato', target: '/itaberai#contato' },
+				{ hasSubSections: false, title: 'Perguntas', target: '/itaberai#perguntas' },
+				{ hasSubSections: false, title: 'Artigos', target: '/artigos' },
+			],
+			icons: {
+				menu: '/icons/menu.svg',
+				menuOpen: '/icons/menu-open.svg',
 			},
-			{ hasSubSections: false, title: 'Contato', target: '/itaberai#contato' },
-			{ hasSubSections: false, title: 'Perguntas', target: '/itaberai#perguntas' },
-			{ hasSubSections: false, title: 'Artigos', target: '/artigos' },
-		],
-		icons: {
-			menu: '/icons/menu.svg',
-			menuOpen: '/icons/menu-open.svg',
-		},
-		logo: '/logos/logo_sem_fundo2.svg',
-		logoText: '/logos/logo_texto_sem_fundo_black.svg',
-	}),
-	computed: {
-		...mapState('Hamburger', {
-			isSidebarOpen: 'isSidebarOpen',
+			logo: '/logos/logo_sem_fundo2.svg',
+			logoText: '/logos/logo_texto_sem_fundo_black.svg',
 		}),
-	},
-	methods: {
-		...mapMutations({
-			toggleSidebar: `Hamburger/${HamburgerMutations.TOGGLE_SIDEBAR}`,
-		}),
-		toggleSidebarStatus() {
-			this.toggleSidebar(!this.isSidebarOpen);
+		methods: {
+			toggleSidebarStatus() {
+				this.toggleSidebar(!this.isSidebarOpen);
+			},
+			toggleSection(section: Section) {
+				section.open = !section.open;
+			},
 		},
-		toggleSection(section: Section) {
-			section.open = !section.open;
-		},
-	},
-});
+	});
 </script>
 
 <style>
-.navbar__submenu--position {
-	transform: translate(-23px);
-}
+	.navbar__submenu--position {
+		transform: translate(-23px);
+	}
 </style>

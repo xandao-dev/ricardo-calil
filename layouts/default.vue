@@ -17,43 +17,37 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
-import { MetaInfo } from 'vue-meta';
-import WhatsappFab from '~/components/WhatsappFab.vue';
+	import Vue from 'vue';
+	import { MetaInfo } from 'vue-meta';
+	import WhatsappFab from '~/components/WhatsappFab.vue';
 
-export default Vue.extend({
-	components: { WhatsappFab },
-	data: () => ({
-		social: {
-			whatsapp: '556233752216',
-			facebook: 'ricardocaliladv',
-			instagram: 'dr.ricardocalil',
-			phone: '+55 62 3375-2216',
-		},
-		icons: {
-			menu: '/icons/menu.svg',
-			menuOpen: '/icons/menu-open.svg',
-			phone: '/icons/phone.svg',
-			whatsapp: '/icons/whatsapp.svg',
-			facebook: '/icons/facebook.svg',
-			instagram: '/icons/instagram.svg',
-			linkedin: '/icons/linkedin.svg',
-			location: '/icons/location.svg',
-			map: '/icons/map.svg',
-		},
-	}),
-	head(): MetaInfo {
-		return {
-			bodyAttrs: {
-				class: this.isSidebarOpen ? 'overflow-hidden' : '',
+	export default Vue.extend({
+		components: { WhatsappFab },
+		data: () => ({
+			social: {
+				whatsapp: '556233752216',
+				facebook: 'ricardocaliladv',
+				instagram: 'dr.ricardocalil',
+				phone: '+55 62 3375-2216',
 			},
-		};
-	},
-	computed: {
-		...mapState('Hamburger', {
-			isSidebarOpen: 'isSidebarOpen',
+			icons: {
+				menu: '/icons/menu.svg',
+				menuOpen: '/icons/menu-open.svg',
+				phone: '/icons/phone.svg',
+				whatsapp: '/icons/whatsapp.svg',
+				facebook: '/icons/facebook.svg',
+				instagram: '/icons/instagram.svg',
+				linkedin: '/icons/linkedin.svg',
+				location: '/icons/location.svg',
+				map: '/icons/map.svg',
+			},
 		}),
-	},
-});
+		head(): MetaInfo {
+			return {
+				bodyAttrs: {
+					class: this.isSidebarOpen ? 'overflow-hidden' : '',
+				},
+			};
+		},
+	});
 </script>

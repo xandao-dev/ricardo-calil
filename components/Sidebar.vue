@@ -4,16 +4,7 @@
 			<div v-for="section in sections" :key="section.target">
 				<NuxtLink
 					v-if="!section.hasSubSections"
-					class="
-						flex
-						items-center
-						px-4
-						py-3
-						transition
-						cursor-pointer
-						group
-						hover:bg-gray-100 hover:text-gray-900
-					"
+					class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-100 hover:text-gray-900"
 					:to="section.target"
 				>
 					<img v-if="section.icon" :src="section.icon" />
@@ -22,17 +13,7 @@
 
 				<template v-else>
 					<div
-						class="
-							flex
-							items-center
-							justify-between
-							px-4
-							py-3
-							transition
-							cursor-pointer
-							group
-							hover:bg-gray-100 hover:text-gray-900
-						"
+						class="flex items-center justify-between px-4 py-3 transition cursor-pointer group hover:bg-gray-100 hover:text-gray-900"
 						@click="toggleSection(section)"
 					>
 						<div class="flex items-center">
@@ -56,16 +37,7 @@
 						<NuxtLink
 							v-for="subSection in section.subSections"
 							:key="subSection.target"
-							class="
-								flex
-								items-center
-								py-2
-								pl-12
-								pr-4
-								transition
-								cursor-pointer
-								hover:bg-gray-100 hover:text-gray-900
-							"
+							class="flex items-center py-2 pl-12 pr-4 transition cursor-pointer hover:bg-gray-100 hover:text-gray-900"
 							:to="subSection.target"
 						>
 							<span v-text="subSection.title"></span>
@@ -78,116 +50,110 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
+	import Vue from 'vue';
 
-interface SubSection {
-	title: string;
-	target: string;
-}
-interface Section {
-	title: string;
-	icon: string;
-	target?: string;
-	hasSubSections: boolean;
-	open?: boolean;
-	subSections?: SubSection[];
-}
+	interface SubSection {
+		title: string;
+		target: string;
+	}
+	interface Section {
+		title: string;
+		icon: string;
+		target?: string;
+		hasSubSections: boolean;
+		open?: boolean;
+		subSections?: SubSection[];
+	}
 
-export default Vue.extend({
-	data: () => ({
-		sections: [
-			{
-				hasSubSections: false,
-				title: 'Início',
-				target: '/itaberai#inicio',
-				icon: '/icons/home.svg',
+	export default Vue.extend({
+		data: () => ({
+			sections: [
+				{
+					hasSubSections: false,
+					title: 'Início',
+					target: '/itaberai#inicio',
+					icon: '/icons/home.svg',
+				},
+				{
+					hasSubSections: false,
+					title: 'Escritório',
+					target: '/itaberai#escritorio',
+					icon: '/icons/office.svg',
+				},
+				{
+					hasSubSections: false,
+					title: 'Advogados',
+					target: '/itaberai#advogados',
+					icon: '/icons/lawyers.svg',
+				},
+				{
+					hasSubSections: true,
+					title: 'Atuação',
+					icon: '/icons/expertise.svg',
+					open: false,
+					subSections: [
+						{
+							title: 'Trabalhista',
+							target: '/itaberai/trabalhista',
+						},
+						{
+							title: 'Previdenciário',
+							target: '/itaberai/previdenciario',
+						},
+						{
+							title: 'Cívil',
+							target: '/itaberai/civil',
+						},
+						{
+							title: 'Consumidor',
+							target: '/itaberai/consumidor',
+						},
+						{
+							title: 'Família',
+							target: '/itaberai/familia',
+						},
+						{
+							title: 'Imobiliário',
+							target: '/itaberai/imobiliario',
+						},
+						{
+							title: 'Contratual',
+							target: '/itaberai/contratual',
+						},
+						{
+							title: 'Criminal',
+							target: '/itaberai/criminal',
+						},
+					],
+				},
+				{
+					hasSubSections: false,
+					title: 'Contato',
+					target: '/itaberai#contato',
+					icon: '/icons/contact.svg',
+				},
+				{
+					hasSubSections: false,
+					title: 'Perguntas',
+					target: '/itaberai#perguntas',
+					icon: '/icons/faq.svg',
+				},
+				{
+					hasSubSections: false,
+					title: 'Artigos',
+					target: '/artigos',
+					icon: '/icons/articles.svg',
+				},
+			],
+			icons: {
+				menu: '/icons/menu.svg',
+				menuOpen: '/icons/menu-open.svg',
 			},
-			{
-				hasSubSections: false,
-				title: 'Escritório',
-				target: '/itaberai#escritorio',
-				icon: '/icons/office.svg',
-			},
-			{
-				hasSubSections: false,
-				title: 'Advogados',
-				target: '/itaberai#advogados',
-				icon: '/icons/lawyers.svg',
-			},
-			{
-				hasSubSections: true,
-				title: 'Atuação',
-				icon: '/icons/expertise.svg',
-				open: false,
-				subSections: [
-					{
-						title: 'Trabalhista',
-						target: '/itaberai/trabalhista',
-					},
-					{
-						title: 'Previdenciário',
-						target: '/itaberai/previdenciario',
-					},
-					{
-						title: 'Cívil',
-						target: '/itaberai/civil',
-					},
-					{
-						title: 'Consumidor',
-						target: '/itaberai/consumidor',
-					},
-					{
-						title: 'Família',
-						target: '/itaberai/familia',
-					},
-					{
-						title: 'Imobiliário',
-						target: '/itaberai/imobiliario',
-					},
-					{
-						title: 'Contratual',
-						target: '/itaberai/contratual',
-					},
-					{
-						title: 'Criminal',
-						target: '/itaberai/criminal',
-					},
-				],
-			},
-			{
-				hasSubSections: false,
-				title: 'Contato',
-				target: '/itaberai#contato',
-				icon: '/icons/contact.svg',
-			},
-			{
-				hasSubSections: false,
-				title: 'Perguntas',
-				target: '/itaberai#perguntas',
-				icon: '/icons/faq.svg',
-			},
-			{
-				hasSubSections: false,
-				title: 'Artigos',
-				target: '/artigos',
-				icon: '/icons/articles.svg',
-			},
-		],
-		icons: {
-			menu: '/icons/menu.svg',
-			menuOpen: '/icons/menu-open.svg',
-		},
-	}),
-	computed: {
-		...mapState('Hamburger', {
-			isSidebarOpen: 'isSidebarOpen',
 		}),
-	},
-	methods: {
-		toggleSection(section: Section) {
-			section.open = !section.open;
+		methods: {
+			toggleSection(section: Section) {
+				section.open = !section.open;
+			},
 		},
-	},
-});
+	});
 </script>
