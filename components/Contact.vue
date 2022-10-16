@@ -200,21 +200,22 @@
 
 <style scoped>
 	.input-error {
-		animation-duration: 0.6s;
-		animation-fill-mode: forwards;
 		animation-name: shakeError;
+		animation-duration: 0.2s;
+		animation-iteration-count: 3;
+		animation-fill-mode: forwards;
 		animation-timing-function: ease-in-out;
 	}
 
 	.input-error input,
 	.input-error textarea,
 	.input-error pre {
-		border-color: #e3342f;
+		border-color: var(--red-600);
 	}
 
 	.input-error label,
 	.input-error div.error-message {
-		color: #e3342f;
+		color: var(--red-600);
 		display: block;
 	}
 
@@ -227,33 +228,11 @@
 		0% {
 			transform: translateX(0);
 		}
-
-		15% {
+		50% {
 			transform: translateX(0.375rem);
 		}
-
-		30% {
-			transform: translateX(-0.375rem);
-		}
-
-		45% {
-			transform: translateX(0.375rem);
-		}
-
-		60% {
-			transform: translateX(-0.375rem);
-		}
-
-		75% {
-			transform: translateX(0.375rem);
-		}
-
-		90% {
-			transform: translateX(-0.375rem);
-		}
-
 		100% {
-			transform: translateX(0);
+			transform: translateX(-0.375rem);
 		}
 	}
 </style>
