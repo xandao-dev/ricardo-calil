@@ -35,7 +35,7 @@
 					src: '/lawyers/lucilo.webp',
 					lazyUrl: '/lawyers/lucilo_lqip.webp',
 					name: 'Dr. Lucilo Neto',
-					oab: '47.557',
+					oab: '43.557',
 					summary:
 						'Advogado formado na Puc/GO em 2015, pós-graduado em prática trabalhista e previdenciária.',
 				},
