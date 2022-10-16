@@ -29,11 +29,15 @@ specifiers:
   stylelint-config-standard: ^22.0.0
   ts-jest: ^27.0.3
   vue-jest: ^3.0.4
+  vue-toastification: ^1.7.14
+  vuelidate: ^0.7.7
 
 dependencies:
   '@nuxtjs/gtm': 2.4.0
   core-js: 3.23.3
   nuxt: 2.15.8_babel-core@7.0.0-bridge.0
+  vue-toastification: 1.7.14
+  vuelidate: 0.7.7
 
 devDependencies:
   '@babel/eslint-parser': 7.18.2_eslint@7.32.0
@@ -2098,7 +2102,7 @@ packages:
       vue-client-only: 2.1.0
       vue-meta: 2.4.0
       vue-no-ssr: 1.1.1
-      vue-router: 3.5.4
+      vue-router: 3.5.4_vue@2.7.1
       vue-template-compiler: 2.7.1
       vuex: 3.6.2_vue@2.7.1
     transitivePeerDependencies:
@@ -12436,6 +12440,7 @@ packages:
   /unified/9.2.2:
     resolution: {integrity: sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
@@ -12806,8 +12811,12 @@ packages:
     resolution: {integrity: sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g==}
     dev: false
 
-  /vue-router/3.5.4:
+  /vue-router/3.5.4_vue@2.7.1:
     resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==}
+    peerDependencies:
+      vue: ^2
+    dependencies:
+      vue: 2.7.1
     dev: false
 
   /vue-server-renderer/2.7.1:
@@ -12840,11 +12849,22 @@ packages:
   /vue-template-es2015-compiler/1.9.1:
     resolution: {integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==}
 
+  /vue-toastification/1.7.14:
+    resolution: {integrity: sha512-khZR8t3NWZ/JJ2MZxXLbesHrRJ8AKa75PY5Zq8yMifF9x8lHq8ljYkC0d2PD9yahooygQB5tcFyRDkbbIPx8hw==}
+    peerDependencies:
+      vue: ^2.0.0
+    dev: false
+
   /vue/2.7.1:
     resolution: {integrity: sha512-X1YkFddhbTAU2FPK0gBZ/vDOcOMA8ZT4uHoFVor1bUb7BpVGdEswS286YGtODsf/Ghfr1LM1sBMFAY8XT+dVhA==}
     dependencies:
       '@vue/compiler-sfc': 2.7.1
       csstype: 3.1.0
+    dev: false
+
+  /vuelidate/0.7.7:
+    resolution: {integrity: sha512-pT/U2lDI67wkIqI4tum7cMSIfGcAMfB+Phtqh2ttdXURwvHRBJEAQ0tVbUsW9Upg83Q5QH59bnCoXI7A9JDGnA==}
+    engines: {node: '>= 4.0.0', npm: '>= 3.0.0'}
     dev: false
 
   /vuex/3.6.2_vue@2.7.1:

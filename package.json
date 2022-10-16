@@ -16,7 +16,9 @@
   "dependencies": {
     "@nuxtjs/gtm": "^2.4.0",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-toastification": "^1.7.14",
+    "vuelidate": "^0.7.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

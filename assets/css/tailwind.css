@@ -4,6 +4,7 @@
 
 :root {
 	--navbar-height: 4rem;
+	--red-600: #dc2626;
 }
 
 @layer utilities {
