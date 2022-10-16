@@ -132,6 +132,7 @@
 				email: '',
 				message: '',
 			},
+			contactFormSent: false,
 		}),
 		mounted() {},
 		methods: {
@@ -141,6 +142,11 @@
 				this.$v.$touch();
 				if (this.$v.$invalid) {
 					this.$toast.error('Preencha os campos corretamente');
+					return;
+				}
+
+				if (this.contactFormSent) {
+					this.$toast.error('A mensagem já foi enviada');
 					return;
 				}
 
@@ -156,6 +162,7 @@
 
 					if (response.status === 200) {
 						this.$toast.success('Mensagem enviada com sucesso!');
+						this.contactFormSent = true;
 					} else {
 						this.$toast.error('Erro! Tente outro meio de contato.');
 					}
