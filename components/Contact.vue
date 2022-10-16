@@ -38,7 +38,7 @@
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.name.$error }">
 				<label for="name" class="leading-7 text-sm">Nome</label>
 				<input
-					v-model.trim.lazy="$v.contactForm.name.$model"
+					v-model.trim="$v.contactForm.name.$model"
 					type="text"
 					name="name"
 					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -66,19 +66,18 @@
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.phone.$error }">
 				<label for="phone" class="leading-7 text-sm">Telefone</label>
 				<input
-					v-model.trim.lazy="$v.contactForm.phone.$model"
+					v-model.trim="$v.contactForm.phone.$model"
 					type="tel"
 					name="phone"
 					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
 				<div v-if="!$v.contactForm.phone.required" class="error-message">Telefone ou email obrigatório</div>
-				<div v-if="!$v.contactForm.phone.numeric" class="error-message">Apenas números</div>
 			</div>
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.email.$error }">
 				<label for="email" class="leading-7 text-sm">Email</label>
 				<input
-					v-model.trim.lazy="$v.contactForm.email.$model"
+					v-model.trim="$v.contactForm.email.$model"
 					type="email"
 					name="email"
 					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -90,7 +89,7 @@
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.message.$error }">
 				<label for="message" class="leading-7 text-sm">Mensagem</label>
 				<textarea
-					v-model.trim.lazy="$v.contactForm.message.$model"
+					v-model.trim="$v.contactForm.message.$model"
 					name="message"
 					class="w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
@@ -113,7 +112,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import { validationMixin } from 'vuelidate';
-	import { required, minLength, maxLength, numeric, email, requiredIf } from 'vuelidate/lib/validators';
+	import { required, minLength, maxLength, email, requiredIf } from 'vuelidate/lib/validators';
 
 	export default Vue.extend({
 		mixins: [validationMixin],
@@ -176,7 +175,6 @@
 					required: requiredIf(function () {
 						return !this.contactForm.phone && !this.contactForm.email;
 					}),
-					numeric,
 				},
 				email: {
 					required: requiredIf(function () {
