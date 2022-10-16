@@ -62,6 +62,9 @@ export default {
 	modules: [
 		// https://github.com/nuxt-community/gtm-module
 		'@nuxtjs/gtm',
+
+		// https://github.com/Maronato/vue-toastification
+		'vue-toastification/nuxt',
 	],
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
@@ -78,6 +81,11 @@ export default {
 		enabled: true,
 		id: process.env.GTM_ID,
 		pageTracking: true,
+	},
+
+	toast: {
+		timeout: 5000,
+		position: 'bottom-right',
 	},
 
 	prismic: {
