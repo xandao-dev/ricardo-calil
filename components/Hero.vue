@@ -1,9 +1,9 @@
 <template>
 	<section
 		id="inicio"
-		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:align-middle lg:before:hidden"
+		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:before:hidden"
 	>
-		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
+		<div class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
 			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12">
 				30 anos de <span class="text-sky-600 lg:text-black">advocacia</span> para te ajudar
 			</h1>
@@ -13,7 +13,7 @@
 			</p>
 			<NuxtLink :to="{ path: $route.path, hash: 'contato' }">
 				<button
-					class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl lg:px-12"
+					class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mx-12"
 				>
 					Fale agora com um advogado
 				</button>
