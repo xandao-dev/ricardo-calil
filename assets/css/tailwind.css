@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--navbar-height: 4rem;
+}
+
+@layer utilities {
+	.h-navbar {
+		height: var(--navbar-height);
+	}
+	.h-screen-minus-navbar {
+		height: calc(100vh - var(--navbar-height));
+	}
+}
