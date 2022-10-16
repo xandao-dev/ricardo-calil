@@ -1,7 +1,7 @@
 <template>
 	<nav
 		v-if="isSidebarOpen"
-		class="fixed z-10 min-h-screen min-w-full bg-gray-100 flex flex-col items-center py-3 md:hidden"
+		class="fixed z-10 h-screen-minus-navbar overflow-y-auto w-full bg-gray-100 flex flex-col items-center py-3 md:hidden"
 	>
 		<div v-for="section in sections" :key="section.target" class="contents group" @click="action">
 			<NuxtLink

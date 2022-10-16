@@ -1,5 +1,5 @@
 <template>
-	<nav id="navbar" class="bg-white shadow h-16">
+	<nav id="navbar" class="bg-white shadow h-navbar">
 		<div class="max-w-screen-xl px-4 h-full mx-auto md:flex md:justify-between md:items-center lg:px-12">
 			<div class="flex justify-between h-full">
 				<Logo></Logo>
