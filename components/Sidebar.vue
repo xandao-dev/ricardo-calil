@@ -3,7 +3,7 @@
 		v-if="isSidebarOpen"
 		class="fixed z-10 h-screen-minus-navbar overflow-y-auto w-full bg-gray-100 flex flex-col items-center py-3 md:hidden"
 	>
-		<div v-for="section in sections" :key="section.target" class="contents group" @click="action">
+		<div v-for="section in sections" :key="section.target" class="contents group" @click="hideSidebar">
 			<NuxtLink
 				class="flex items-center text-lg font-normal text-gray-600 px-4 py-3 transition cursor-pointer group hover:bg-gray-100 hover:text-gray-900"
 				:to="section.target"
@@ -38,7 +38,7 @@
 			});
 		},
 		methods: {
-			action() {
+			hideSidebar() {
 				sidebarEventBus.$emit('isOpen', false);
 			},
 		},
