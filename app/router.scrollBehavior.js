@@ -21,10 +21,11 @@ export default async function (to, from, savedPosition) {
 	if (to.hash) {
 		navbarHeight = navbarHeight || (await findEl('#navbar')).offsetHeight;
 		const el = await findEl(to.hash);
+		const scrollable = document.querySelector('main') || window;
 		if ('scrollBehavior' in document.documentElement.style) {
-			return window.scrollTo({ top: el.offsetTop - navbarHeight, behavior: 'smooth' });
+			return scrollable.scrollTo({ top: el.offsetTop - navbarHeight, behavior: 'smooth' });
 		} else {
-			return window.scrollTo(0, el.offsetTop - navbarHeight);
+			return scrollable.scrollTo(0, el.offsetTop - navbarHeight);
 		}
 	}
 

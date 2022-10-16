@@ -6,14 +6,14 @@
 		<aside>
 			<Sidebar></Sidebar>
 		</aside>
-		<div class="overflow-y-auto h-screen-minus-navbar">
-			<main class="max-w-screen-xl mx-auto">
+		<main class="overflow-y-auto h-screen-minus-navbar">
+			<div class="max-w-screen-xl mx-auto">
 				<nuxt />
-			</main>
+			</div>
 			<footer>
 				<Footbar></Footbar>
 			</footer>
-		</div>
+		</main>
 		<whatsapp-fab :whatsapp="social.whatsapp"></whatsapp-fab>
 	</div>
 </template>
