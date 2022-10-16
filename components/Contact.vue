@@ -35,16 +35,21 @@
 		<form class="hidden lg:col-span-6 lg:order-1 lg:flex lg:flex-col">
 			<h2 class="text-3xl font-bold mb-1 lg:text-4xl">Contato</h2>
 			<p class="mb-5">Converse com um advogado</p>
-			<div class="relative mb-4">
+			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.name.$error }">
 				<label for="name" class="leading-7 text-sm">Nome</label>
 				<input
-					v-model="contactForm.name"
+					v-model.trim.lazy="$v.contactForm.name.$model"
 					type="text"
 					name="name"
 					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
+				<div v-if="!$v.contactForm.name.required" class="error-message">Nome obrigatório</div>
+				<div v-if="!$v.contactForm.name.minLength" class="error-message">
+					No mínimo {{ $v.contactForm.name.$params.minLength.min }} letras.
+				</div>
 			</div>
+
 			<div class="hidden relative mb-4">
 				<label for="surname" class="leading-7 text-sm">Sobrenome</label>
 				<input
@@ -52,37 +57,41 @@
 					type="text"
 					name="surname"
 					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-					placeholder="Nome"
+					placeholder="Sobrenome"
 				/>
 			</div>
-			<div class="relative mb-4">
+			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.phone.$error }">
 				<label for="phone" class="leading-7 text-sm">Telefone</label>
 				<input
-					v-model="contactForm.phone"
+					v-model.trim.lazy="$v.contactForm.phone.$model"
 					type="tel"
 					name="phone"
 					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
+				<div v-if="!$v.contactForm.phone.required" class="error-message">Telefone obrigatório</div>
+				<div v-if="!$v.contactForm.phone.numeric" class="error-message">Apenas números</div>
 			</div>
-			<div class="relative mb-4">
+			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.email.$error }">
 				<label for="email" class="leading-7 text-sm">Email</label>
 				<input
-					v-model="contactForm.email"
+					v-model.trim.lazy="$v.contactForm.email.$model"
 					type="email"
 					name="email"
 					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="nome@gmail.com"
 				/>
+				<div v-if="!$v.contactForm.email.email" class="error-message">Email inválido</div>
 			</div>
-			<div class="relative mb-4">
+			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.message.$error }">
 				<label for="message" class="leading-7 text-sm">Mensagem</label>
 				<textarea
-					v-model="contactForm.message"
+					v-model.trim.lazy="$v.contactForm.message.$model"
 					name="message"
 					class="w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
+				<div v-if="!$v.contactForm.message.required" class="error-message">Mensagem obrigatório</div>
 			</div>
 			<button
 				class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
@@ -96,7 +105,11 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import { validationMixin } from 'vuelidate';
+	import { required, minLength, numeric, email } from 'vuelidate/lib/validators';
+
 	export default Vue.extend({
+		mixins: [validationMixin],
 		data: () => ({
 			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
 			social: {
@@ -118,6 +131,13 @@
 		methods: {
 			async submitContactForm(e: Event) {
 				e.preventDefault();
+
+				this.$v.$touch();
+				if (this.$v.$invalid) {
+					this.$toast.error('Preencha os campos corretamente');
+					return;
+				}
+
 				try {
 					const response = await fetch(this.$config.contactFormEndpoint, {
 						method: 'POST',
@@ -129,14 +149,92 @@
 					});
 
 					if (response.status === 200) {
-						console.log('success');
+						this.$toast.success('Mensagem enviada com sucesso!');
 					} else {
-						console.log('fail');
+						this.$toast.error('Erro! Tente outro meio de contato.');
 					}
 				} catch (error) {
-					console.log(error);
+					this.$toast.error('Erro! Tente outro meio de contato.');
 				}
+			},
+		},
+		validations: {
+			contactForm: {
+				name: {
+					required,
+					minLength: minLength(3),
+				},
+				phone: {
+					required,
+					numeric,
+				},
+				email: {
+					email,
+				},
+				message: {
+					required,
+				},
 			},
 		},
 	});
 </script>
+
+<style scoped>
+	.input-error {
+		animation-duration: 0.6s;
+		animation-fill-mode: forwards;
+		animation-name: shakeError;
+		animation-timing-function: ease-in-out;
+	}
+
+	.input-error input,
+	.input-error textarea,
+	.input-error pre {
+		border-color: #e3342f;
+	}
+
+	.input-error label,
+	.input-error div.error-message {
+		color: #e3342f;
+		display: block;
+	}
+
+	.error-message {
+		display: none;
+		font-size: 0.8rem;
+	}
+
+	@keyframes shakeError {
+		0% {
+			transform: translateX(0);
+		}
+
+		15% {
+			transform: translateX(0.375rem);
+		}
+
+		30% {
+			transform: translateX(-0.375rem);
+		}
+
+		45% {
+			transform: translateX(0.375rem);
+		}
+
+		60% {
+			transform: translateX(-0.375rem);
+		}
+
+		75% {
+			transform: translateX(0.375rem);
+		}
+
+		90% {
+			transform: translateX(-0.375rem);
+		}
+
+		100% {
+			transform: translateX(0);
+		}
+	}
+</style>
