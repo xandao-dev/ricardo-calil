@@ -6,7 +6,7 @@
 		<aside>
 			<Sidebar></Sidebar>
 		</aside>
-		<main class="overflow-y-auto h-screen-minus-navbar">
+		<main class="overflow-y-auto overflow-x-hidden h-screen-minus-navbar">
 			<div class="max-w-screen-xl mx-auto">
 				<nuxt />
 			</div>
@@ -22,16 +22,13 @@
 	import Vue from 'vue';
 	import { MetaInfo } from 'vue-meta';
 	import WhatsappFab from '~/components/WhatsappFab.vue';
+	import { contacts } from '~/utils/data/contacts';
+
 	export default Vue.extend({
 		components: { WhatsappFab },
 		data: () => ({
 			isSidebarOpen: false,
-			social: {
-				whatsapp: '556233752216',
-				facebook: 'ricardocaliladv',
-				instagram: 'dr.ricardocalil',
-				phone: '+55 62 3375-2216',
-			},
+			social: contacts,
 		}),
 		head(): MetaInfo {
 			return {
