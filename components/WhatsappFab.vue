@@ -1,6 +1,6 @@
 <template>
 	<a
-		class="fixed flex items-center justify-center w-12 h-12 right-8 bottom-4 rounded-full bg-green-400 hover:bg-green-500 active:translate-x-[0.1rem] active:translate-y-[0.1rem]"
+		class="fixed flex items-center justify-center w-12 h-12 right-4 bottom-4 rounded-full bg-green-400 md:right-8 hover:bg-green-500 active:translate-x-[0.1rem] active:translate-y-[0.1rem]"
 		:href="whatsappShortLink + whatsapp + message"
 		target="_blank"
 		rel="noopener noreferrer"

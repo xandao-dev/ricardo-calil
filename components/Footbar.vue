@@ -1,14 +1,15 @@
 <template>
-	<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-		<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-			<img :src="logo" width="64px" height="64px" alt="Logo Ricardo Calil e Advogados Associados" />
-		</a>
+	<section
+		id="footer"
+		class="px-8 pt-12 pb-24 lg:px-12 mx-auto flex flex-col justify-center items-center gap-4 sm:flex-row"
+	>
+		<img class="hidden sm:block h-12 w-12" :src="logo" alt="Logo Ricardo Calil e Advogados Associados" />
 		<p
-			class="text-sm text-gray-500 text-center sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
+			class="order-2 text-sm text-gray-500 text-center sm:order-1 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0"
 		>
 			&copy; Copyright {{ new Date().getFullYear() }}. Todos os direitos reservados.
 		</p>
-		<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+		<span class="order-1 inline-flex justify-center sm:order-2 sm:ml-auto sm:mt-0 sm:justify-start">
 			<a
 				class="ml-3 text-gray-500"
 				:href="'https://www.facebook.com/' + social.facebook"
@@ -26,7 +27,7 @@
 				<img :src="icons.instagram" />
 			</a>
 		</span>
-	</div>
+	</section>
 </template>
 
 <script>
