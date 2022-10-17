@@ -8,7 +8,13 @@
 				</div>
 				<div class="px-6 mt-4 lg:w-1/2 lg:mt-0">
 					<h3 class="title-font font-semibold tracking-widest text-xs">EMAIL</h3>
-					<a class="leading-relaxed underline" :href="'mailto:' + social.email" v-text="social.email"></a>
+					<a
+						class="leading-relaxed underline"
+						:href="'mailto:' + social.email"
+						rel="noopener noreferrer"
+						target="_blank"
+						v-text="social.email"
+					></a>
 					<h3 class="title-font font-semibold tracking-widest text-xs mt-4">TELEFONE</h3>
 					<a
 						class="leading-relaxed underline"
@@ -113,18 +119,13 @@
 	import Vue from 'vue';
 	import { validationMixin } from 'vuelidate';
 	import { required, minLength, maxLength, email, requiredIf } from 'vuelidate/lib/validators';
+	import { contacts } from '~/utils/data/contacts';
 
 	export default Vue.extend({
 		mixins: [validationMixin],
 		data: () => ({
 			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
-			social: {
-				whatsapp: '556233752216',
-				facebook: 'ricardocaliladv',
-				instagram: 'dr.ricardocalil',
-				phone: '+55 62 3375-2216',
-				email: 'ricardocalil@hotmail.com',
-			},
+			social: contacts,
 			contactForm: {
 				name: '',
 				surname: '',
