@@ -1,50 +1,23 @@
 <template>
 	<section
-		class="
-			before:absolute before:inset-0 before:h-full before:w-full
-			hero-bg
-			px-8
-			py-24
-			lg:px-12 lg:py-48 lg:flex lg:justify-between lg:align-middle lg:before:hidden
-			xl:px-16 xl:py-64
-		"
+		id="inicio"
+		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:before:hidden"
 	>
-		<div class="relative flex flex-col justify-center text-center lg:text-left lg:justify-start">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:px-12 xl:px-16">
+		<div class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-blue-900 lg:pr-12 lg:pl-0">
 				30 anos de <span class="text-sky-600 lg:text-black">advocacia</span> para te ajudar
 			</h1>
-			<p
-				class="
-					text-gray-200
-					pt-6
-					pb-12
-					sm:px-12
-					md:text-lg md:px-28
-					lg:text-black lg:px-12
-					xl:px-16 xl:pt-12 xl:pb-18
-				"
-			>
+			<p class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-lg md:px-28 lg:text-black lg:pr-12 lg:pl-0">
 				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
 				simplificada.
 			</p>
-			<button
-				class="
-					text-white
-					bg-blue-900
-					hover:bg-blue-800
-					focus:ring-4 focus:ring-blue-300
-					font-semibold
-					rounded
-					px-6
-					py-3
-					mx-auto
-					focus:outline-none
-					sm:px-8 sm:py-4 sm:text-xl
-					lg:px-12
-				"
-			>
-				<NuxtLink to="/itaberai#contato">Fale agora com um advogado</NuxtLink>
-			</button>
+			<NuxtLink :to="{ path: $route.path, hash: 'contato' }">
+				<button
+					class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mr-12"
+				>
+					Fale agora com um advogado
+				</button>
+			</NuxtLink>
 		</div>
 		<img
 			src="/hero/hero.webp"
@@ -54,20 +27,13 @@
 	</section>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
-.hero-bg {
-	position: relative;
-}
-.hero-bg::before {
-	content: '';
-	background-image: url('/hero/hero.webp');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	filter: brightness(0.25);
-}
+	.hero-bg::before {
+		content: '';
+		background-image: url('/hero/hero.webp');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: brightness(0.25);
+	}
 </style>

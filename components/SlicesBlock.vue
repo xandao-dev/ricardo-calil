@@ -20,23 +20,23 @@
 </template>
 
 <script>
-import Vue from 'vue';
-const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
-const TextSlice = () => import('../components/slices/TextSlice.vue');
-const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');
+	import Vue from 'vue';
+	const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
+	const TextSlice = () => import('../components/slices/TextSlice.vue');
+	const ImageCaptionSlice = () => import('../components/slices/ImageCaptionSlice.vue');
 
-export default Vue.extend({
-	name: 'SlicesBlock',
-	components: {
-		QuoteSlice,
-		TextSlice,
-		ImageCaptionSlice,
-	},
-	props: {
-		slices: {
-			type: Array,
-			required: true,
+	export default Vue.extend({
+		name: 'SlicesBlock',
+		components: {
+			QuoteSlice,
+			TextSlice,
+			ImageCaptionSlice,
 		},
-	},
-});
+		props: {
+			slices: {
+				type: Array,
+				required: true,
+			},
+		},
+	});
 </script>

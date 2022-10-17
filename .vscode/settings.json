@@ -1,7 +1,26 @@
 {
+	"editor.formatOnSave": true,
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+	"editor.rulers": [80, 120],
+
 	"[vue]": {
-		"editor.defaultFormatter": "octref.vetur"
-	}
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	"eslint.validate": ["vue", "javascript", "typescript", "html", "css", "markdown"],
+	"eslint.probe": ["vue", "javascript", "typescript", "html", "css", "markdown"]
 }

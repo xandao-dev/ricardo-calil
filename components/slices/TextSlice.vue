@@ -5,20 +5,20 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
-	name: 'TextSlice',
-	props: {
-		slice: {
-			type: Object,
-			required: true,
+	import Vue from 'vue';
+	export default Vue.extend({
+		name: 'TextSlice',
+		props: {
+			slice: {
+				type: Object,
+				required: true,
+			},
 		},
-	},
-});
+	});
 </script>
 
 <style scoped>
-.textslice a {
-	text-decoration: underline;
-}
+	.textslice a {
+		text-decoration: underline;
+	}
 </style>

@@ -5,21 +5,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import type { PropType } from 'vue';
-import { IExpertiseArea } from '~/utils/data/expertise';
+	import Vue from 'vue';
+	import type { PropType } from 'vue';
+	import { IExpertiseArea } from '~/utils/data/expertise';
 
-export default Vue.extend({
-	props: {
-		area: {
-			type: Object as PropType<IExpertiseArea>,
-			required: true,
+	export default Vue.extend({
+		props: {
+			area: {
+				type: Object as PropType<IExpertiseArea>,
+				required: true,
+			},
 		},
-	},
-	computed: {
-		title(): string {
-			return (this as any).area.title;
+		computed: {
+			title(): string {
+				return (this as any).area.title;
+			},
 		},
-	},
-});
+	});
 </script>

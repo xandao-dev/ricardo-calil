@@ -10,20 +10,7 @@
 			<div class="mb-4">
 				<span
 					aria-label="Article"
-					class="
-						inline-block
-						max-w-lg
-						font-sans
-						text-3xl
-						font-extrabold
-						leading-none
-						tracking-tight
-						text-black
-						transition-colors
-						duration-200
-						hover:text-deep-purple-accent-700
-						sm:text-4xl
-					"
+					class="inline-block max-w-lg font-sans text-3xl font-extrabold leading-none tracking-tight text-black transition-colors duration-200 hover:text-deep-purple-accent-700 sm:text-4xl"
 				>
 					{{ $prismic.asText(document.title) }}
 				</span>
@@ -44,49 +31,49 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default Vue.extend({
-	name: 'Post',
-	async asyncData({ $prismic, params, error }) {
-		try {
-			const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
+	import Vue from 'vue';
+	export default Vue.extend({
+		name: 'Post',
+		async asyncData({ $prismic, params, error }) {
+			try {
+				const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
 
-			const document = post;
-			const slices = post.body;
-			const formattedDate = Intl.DateTimeFormat('pt-BR', {
-				year: 'numeric',
-				month: 'short',
-				day: '2-digit',
-			}).format(new Date(post.post_date));
-			const category = post.post_category;
-			let author = post.post_author;
-			let authorImageSrc = '';
-			if (author === 'Ricardo Calil') {
-				author = 'Dr. Ricardo Calil';
-				authorImageSrc = '/lawyers/ricardo_small.webp';
+				const document = post;
+				const slices = post.body;
+				const formattedDate = Intl.DateTimeFormat('pt-BR', {
+					year: 'numeric',
+					month: 'short',
+					day: '2-digit',
+				}).format(new Date(post.post_date));
+				const category = post.post_category;
+				let author = post.post_author;
+				let authorImageSrc = '';
+				if (author === 'Ricardo Calil') {
+					author = 'Dr. Ricardo Calil';
+					authorImageSrc = '/lawyers/ricardo_small.webp';
+				}
+				if (author === 'Lucilo Neto') {
+					author = 'Dr. Lucilo Neto';
+					authorImageSrc = '/lawyers/lucilo_small.webp';
+				}
+				return {
+					document,
+					slices,
+					formattedDate,
+					category,
+					author,
+					authorImageSrc,
+				};
+			} catch (e) {
+				error({ statusCode: 404, message: 'Artigo não encontrado' });
 			}
-			if (author === 'Lucilo Neto') {
-				author = 'Dr. Lucilo Neto';
-				authorImageSrc = '/lawyers/lucilo_small.webp';
-			}
+		},
+		head({ $prismic }) {
+			// Title with 60 characters max, 44 for post and 16 for site name
+			const postTitle = String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo';
 			return {
-				document,
-				slices,
-				formattedDate,
-				category,
-				author,
-				authorImageSrc,
+				title: `${postTitle} | Ricardo Calil`,
 			};
-		} catch (e) {
-			error({ statusCode: 404, message: 'Artigo não encontrado' });
-		}
-	},
-	head({ $prismic }) {
-		// Title with 60 characters max, 44 for post and 16 for site name
-		const postTitle = String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo';
-		return {
-			title: `${postTitle} | Ricardo Calil`,
-		};
-	},
-});
+		},
+	});
 </script>
