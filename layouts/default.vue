@@ -10,7 +10,7 @@
 			<div class="max-w-screen-xl mx-auto">
 				<nuxt />
 			</div>
-			<footer>
+			<footer class="max-w-screen-xl mx-auto">
 				<Footbar></Footbar>
 			</footer>
 		</main>
