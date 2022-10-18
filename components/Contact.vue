@@ -35,7 +35,6 @@
 				scrolling="no"
 				loading="lazy"
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7669.849964307218!2d-49.8079523!3d-16.0174202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5f2f774f3b2d9abc!2sRicardo%20Calil%20%26%20Advogados%20Associados!5e0!3m2!1spt-BR!2sbr!4v1636910106771!5m2!1spt-BR!2sbr"
-				style="filter: grayscale(1) contrast(1.2) opacity(0.65)"
 			></iframe>
 		</div>
 		<form class="hidden lg:col-span-6 lg:order-1 lg:flex lg:flex-col">
