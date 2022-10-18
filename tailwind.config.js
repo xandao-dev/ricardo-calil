@@ -1,9 +1,23 @@
 module.exports = {
 	mode: 'jit',
 	theme: {
-		/* Default Tailwind CSS Colors + More colors in tailwind.css file */
-		/* https://tailwindcss.com/docs/customizing-colors */
-		/* https://stackoverflow.com/questions/64872861/how-to-use-css-variables-with-tailwind-css */
+		extend: {
+			colors: {
+				primary: {
+					DEFAULT: '#084D6E',
+					50: '#2EB1F0',
+					100: '#20ACEF',
+					200: '#109DE0',
+					300: '#0E89C4',
+					400: '#0C75A7',
+					500: '#0A618B',
+					600: '#084D6E',
+					700: '#063951',
+					800: '#042535',
+					900: '#021118',
+				},
+			},
+		},
 	},
 	plugins: [require('@tailwindcss/line-clamp')],
 };
