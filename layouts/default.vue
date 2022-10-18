@@ -1,5 +1,5 @@
 <template>
-	<div class="contents">
+	<div class="selection:bg-primary selection:text-white">
 		<header class="sticky top-0 z-50">
 			<Navbar></Navbar>
 		</header>

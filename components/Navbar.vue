@@ -7,7 +7,7 @@
 				<Logo></Logo>
 				<button
 					type="button"
-					class="text-gray-700 hover:text-primary-400 active:text-primary focus:outline-hidden md:hidden"
+					class="text-gray-700 hover:text-primary-400 active:text-primary focus:outline-none md:hidden"
 					aria-label="Alternar menu lateral"
 					@click="toggleSidebarStatus"
 				>

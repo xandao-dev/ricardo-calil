@@ -1,7 +1,7 @@
 <template>
 	<section id="contato" class="px-8 py-12 lg:grid lg:grid-cols-12 lg:px-12 lg:gap-10">
 		<div class="flex flex-col relative lg:col-span-6">
-			<div class="bg-white flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
+			<div class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
 				<div class="px-6 lg:w-1/2">
 					<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
 					<p class="mt-1" v-text="street"></p>
@@ -47,7 +47,7 @@
 					v-model.trim="$v.contactForm.name.$model"
 					type="text"
 					name="name"
-					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
 				<div v-if="!$v.contactForm.name.required" class="error-message">Nome obrigatório</div>
@@ -65,7 +65,7 @@
 					v-model="contactForm.surname"
 					type="text"
 					name="surname"
-					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Sobrenome"
 				/>
 			</div>
@@ -75,7 +75,7 @@
 					v-model.trim="$v.contactForm.phone.$model"
 					type="tel"
 					name="phone"
-					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
 				<div v-if="!$v.contactForm.phone.required" class="error-message">Telefone ou email obrigatório</div>
@@ -86,7 +86,7 @@
 					v-model.trim="$v.contactForm.email.$model"
 					type="email"
 					name="email"
-					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="nome@gmail.com"
 				/>
 				<div v-if="!$v.contactForm.email.required" class="error-message">Email ou telefone obrigatório</div>
@@ -97,7 +97,7 @@
 				<textarea
 					v-model.trim="$v.contactForm.message.$model"
 					name="message"
-					class="w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary h-32 text-base py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
 				<div v-if="!$v.contactForm.message.required" class="error-message">Mensagem obrigatório</div>
@@ -106,7 +106,7 @@
 				</div>
 			</div>
 			<button
-				class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
+				class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
 				@click="submitContactForm"
 			>
 				Enviar
