@@ -8,17 +8,21 @@
 				<button
 					draggable="false"
 					type="button"
-					class="text-gray-700 hover:text-primary-400 active:text-primary focus:outline-none md:hidden"
+					class="text-gray-700 hover:text-primary-500 active:text-primary focus:outline-none md:hidden"
 					aria-label="Alternar menu lateral"
 					@click="toggleSidebarStatus"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						version="1.1"
 						:class="[!isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
-						height="24px"
+						fill="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
 						viewBox="0 0 24 24"
 						width="24px"
-						fill="#000000"
+						height="24px"
 					>
 						<path
 							d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
@@ -26,9 +30,15 @@
 					</svg>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						version="1.1"
 						:class="[isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
+						fill="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
 						height="24"
 						width="24"
+						viewBox="0 0 24 24"
 					>
 						<path
 							d="m12 13.4-4.9 4.9q-.275.275-.7.275-.425 0-.7-.275-.275-.275-.275-.7 0-.425.275-.7l4.9-4.9-4.9-4.9q-.275-.275-.275-.7 0-.425.275-.7.275-.275.7-.275.425 0 .7.275l4.9 4.9 4.9-4.9q.275-.275.7-.275.425 0 .7.275.275.275.275.7 0 .425-.275.7L13.4 12l4.9 4.9q.275.275.275.7 0 .425-.275.7-.275.275-.7.275-.425 0-.7-.275Z"

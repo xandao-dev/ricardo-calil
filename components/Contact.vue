@@ -2,11 +2,14 @@
 	<section id="contato" class="px-8 py-12 lg:grid lg:grid-cols-12 lg:px-12 lg:gap-10">
 		<div class="flex flex-col relative lg:col-span-6">
 			<div class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
-				<div class="px-6 lg:w-1/2">
-					<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
-					<p class="mt-1" v-text="street"></p>
+				<div class="px-6 flex flex-col justify-between lg:w-1/2">
+					<div>
+						<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
+						<p class="mt-1" v-text="street"></p>
+					</div>
+					<SocialMedia class="hidden mt-4 lg:flex" whatsapp facebook instagram />
 				</div>
-				<div class="px-6 mt-4 lg:w-1/2 lg:mt-0">
+				<div class="px-6 mt-4 w-full flex flex-col lg:w-1/2 lg:mt-0">
 					<h3 class="title-font font-semibold tracking-widest text-xs">EMAIL</h3>
 					<a
 						class="leading-relaxed underline"
@@ -22,6 +25,7 @@
 						rel="noopener noreferrer"
 						v-text="social.phone"
 					></a>
+					<SocialMedia class="mt-4 self-end lg:hidden" whatsapp facebook instagram />
 				</div>
 			</div>
 			<iframe
@@ -125,6 +129,8 @@
 		data: () => ({
 			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
 			social: contacts,
+			whatsappShortLink: 'https://wa.me/',
+			message: '?text=Ol%C3%A1%2C%20como%20vai%3F%20Peguei%20seu%20contato%20atrav%C3%A9s%20do%20site.',
 			contactForm: {
 				name: '',
 				surname: '',
