@@ -1,15 +1,49 @@
 <template>
 	<nav id="navbar" class="bg-white shadow h-navbar">
-		<div class="max-w-screen-xl px-4 h-full mx-auto md:flex md:justify-between md:items-center lg:px-12">
+		<div
+			class="max-w-screen-xl px-4 h-full mx-auto select-none md:flex md:justify-between md:items-center lg:px-12"
+		>
 			<div class="flex justify-between h-full">
 				<Logo></Logo>
 				<button
+					draggable="false"
 					type="button"
-					class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400 md:hidden"
+					class="text-gray-700 hover:text-primary-500 active:text-primary focus:outline-none md:hidden"
 					aria-label="Alternar menu lateral"
 					@click="toggleSidebarStatus"
 				>
-					<img class="h-6 w-6" :src="currentMenuIcon" alt="Alternar sidebar" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						version="1.1"
+						:class="[!isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
+						fill="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						viewBox="0 0 24 24"
+						width="24px"
+						height="24px"
+					>
+						<path
+							d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
+						/>
+					</svg>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						version="1.1"
+						:class="[isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
+						fill="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						height="24"
+						width="24"
+						viewBox="0 0 24 24"
+					>
+						<path
+							d="m12 13.4-4.9 4.9q-.275.275-.7.275-.425 0-.7-.275-.275-.275-.275-.7 0-.425.275-.7l4.9-4.9-4.9-4.9q-.275-.275-.275-.7 0-.425.275-.7.275-.275.7-.275.425 0 .7.275l4.9 4.9 4.9-4.9q.275-.275.7-.275.425 0 .7.275.275.275.275.7 0 .425-.275.7L13.4 12l4.9 4.9q.275.275.275.7 0 .425-.275.7-.275.275-.7.275-.425 0-.7-.275Z"
+						/>
+					</svg>
 				</button>
 			</div>
 
@@ -18,7 +52,8 @@
 					<NuxtLink
 						v-for="section in sections"
 						:key="section.target"
-						class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:my-0 lg:text-base"
+						draggable="false"
+						class="my-1 text-sm font-medium text-gray-700 hover:text-primary-400 active:text-primary md:my-0 lg:text-base"
 						:to="section.target"
 						v-text="section.title"
 					></NuxtLink>
@@ -44,18 +79,9 @@
 				{ title: 'Perguntas', target: `${vm.$route.path}#perguntas` },
 				{ title: 'Artigos', target: '/artigos' },
 			],
-			icons: {
-				hamburger: '/icons/menu.svg',
-				close: '/icons/close.svg',
-			},
 			logo: '/logos/logo_sem_fundo2.svg',
 			logoText: '/logos/logo_texto_sem_fundo_black.svg',
 		}),
-		computed: {
-			currentMenuIcon() {
-				return this.isSidebarOpen ? this.icons.close : this.icons.hamburger;
-			},
-		},
 		mounted() {
 			sidebarEventBus.$on('isOpen', (isSidebarOpen: boolean) => {
 				this.isSidebarOpen = isSidebarOpen;

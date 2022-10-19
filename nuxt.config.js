@@ -94,4 +94,16 @@ export default {
 		linkResolver: '@/plugins/link-resolver',
 		htmlSerializer: '@/plugins/html-serializer',
 	},
+
+	typescript: {
+		/**
+		 * !! WARN !!
+		 * Dangerously allow production builds to successfully complete even if
+		 * your project has type errors.
+		 * !! WARN !!
+		 *
+		 * This will show us errors on dev, but not stop builds for production
+		 */
+		typeCheck: process.env.NODE_ENV !== 'production',
+	},
 };

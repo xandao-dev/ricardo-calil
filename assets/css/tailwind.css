@@ -4,7 +4,8 @@
 
 :root {
 	--navbar-height: 4rem;
-	--red-600: #dc2626;
+	--footbar-height: 12rem;
+	--red-600: #dc2626; /* Tailwind red-600 */
 }
 
 @layer utilities {
@@ -13,5 +14,11 @@
 	}
 	.h-screen-minus-navbar {
 		height: calc(100vh - var(--navbar-height));
+	}
+	.h-footbar {
+		height: var(--footbar-height);
+	}
+	.min-h-full-minus-footbar {
+		min-height: calc(100% - var(--footbar-height));
 	}
 }
