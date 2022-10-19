@@ -7,7 +7,9 @@
 		<p
 			class="order-2 text-sm text-gray-500 text-center sm:order-1 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0"
 		>
-			&copy; Copyright {{ new Date().getFullYear() }}. Todos os direitos reservados.
+			&copy; Copyright {{ new Date().getFullYear() }}. Todos os direitos reservados. <br />
+			Desenvolvido por
+			<a class="text-primary" href="https://xandao.dev/" target="_blank" rel="noopener noreferrer">xandao.dev</a>
 		</p>
 		<div class="order-1 sm:order-2 sm:ml-auto sm:mt-0">
 			<SocialMedia facebook instagram />
