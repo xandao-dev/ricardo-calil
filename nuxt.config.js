@@ -8,6 +8,9 @@ export default {
 	publicRuntimeConfig: {
 		websiteHomeDomain: process.env.WEBSITE_HOME_DOMAIN,
 		contactFormEndpoint: process.env.CONTACT_FORM_ENDPOINT,
+		gtm: {
+			id: process.env.GTM_ID,
+		},
 	},
 	privateRuntimeConfig: {},
 
@@ -99,7 +102,7 @@ export default {
 	gtm: {
 		enabled: true,
 		id: process.env.GTM_ID,
-		pageTracking: true,
+		pageTracking: false, // Prevent double events when using with GA
 	},
 
 	toast: {
