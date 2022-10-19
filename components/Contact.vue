@@ -1,5 +1,6 @@
 <template>
 	<section id="contato" class="px-8 py-12 lg:grid lg:grid-cols-12 lg:px-12 lg:gap-10">
+		<h2 class="text-3xl font-bold mb-10 lg:hidden">Contato</h2>
 		<div class="flex flex-col relative lg:col-span-6">
 			<div class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
 				<div class="px-6 flex flex-col justify-between lg:w-1/2">
