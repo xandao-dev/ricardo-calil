@@ -5,7 +5,7 @@
 	>
 		<div class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
 			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0">
-				30 anos de <span class="text-primary lg:text-primary">advocacia</span> para te ajudar
+				30 anos de <span class="text-primary-400 lg:text-primary">advocacia</span> para te ajudar
 			</h1>
 			<p class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-lg md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0">
 				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e

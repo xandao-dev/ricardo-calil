@@ -1,6 +1,6 @@
 <template>
 	<section
-		v-if="error.statusCode === 404 && false"
+		v-if="error.statusCode === 404"
 		class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12"
 	>
 		<h2 class="mb-12 font-extrabold text-9xl"><span class="sr-only">Erro</span>404</h2>
