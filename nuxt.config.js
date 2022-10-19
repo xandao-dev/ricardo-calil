@@ -25,7 +25,26 @@ export default {
 			{ name: 'apple-mobile-web-app-title', content: 'Ricardo Calil' },
 			{ name: 'application-name', content: 'Ricardo Calil' },
 			{ name: 'msapplication-TileColor', content: '#da532c' },
-			{ name: 'theme-color', content: '#ffffff' },
+			{ name: 'theme-color', content: '#084D6E' },
+			{ property: 'og:title', content: 'Ricardo Calil & Advogados Associados' },
+			{ name: 'twitter:title', content: 'Ricardo Calil & Advogados Associados' },
+			{
+				name: 'description',
+				content:
+					'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
+			},
+			{
+				property: 'og:description',
+				content:
+					'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
+			},
+			{
+				name: 'twitter:description',
+				content:
+					'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
+			},
+			{ property: 'og:image', content: '/logo-og.png' },
+			{ name: 'twitter:image', content: '/logo-og.png' },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
