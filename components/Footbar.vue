@@ -1,7 +1,7 @@
 <template>
 	<section
 		id="footer"
-		class="px-8 pt-12 pb-24 lg:px-12 mx-auto flex flex-col justify-center items-center gap-4 sm:flex-row"
+		class="h-footbar px-8 pt-12 pb-24 lg:px-12 mx-auto flex flex-col justify-center items-center gap-4 sm:flex-row"
 	>
 		<img class="hidden sm:block h-12 w-12" :src="logo" alt="Logo Ricardo Calil e Advogados Associados" />
 		<p

@@ -9,7 +9,7 @@ interface IContacts {
 const contacts: IContacts = {
 	whatsapp: '556233752216',
 	facebook: 'ricardocaliladv',
-	instagram: 'dr.ricardocalil',
+	instagram: 'calilfonsecaadvogados',
 	phone: '+55 62 3375-2216',
 	email: 'ricardocalil@hotmail.com',
 };
