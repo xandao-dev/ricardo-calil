@@ -4,7 +4,7 @@
 		<div class="text-sm border-t border-b border-gray-200 divide-y divide-gray-200">
 			<div v-for="question in questions" :key="question.id">
 				<button
-					class="flex items-center justify-between w-full py-4 pr-1 font-semibold text-left outline-none hover:text-primary focus:text-primary focus:outline-none"
+					class="flex items-center justify-between w-full py-4 pr-1 font-semibold text-left outline-none hover:text-primary focus:outline-none"
 					role="button"
 					@click="toggleQuestion(question)"
 				>

@@ -9,39 +9,18 @@
 		>
 			&copy; Copyright {{ new Date().getFullYear() }}. Todos os direitos reservados.
 		</p>
-		<span class="order-1 inline-flex justify-center sm:order-2 sm:ml-auto sm:mt-0 sm:justify-start">
-			<a
-				class="ml-3 text-gray-500"
-				:href="'https://www.facebook.com/' + social.facebook"
-				rel="noopener noreferrer"
-				target="_blank"
-			>
-				<img :src="icons.facebook" />
-			</a>
-			<a
-				class="ml-3 text-gray-500"
-				:href="'https://www.instagram.com/' + social.instagram"
-				rel="noopener noreferrer"
-				target="_blank"
-			>
-				<img :src="icons.instagram" />
-			</a>
-		</span>
+		<div class="order-1 sm:order-2 sm:ml-auto sm:mt-0">
+			<SocialMedia facebook instagram />
+		</div>
 	</section>
 </template>
 
 <script>
 	import Vue from 'vue';
-	import { contacts } from '~/utils/data/contacts';
 
 	export default Vue.extend({
 		data: () => ({
 			logo: '/logos/logo_sem_fundo2.svg',
-			social: contacts,
-			icons: {
-				facebook: '/icons/facebook.svg',
-				instagram: '/icons/instagram.svg',
-			},
 		}),
 	});
 </script>

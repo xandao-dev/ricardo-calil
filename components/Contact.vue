@@ -1,12 +1,15 @@
 <template>
 	<section id="contato" class="px-8 py-12 lg:grid lg:grid-cols-12 lg:px-12 lg:gap-10">
 		<div class="flex flex-col relative lg:col-span-6">
-			<div class="bg-white flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
-				<div class="px-6 lg:w-1/2">
-					<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
-					<p class="mt-1" v-text="street"></p>
+			<div class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
+				<div class="px-6 flex flex-col justify-between lg:w-1/2">
+					<div>
+						<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
+						<p class="mt-1" v-text="street"></p>
+					</div>
+					<SocialMedia class="hidden mt-4 lg:flex" whatsapp facebook instagram />
 				</div>
-				<div class="px-6 mt-4 lg:w-1/2 lg:mt-0">
+				<div class="px-6 mt-4 w-full flex flex-col lg:w-1/2 lg:mt-0">
 					<h3 class="title-font font-semibold tracking-widest text-xs">EMAIL</h3>
 					<a
 						class="leading-relaxed underline"
@@ -22,6 +25,7 @@
 						rel="noopener noreferrer"
 						v-text="social.phone"
 					></a>
+					<SocialMedia class="mt-4 self-end lg:hidden" whatsapp facebook instagram />
 				</div>
 			</div>
 			<iframe
@@ -35,7 +39,6 @@
 				scrolling="no"
 				loading="lazy"
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7669.849964307218!2d-49.8079523!3d-16.0174202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5f2f774f3b2d9abc!2sRicardo%20Calil%20%26%20Advogados%20Associados!5e0!3m2!1spt-BR!2sbr!4v1636910106771!5m2!1spt-BR!2sbr"
-				style="filter: grayscale(1) contrast(1.2) opacity(0.65)"
 			></iframe>
 		</div>
 		<form class="hidden lg:col-span-6 lg:order-1 lg:flex lg:flex-col">
@@ -47,7 +50,7 @@
 					v-model.trim="$v.contactForm.name.$model"
 					type="text"
 					name="name"
-					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
 				<div v-if="!$v.contactForm.name.required" class="error-message">Nome obrigatório</div>
@@ -65,7 +68,7 @@
 					v-model="contactForm.surname"
 					type="text"
 					name="surname"
-					class="w-full bg-white rounded border focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Sobrenome"
 				/>
 			</div>
@@ -75,7 +78,7 @@
 					v-model.trim="$v.contactForm.phone.$model"
 					type="tel"
 					name="phone"
-					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
 				<div v-if="!$v.contactForm.phone.required" class="error-message">Telefone ou email obrigatório</div>
@@ -86,7 +89,7 @@
 					v-model.trim="$v.contactForm.email.$model"
 					type="email"
 					name="email"
-					class="w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="nome@gmail.com"
 				/>
 				<div v-if="!$v.contactForm.email.required" class="error-message">Email ou telefone obrigatório</div>
@@ -97,7 +100,7 @@
 				<textarea
 					v-model.trim="$v.contactForm.message.$model"
 					name="message"
-					class="w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary h-32 text-base py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
 				<div v-if="!$v.contactForm.message.required" class="error-message">Mensagem obrigatório</div>
@@ -106,7 +109,7 @@
 				</div>
 			</div>
 			<button
-				class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
+				class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
 				@click="submitContactForm"
 			>
 				Enviar
@@ -126,6 +129,8 @@
 		data: () => ({
 			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
 			social: contacts,
+			whatsappShortLink: 'https://wa.me/',
+			message: '?text=Ol%C3%A1%2C%20como%20vai%3F%20Peguei%20seu%20contato%20atrav%C3%A9s%20do%20site.',
 			contactForm: {
 				name: '',
 				surname: '',
