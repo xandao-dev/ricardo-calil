@@ -13,7 +13,7 @@ export default {
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'Ricardo Calil',
+		title: 'Advogado em Itaberaí | Ricardo Calil',
 		htmlAttrs: {
 			lang: 'pt-BR',
 		},
@@ -22,12 +22,12 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: '' },
 			{ name: 'format-detection', content: 'telephone=no' },
-			{ name: 'apple-mobile-web-app-title', content: 'Ricardo Calil' },
-			{ name: 'application-name', content: 'Ricardo Calil' },
+			{ name: 'apple-mobile-web-app-title', content: 'Advogado em Itaberaí | Ricardo Calil' },
+			{ name: 'application-name', content: 'Advogado em Itaberaí | Ricardo Calil' },
 			{ name: 'msapplication-TileColor', content: '#da532c' },
 			{ name: 'theme-color', content: '#084D6E' },
-			{ property: 'og:title', content: 'Ricardo Calil & Advogados Associados' },
-			{ name: 'twitter:title', content: 'Ricardo Calil & Advogados Associados' },
+			{ property: 'og:title', content: 'Advogado em Itaberaí | Ricardo Calil' },
+			{ name: 'twitter:title', content: 'Advogado em Itaberaí | Ricardo Calil' },
 			{
 				name: 'description',
 				content:
