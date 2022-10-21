@@ -1,15 +1,21 @@
 <template>
-	<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-		<div class="back">
-			<NuxtLink to="./">Voltar</NuxtLink>
-		</div>
-		<full-expertise :area="area"> </full-expertise>
+	<div class="contents">
+		<!--NuxtLink draggable="false" to="./">
+			<button
+				class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mr-12"
+			>
+				Voltar
+			</button>
+		</NuxtLink-->
+		<ExpertiseHero :info="area.pageInfo.hero" />
+		<FullExpertise :area="area" />
+		<Contact />
 	</div>
 </template>
 
 <script land="ts">
 	import Vue from 'vue';
-	import FullExpertise from '~/components/FullExpertise.vue';
+	import FullExpertise from '~/components/expertise/FullExpertise.vue';
 	import { areas } from '~/utils/data/expertise';
 
 	export default Vue.extend({
