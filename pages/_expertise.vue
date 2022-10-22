@@ -19,11 +19,12 @@
 <script land="ts">
 	import Vue from 'vue';
 	import FullExpertise from '~/components/expertise/FullExpertise.vue';
+	import DifferentialCards from '~/components/expertise/DifferentialCards.vue';
 	import { areas } from '~/utils/data/expertise';
 
 	export default Vue.extend({
 		name: 'Expertise',
-		components: { FullExpertise },
+		components: { FullExpertise, DifferentialCards },
 		data: () => ({
 			area: areas[0],
 		}),
