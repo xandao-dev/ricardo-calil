@@ -3,7 +3,7 @@
 		<div
 			v-for="differential in differentials"
 			:key="differential.title"
-			class="flex flex-col items-center gap-5 w-full py-5 md:w-48 md:mx-2 md:rounded"
+			class="flex flex-col items-center gap-5 w-full py-5 md:w-48 md:mx-2 md:rounded md:shadow-lg"
 			:class="[differential.bgColor, differential.textColor]"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" class="text-primary-50 fill-current">
