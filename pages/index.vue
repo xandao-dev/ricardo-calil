@@ -1,10 +1,21 @@
+<template>
+	<div class="contents">
+		<Hero></Hero>
+		<Office></Office>
+		<Lawyers></Lawyers>
+		<Expertise></Expertise>
+		<Contact></Contact>
+		<FAQ></FAQ>
+	</div>
+</template>
+
 <script>
 	export default {
 		name: 'Home',
-		middleware: [
-			function ({ redirect }) {
-				redirect('/itaberai');
-			},
-		],
+		head() {
+			return {
+				title: 'Advogado em Itaberaí | Ricardo Calil',
+			};
+		},
 	};
 </script>

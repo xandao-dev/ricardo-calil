@@ -22,7 +22,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Trabalhista',
 		description: 'Somos especialistas nas causas trabalhistas que ocorrem entre o empregado e o empregador',
-		target: '/itaberai/trabalhista',
+		target: '/trabalhista',
 		pageInfo: {
 			hero: {
 				title: 'Direito do Trabalho',
@@ -37,7 +37,7 @@ const areas: IExpertiseArea[] = [
 		title: 'Previdenciário',
 		description:
 			'Garantimos os direitos quanto à assistência e Previdência Social, relacionadas a morte, idade e doenças',
-		target: null, // '/itaberai/previdenciario',
+		target: null, // '/previdenciario',
 		pageInfo: null,
 	},
 	{
@@ -45,7 +45,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Civil',
 		description: 'Cuidamos dos direitos do cidadão, pessoas físicas ou jurídicas, perante a sociedade',
-		target: null, // '/itaberai/civil',
+		target: null, // '/civil',
 		pageInfo: null,
 	},
 	{
@@ -53,7 +53,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Consumidor',
 		description: 'Tratamos das relações e problemas entre o consumidor e o fornecedor de bens ou de serviços',
-		target: null, // '/itaberai/consumidor',
+		target: null, // '/consumidor',
 		pageInfo: null,
 	},
 	{
@@ -61,7 +61,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Família',
 		description: 'Cuidamos das relações familiares e das obrigações e direitos decorrentes dessas relações',
-		target: null, // '/itaberai/familia',
+		target: null, // '/
 		pageInfo: null,
 	},
 	{
@@ -69,7 +69,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Imobiliário',
 		description: 'Lidamos com o direito que envolva a compra, venda, doação, sucessão e troca de bens imóveis',
-		target: null, // '/itaberai/imobiliario',
+		target: null, // '/imobiliario',
 		pageInfo: null,
 	},
 	{
@@ -77,7 +77,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Contratual',
 		description: 'Tratamos das relações que surgem em todos os tipos de contratos para garantir seus direitos',
-		target: null, // '/itaberai/contratual',
+		target: null, // '/contratual',
 		pageInfo: null,
 	},
 	{
@@ -85,7 +85,7 @@ const areas: IExpertiseArea[] = [
 		src: '',
 		title: 'Criminal',
 		description: 'Prestamos serviços na área criminal com dedicação e excelência em defesa de nossos clientes',
-		target: null, // '/itaberai/criminal',
+		target: null, // '/criminal',
 		pageInfo: null,
 	},
 ];
