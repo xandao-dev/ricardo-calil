@@ -4,7 +4,7 @@
 			v-if="whatsapp"
 			draggable="false"
 			class="ml-3 first:ml-0"
-			:href="whatsappShortLink + social.whatsapp + message"
+			:href="social.whatsapp"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -31,7 +31,7 @@
 			v-if="facebook"
 			draggable="false"
 			class="ml-3 first:ml-0"
-			:href="'https://www.facebook.com/' + social.facebook"
+			:href="social.facebook"
 			rel="noopener noreferrer"
 			target="_blank"
 		>
@@ -55,7 +55,7 @@
 			v-if="instagram"
 			draggable="false"
 			class="ml-3 first:ml-0"
-			:href="'https://www.instagram.com/' + social.instagram"
+			:href="social.instagram"
 			rel="noopener noreferrer"
 			target="_blank"
 		>
@@ -100,8 +100,6 @@
 			},
 		},
 		data: () => ({
-			whatsappShortLink: 'https://wa.me/',
-			message: '?text=Ol%C3%A1%2C%20como%20vai%3F%20Peguei%20seu%20contato%20atrav%C3%A9s%20do%20site.',
 			social: contacts,
 		}),
 	});

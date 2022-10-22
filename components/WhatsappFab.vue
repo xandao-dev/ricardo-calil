@@ -1,7 +1,7 @@
 <template>
 	<a
 		class="fixed flex items-center justify-center w-12 h-12 right-4 bottom-4 rounded-full bg-green-400 md:right-8 hover:bg-green-500 active:translate-x-[0.1rem] active:translate-y-[0.1rem]"
-		:href="whatsappShortLink + whatsapp + message"
+		:href="whatsapp"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -28,9 +28,5 @@
 				required: true,
 			},
 		},
-		data: () => ({
-			whatsappShortLink: 'https://wa.me/',
-			message: '?text=Ol%C3%A1%2C%20como%20vai%3F%20Peguei%20seu%20contato%20atrav%C3%A9s%20do%20site.',
-		}),
 	});
 </script>
