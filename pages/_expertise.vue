@@ -20,11 +20,13 @@
 	import Vue from 'vue';
 	import FullExpertise from '~/components/expertise/FullExpertise.vue';
 	import DifferentialCards from '~/components/expertise/DifferentialCards.vue';
+	import CompactLawyers from '~/components/expertise/CompactLawyers.vue';
+	import CompactOffice from '~/components/expertise/CompactOffice.vue';
 	import { areas } from '~/utils/data/expertise';
 
 	export default Vue.extend({
 		name: 'Expertise',
-		components: { FullExpertise, DifferentialCards },
+		components: { FullExpertise, DifferentialCards, CompactLawyers, CompactOffice },
 		data: () => ({
 			area: areas[0],
 		}),

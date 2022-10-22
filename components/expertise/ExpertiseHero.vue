@@ -14,7 +14,7 @@
 			></p>
 			<a
 				draggable="false"
-				class="flex items-center text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 xl:mr-12"
+				class="flex items-center text-white select-none max-w-max bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 xl:mr-12"
 				:href="social.whatsapp"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -24,7 +24,7 @@
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					version="1.1"
 					enable-background="new 0 0 24 24"
-					class="text-green-400 mr-2"
+					class="text-green-400 mr-2 min-w-[24px] min-h-[24px]"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					stroke-width="4"

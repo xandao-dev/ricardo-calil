@@ -1,20 +1,24 @@
 <template>
-	<section class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
-		Nossa equipe conta com especialistas altamente capacitados para garanti o recebimento do seu benefício!
-		<br />
-		Ricardo Calil & Advogados Associados , pode amparar você judicialmente e fazer com que você encontre reparação.
+	<section id="atuacao" class="px-8 pb-12 lg:px-12">
+		<p
+			v-for="text in area.pageInfo.fullDescription.beginningTexts"
+			:key="text"
+			class="text-center font-semibold text-lg text-primary-800 pb-5"
+			v-text="text"
+		/>
+
 		<SubExpertises />
-		O Direito Previdenciário tem como objetivo garantir o seu direito quanto à assistência e Previdência Social,
-		relacionadas à idade, doença e morte.
-		<br />
-		Com o passar do tempo, ocorre muitas mudanças da Previdência Social que impacta diretamente à você contribuinte.
-		<br />
-		São alterações em vários aspectos, principalmente na maneira que rege cada lei e como isso impacta nos cálculos
-		de benefícios.
+
+		<p
+			v-for="text in area.pageInfo.fullDescription.endingTexts"
+			:key="text"
+			class="text-center font-semibold text-lg text-primary-800 pb-5"
+			v-text="text"
+		/>
 
 		<a
 			draggable="false"
-			class="flex items-center text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 xl:mr-12"
+			class="flex items-center text-center text-white select-none max-w-max bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 xl:mr-12"
 			:href="social.whatsapp"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -24,7 +28,7 @@
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
 				enable-background="new 0 0 24 24"
-				class="text-green-400 mr-2"
+				class="text-green-400 mr-2 min-w-[24px] min-h-[24px]"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				stroke-width="4"
@@ -47,8 +51,10 @@
 	import type { PropType } from 'vue';
 	import { IExpertiseArea } from '~/utils/data/expertise';
 	import { contacts } from '~/utils/data/contacts';
+	import SubExpertises from '~/components/expertise/SubExpertises.vue';
 
 	export default Vue.extend({
+		components: { SubExpertises },
 		props: {
 			area: {
 				type: Object as PropType<IExpertiseArea>,
