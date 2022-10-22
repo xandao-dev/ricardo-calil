@@ -8,7 +8,10 @@
 			</button>
 		</NuxtLink-->
 		<ExpertiseHero :info="area.pageInfo.hero" />
+		<DifferentialCards />
 		<FullExpertise :area="area" />
+		<CompactLawyers />
+		<CompactOffice />
 		<Contact />
 	</div>
 </template>
