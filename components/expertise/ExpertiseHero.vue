@@ -1,20 +1,20 @@
 <template>
 	<section
 		id="inicio"
-		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:before:hidden"
+		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 xl:px-12 xl:pb-12 xl:flex xl:justify-between xl:before:hidden"
 	>
-		<div class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0">
+		<div class="relative flex flex-col justify-center items-center text-center xl:text-left xl:items-start">
+			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 xl:text-primary-900 xl:pr-12 xl:pl-0">
 				Advogados especialistas em
-				<span class="text-primary-400 lg:text-primary" v-text="info.title"></span> a mais de 30 anos
+				<span class="text-primary-400 xl:text-primary" v-text="info.title"></span> a mais de 30 anos
 			</h1>
 			<p
-				class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-lg md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0"
+				class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-xl md:px-28 xl:text-primary-900 xl:pr-12 xl:pl-0"
 				v-text="info.description"
 			></p>
 			<a
 				draggable="false"
-				class="flex items-center text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mr-12"
+				class="flex items-center text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 xl:mr-12"
 				:href="social.whatsapp"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -44,7 +44,7 @@
 			draggable="false"
 			src="/hero/hero.webp"
 			alt="Imagem de um advogado apertando a mão de um cliente"
-			class="hidden object-contain h-96 lg:block"
+			class="hidden object-contain h-96 xl:block"
 		/>
 	</section>
 </template>
