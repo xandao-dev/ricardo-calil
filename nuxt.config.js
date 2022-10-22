@@ -45,6 +45,10 @@ export default {
 				content:
 					'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
 			},
+			{
+				name: 'twitter:card',
+				content: 'summary',
+			},
 			{ property: 'og:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
 			{ name: 'twitter:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
 		],
