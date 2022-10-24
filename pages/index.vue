@@ -1,9 +1,9 @@
 <template>
 	<div class="contents">
 		<Hero></Hero>
+		<Expertise></Expertise>
 		<Office></Office>
 		<Lawyers></Lawyers>
-		<Expertise></Expertise>
 		<Contact></Contact>
 		<FAQ></FAQ>
 	</div>
@@ -11,7 +11,6 @@
 
 <script>
 	export default {
-		name: 'Home',
 		head() {
 			return {
 				title: 'Advogado em Itaberaí | Ricardo Calil',

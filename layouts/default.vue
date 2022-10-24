@@ -39,3 +39,19 @@
 		},
 	});
 </script>
+
+<style scoped>
+	main::before {
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-image: url('/textures/grainy.png');
+		background-repeat: repeat;
+		opacity: 0.1;
+	}
+</style>

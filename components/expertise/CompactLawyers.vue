@@ -11,7 +11,7 @@
 	</section>
 </template>
 
-<script>
+<script lang="ts">
 	import Vue from 'vue';
 	import { lawyers } from '~/utils/data/lawyers';
 

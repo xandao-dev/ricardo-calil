@@ -6,8 +6,8 @@
 	Ricardo Calil & Advogados Associados is a law firm based in Itaberaí, Goiás, Brazil.
 	This project is a landing page for the website of the firm.
 	<br />
-	:construction: Currently this website is under construction. The preview is available on the <a href="https://new.ricardocalil.adv.br">new Ricardo Calil website</a> :construction:
-    <br />
+	Available at <a href="https://ricardocalil.adv.br">Ricardo Calil website</a>
+  <br />
 	<br />
     <a href="https://github.com/xandao-dev/ricardo-calil"><strong>Explore the docs »</strong></a>
     <br />
@@ -63,11 +63,11 @@
 -   Contact form
 -   Frequently asked questions section
 -   Articles page (blog)
--   Expertise areas pages (coming soon)
+-   Expertise areas pages
+-   Responsive design
+-   SEO friendly
 -   Dark mode toggle (coming soon)
--   Responsive design (coming soon)
 -   Calculators for lawyers (coming soon)
--   SEO friendly (coming soon)
 
 ### Built With
 
@@ -96,6 +96,7 @@ To get a local copy up and running follow these simple steps.
     - GTM_ID for Google Tag Manager
     - PRISMIC_ENDPOINT for the blog
     - WEBSITE_HOME_DOMAIN used for some configs
+    - CONTACT_FORM_ENDPOINT endpoint to submit form
 
 <!-- USAGE EXAMPLES -->
 
