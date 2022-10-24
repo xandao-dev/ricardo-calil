@@ -1,19 +1,12 @@
 <template>
-	<div class="flex items-center">
-		<a
-			v-if="whatsapp"
-			draggable="false"
-			class="ml-3 first:ml-0"
-			:href="social.whatsapp"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
+	<div class="flex items-center gap-6">
+		<a v-if="whatsapp" draggable="false" :href="social.whatsapp" target="_blank" rel="noopener noreferrer">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
 				enable-background="new 0 0 24 24"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
+				class="text-primary hover:text-primary-700 active:text-primary-800 scale-150"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				stroke-width="2"
@@ -27,19 +20,12 @@
 				/>
 			</svg>
 		</a>
-		<a
-			v-if="facebook"
-			draggable="false"
-			class="ml-3 first:ml-0"
-			:href="social.facebook"
-			rel="noopener noreferrer"
-			target="_blank"
-		>
+		<a v-if="facebook" draggable="false" :href="social.facebook" rel="noopener noreferrer" target="_blank">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
+				class="text-primary hover:text-primary-700 active:text-primary-800 scale-150"
 				fill="currentColor"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -51,19 +37,12 @@
 				<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
 			</svg>
 		</a>
-		<a
-			v-if="instagram"
-			draggable="false"
-			class="ml-3 first:ml-0"
-			:href="social.instagram"
-			rel="noopener noreferrer"
-			target="_blank"
-		>
+		<a v-if="instagram" draggable="false" :href="social.instagram" rel="noopener noreferrer" target="_blank">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
+				class="text-primary hover:text-primary-700 active:text-primary-800 scale-150"
 				fill="none"
 				stroke="currentColor"
 				stroke-linecap="round"
