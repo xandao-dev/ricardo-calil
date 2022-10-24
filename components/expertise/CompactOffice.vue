@@ -7,7 +7,7 @@
 	</section>
 </template>
 
-<script>
+<script lang="ts">
 	import Vue from 'vue';
 	import { office } from '~/utils/data/office';
 

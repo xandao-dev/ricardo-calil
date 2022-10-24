@@ -24,9 +24,9 @@
 			isSidebarOpen: false,
 			sections: [
 				{ title: 'Início', target: '/#inicio' },
+				{ title: 'Atuação', target: '/#atuacao' },
 				{ title: 'Escritório', target: '/#escritorio' },
 				{ title: 'Advogados', target: '/#advogados' },
-				{ title: 'Atuação', target: '/#atuacao' },
 				{ title: 'Contato', target: '/#contato' },
 				{ title: 'Perguntas', target: '/#perguntas' },
 				{ title: 'Artigos', target: '/artigos' },

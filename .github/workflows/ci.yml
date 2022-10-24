@@ -10,38 +10,50 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout 🛎
-              uses: actions/checkout@master
+              uses: actions/checkout@v3
 
             - name: Setup node env 🏗
-              uses: actions/setup-node@v2.1.5
+              uses: actions/setup-node@v3
               with:
                   node-version: 16
-                  check-latest: true
 
-            - name: Get yarn cache directory path 🛠
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-
-            - name: Cache node_modules 📦
-              uses: actions/cache@v2.1.4
-              id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+            - name: Install pnpm 🧱
+              uses: pnpm/action-setup@v2.2.4
+              id: pnpm-install
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                version: 7
+                run_install: false
+
+            - name: Get pnpm store directory 🛠
+              id: pnpm-cache
+              shell: bash
+              run: |
+                echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+            - name: Setup pnpm cache 📦
+              uses: actions/cache@v3
+              with:
+                path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+                key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                restore-keys: |
+                  ${{ runner.os }}-pnpm-store-
 
             - name: Install dependencies 👨🏻‍💻
-              run: yarn
+              run: pnpm install --frozen-lockfile
 
             #- name: Run linter 👀
-            #  run: yarn lint
+            #  run: pnpm run lint
 
             #- name: Run tests 🧪
-            #  run: yarn test
+            #  run: pnpm run test
 
             - name: Generate 📦
-              run: yarn run generate
+              env:
+                GTM_ID: ${{ secrets.GTM_ID }}
+                PRISMIC_ENDPOINT: ${{ secrets.PRISMIC_ENDPOINT }}
+                WEBSITE_HOME_DOMAIN: ${{ secrets.WEBSITE_HOME_DOMAIN }}
+                CONTACT_FORM_ENDPOINT: ${{ secrets.CONTACT_FORM_ENDPOINT }}
+              run: pnpm run generate
 
             - name: Deploy 🚀
               uses: peaceiris/actions-gh-pages@v3

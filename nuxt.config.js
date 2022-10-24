@@ -47,10 +47,10 @@ export default {
 			},
 			{
 				name: 'twitter:card',
-				content: 'summary',
+				content: 'summary_large_image',
 			},
-			{ property: 'og:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
-			{ name: 'twitter:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
+			{ hid: 'og:image', property: 'og:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
+			{ hid: 'twitter:image', name: 'twitter:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

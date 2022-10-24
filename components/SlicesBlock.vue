@@ -19,7 +19,7 @@
 	</section>
 </template>
 
-<script>
+<script lang="ts">
 	import Vue from 'vue';
 	const QuoteSlice = () => import('../components/slices/QuoteSlice.vue');
 	const TextSlice = () => import('../components/slices/TextSlice.vue');
