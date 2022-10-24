@@ -130,8 +130,6 @@
 		data: () => ({
 			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
 			social: contacts,
-			whatsappShortLink: 'https://wa.me/',
-			message: '?text=Ol%C3%A1%2C%20como%20vai%3F%20Peguei%20seu%20contato%20atrav%C3%A9s%20do%20site.',
 			contactForm: {
 				name: '',
 				surname: '',

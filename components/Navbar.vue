@@ -68,15 +68,15 @@
 	import { sidebarEventBus } from '~/utils/events/sidebarEventBus.js';
 
 	export default Vue.extend({
-		data: (vm) => ({
+		data: () => ({
 			isSidebarOpen: false,
 			sections: [
-				{ title: 'Início', target: `${vm.$route.path}#inicio` },
-				{ title: 'Escritório', target: `${vm.$route.path}#escritorio` },
-				{ title: 'Advogados', target: `${vm.$route.path}#advogados` },
-				{ title: 'Atuação', target: `${vm.$route.path}#atuacao` },
-				{ title: 'Contato', target: `${vm.$route.path}#contato` },
-				{ title: 'Perguntas', target: `${vm.$route.path}#perguntas` },
+				{ title: 'Início', target: '/#inicio' },
+				{ title: 'Escritório', target: '/#escritorio' },
+				{ title: 'Advogados', target: '/#advogados' },
+				{ title: 'Atuação', target: '/#atuacao' },
+				{ title: 'Contato', target: '/#contato' },
+				{ title: 'Perguntas', target: '/#perguntas' },
 				{ title: 'Artigos', target: '/artigos' },
 			],
 			logo: '/logos/logo_sem_fundo2.svg',
