@@ -1,9 +1,24 @@
 <template>
-	<div class="flex items-center">
+	<section id="atuacao" class="px-8 pb-12 lg:px-12 xl:py-12">
+		<p
+			v-for="text in area.pageInfo.fullDescription.beginningTexts"
+			:key="text"
+			class="text-center font-semibold text-lg pb-5"
+			v-text="text"
+		/>
+
+		<SubExpertises :sub-expertises="area.pageInfo.subExpertises" />
+
+		<p
+			v-for="text in area.pageInfo.fullDescription.endingTexts"
+			:key="text"
+			class="text-center font-semibold text-lg pb-5"
+			v-text="text"
+		/>
+
 		<a
-			v-if="whatsapp"
 			draggable="false"
-			class="ml-3 first:ml-0"
+			class="flex items-center text-center text-white select-none max-w-max mt-12 bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12"
 			:href="social.whatsapp"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -13,10 +28,10 @@
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				version="1.1"
 				enable-background="new 0 0 24 24"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
+				class="text-green-400 mr-2 min-w-[24px] min-h-[24px]"
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				stroke-width="2"
+				stroke-width="4"
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
@@ -26,81 +41,33 @@
 					d="M19.05,4.91C17.18,3.03,14.69,2,12.04,2c-5.46,0-9.91,4.45-9.91,9.91c0,1.75,0.46,3.45,1.32,4.95L2.05,22l5.25-1.38 c1.45,0.79,3.08,1.21,4.74,1.21h0c0,0,0,0,0,0c5.46,0,9.91-4.45,9.91-9.91C21.95,9.27,20.92,6.78,19.05,4.91z M12.04,20.15 L12.04,20.15c-1.48,0-2.93-0.4-4.2-1.15l-0.3-0.18l-3.12,0.82l0.83-3.04l-0.2-0.31c-0.82-1.31-1.26-2.83-1.26-4.38 c0-4.54,3.7-8.24,8.24-8.24c2.2,0,4.27,0.86,5.82,2.42c1.56,1.56,2.41,3.63,2.41,5.83C20.28,16.46,16.58,20.15,12.04,20.15z M16.56,13.99c-0.25-0.12-1.47-0.72-1.69-0.81c-0.23-0.08-0.39-0.12-0.56,0.12c-0.17,0.25-0.64,0.81-0.78,0.97 c-0.14,0.17-0.29,0.19-0.54,0.06c-0.25-0.12-1.05-0.39-1.99-1.23c-0.74-0.66-1.23-1.47-1.38-1.72c-0.14-0.25-0.02-0.38,0.11-0.51 c0.11-0.11,0.25-0.29,0.37-0.43c0.12-0.14,0.17-0.25,0.25-0.41c0.08-0.17,0.04-0.31-0.02-0.43c-0.06-0.12-0.56-1.34-0.76-1.84 c-0.2-0.48-0.41-0.42-0.56-0.43C8.86,7.33,8.7,7.33,8.53,7.33c-0.17,0-0.43,0.06-0.66,0.31C7.65,7.89,7.01,8.49,7.01,9.71 c0,1.22,0.89,2.4,1.01,2.56c0.12,0.17,1.75,2.67,4.23,3.74c0.59,0.26,1.05,0.41,1.41,0.52c0.59,0.19,1.13,0.16,1.56,0.1 c0.48-0.07,1.47-0.6,1.67-1.18c0.21-0.58,0.21-1.07,0.14-1.18S16.81,14.11,16.56,13.99z"
 				/>
 			</svg>
+			Entre em contato para resolvermos seu caso
 		</a>
-		<a
-			v-if="facebook"
-			draggable="false"
-			class="ml-3 first:ml-0"
-			:href="social.facebook"
-			rel="noopener noreferrer"
-			target="_blank"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				version="1.1"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
-				fill="currentColor"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-			>
-				<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-			</svg>
-		</a>
-		<a
-			v-if="instagram"
-			draggable="false"
-			class="ml-3 first:ml-0"
-			:href="social.instagram"
-			rel="noopener noreferrer"
-			target="_blank"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				version="1.1"
-				class="text-primary hover:text-primary-700 active:text-primary-800"
-				fill="none"
-				stroke="currentColor"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-			>
-				<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-				<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-			</svg>
-		</a>
-	</div>
+	</section>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
+	import type { PropType } from 'vue';
+	import { IExpertiseArea } from '~/utils/data/expertise';
 	import { contacts } from '~/utils/data/contacts';
+	import SubExpertises from '~/components/expertise/SubExpertises.vue';
 
 	export default Vue.extend({
+		components: { SubExpertises },
 		props: {
-			whatsapp: {
-				type: Boolean,
-				default: false,
-			},
-			instagram: {
-				type: Boolean,
-				default: false,
-			},
-			facebook: {
-				type: Boolean,
-				default: false,
+			area: {
+				type: Object as PropType<IExpertiseArea>,
+				required: true,
 			},
 		},
 		data: () => ({
 			social: contacts,
 		}),
+		computed: {
+			title(): string {
+				return (this as any).area.title;
+			},
+		},
 	});
 </script>

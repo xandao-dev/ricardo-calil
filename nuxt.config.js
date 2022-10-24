@@ -6,7 +6,6 @@ export default {
 
 	// Runtime Configs: https://nuxtjs.org/tutorials/moving-from-nuxtjs-dotenv-to-runtime-config/
 	publicRuntimeConfig: {
-		websiteHomeDomain: process.env.WEBSITE_HOME_DOMAIN,
 		contactFormEndpoint: process.env.CONTACT_FORM_ENDPOINT,
 		gtm: {
 			id: process.env.GTM_ID,
@@ -46,8 +45,12 @@ export default {
 				content:
 					'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
 			},
-			{ property: 'og:image', content: '/logo-og.png' },
-			{ name: 'twitter:image', content: '/logo-og.png' },
+			{
+				name: 'twitter:card',
+				content: 'summary',
+			},
+			{ property: 'og:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
+			{ name: 'twitter:image', content: `${process.env.WEBSITE_HOME_DOMAIN}/logo-og.png` },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

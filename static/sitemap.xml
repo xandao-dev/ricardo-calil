@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ricardocalil.adv.br/itaberai</loc>
-    <lastmod>2022-10-19</lastmod>
+    <loc>https://ricardocalil.adv.br/</loc>
+    <lastmod>2022-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ricardocalil.adv.br/trabalhista</loc>
+    <lastmod>2022-10-22</lastmod>
   </url>
     <url>
+    <loc>https://ricardocalil.adv.br/previdenciario</loc>
+    <lastmod>2022-10-22</lastmod>
+  </url>
+    <url>
+    <loc>https://ricardocalil.adv.br/civil</loc>
+    <lastmod>2022-10-22</lastmod>
+  </url>
+    <url>
+    <loc>https://ricardocalil.adv.br/criminal</loc>
+    <lastmod>2022-10-22</lastmod>
+  </url>
+  <url>
     <loc>https://ricardocalil.adv.br/artigos</loc>
-    <lastmod>2022-10-19</lastmod>
+    <lastmod>2022-10-21</lastmod>
   </url>
 </urlset>
