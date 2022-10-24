@@ -35,7 +35,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 	import Vue from 'vue';
 	import LinkResolver from '~/plugins/link-resolver.js';
 
