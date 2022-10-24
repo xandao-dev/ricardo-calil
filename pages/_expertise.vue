@@ -10,8 +10,13 @@
 		<ExpertiseHero :info="area.pageInfo.hero" />
 		<DifferentialCards />
 		<FullExpertise :area="area" />
-		<CompactLawyers />
-		<CompactOffice />
+		<div class="flex flex-col items-center justify-center lg:flex-row lg:items-start">
+			<div class="self-stretch h-0.5 mx-8 mb-4 bg-primary-700 lg:hidden"></div>
+			<CompactLawyers />
+			<div class="self-stretch h-0.5 mx-8 mb-4 bg-primary-700 lg:h-auto lg:w-2 lg:mx-0 lg:mb-0"></div>
+			<CompactOffice />
+			<div class="self-stretch h-0.5 mx-8 mt-4 bg-primary-700 lg:hidden"></div>
+		</div>
 		<Contact />
 	</div>
 </template>

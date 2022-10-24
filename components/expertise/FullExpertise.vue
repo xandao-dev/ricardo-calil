@@ -3,7 +3,7 @@
 		<p
 			v-for="text in area.pageInfo.fullDescription.beginningTexts"
 			:key="text"
-			class="text-center font-semibold text-lg text-primary-800 pb-5"
+			class="text-center font-semibold text-lg pb-5"
 			v-text="text"
 		/>
 
@@ -12,13 +12,13 @@
 		<p
 			v-for="text in area.pageInfo.fullDescription.endingTexts"
 			:key="text"
-			class="text-center font-semibold text-lg text-primary-800 pb-5"
+			class="text-center font-semibold text-lg pb-5"
 			v-text="text"
 		/>
 
 		<a
 			draggable="false"
-			class="flex items-center text-center text-white select-none max-w-max bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12"
+			class="flex items-center text-center text-white select-none max-w-max mt-12 bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12"
 			:href="social.whatsapp"
 			target="_blank"
 			rel="noopener noreferrer"

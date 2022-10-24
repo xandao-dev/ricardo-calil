@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col items-center justify-center">
-		<p class="text-center font-semibold text-primary-800">Veja como podemos te ajudar:</p>
+		<p class="text-center font-semibold">Veja como podemos te ajudar:</p>
 		<div class="grid xs-grid-cols-1 auto-rows-fr gap-2 py-8 grid-cols-2 md:grid-cols-4 md-grid-cols-5">
 			<div
 				v-for="subExpertise in subExpertises"

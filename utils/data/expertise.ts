@@ -49,12 +49,12 @@ const areas: IExpertiseArea[] = [
 			fullDescription: {
 				beginningTexts: [
 					'Você tem todo direito de exigir os cumprimentos dos seus direitos como colaborador!',
-					'Ricardo Calil & Advogados Associados , pode amparar você judicialmente e fazer com que você encontre reparação.',
+					'Ricardo Calil & Advogados Associados, pode amparar você judicialmente e fazer com que você encontre reparação.',
 				],
 				endingTexts: [
 					'A lei trabalhista garante a todos os trabalhadores diversos direitos, que infelizmente algumas empresas deixam de cumprir em sua totalidade.',
-					'Além do pagamento pelos serviços prestados, a empresa tem outras obrigações com os seus funcionários e o descumprimento abre margem para processos trabalhistas.',
-					'Nosso escritório já atuou em diversos casos como o seu e com nossa expertise conhecemos as melhores estratégias de defesa para você tenha o desfecho mais favorável possível, de acordo com o seu caso garantindo todo processo judicial trabalhista.',
+					'Além do pagamento pelos serviços prestados, a empresa tem outras obrigações com seus funcionários e o descumprimento abre margem para processos trabalhistas.',
+					'Nosso escritório já atuou em diversos casos trabalhistas e com nossa expertise conhecemos as melhores estratégias de defesa para o sucesso do seu processo.',
 				],
 			},
 		},
@@ -80,18 +80,18 @@ const areas: IExpertiseArea[] = [
 				'Aposentadoria de PCD',
 				'Revisão de Benefícios',
 				'BPC & LOAS',
-				'Auxílio Doença',
-				'Auxílio Acidente',
+				'Auxílio-doença',
+				'Auxílio-acidente',
 			],
 			fullDescription: {
 				beginningTexts: [
-					'Nossa equipe cinta com especialistas altamente capacitados para garanti o recebimento do seu benefício!',
-					'Ricardo Calil & Advogados Associados , pode amparar você judicialmente e fazer com que você encontre reparação.',
+					'Nossa equipe conta com especialistas altamente capacitados para garantir o recebimento de seus benefício!',
+					'Ricardo Calil & Advogados Associados, pode amparar você judicialmente e fazer com que você encontre reparação.',
 				],
 				endingTexts: [
 					'O Direito Previdenciário tem como objetivo garantir o seu direito quanto à assistência e Previdência Social, relacionadas à idade, doença e morte.',
-					'Com o passar do tempo, ocorre muitas mudanças da Previdência Social que impacta diretamente à você contribuinte.',
-					'São alterações em vários aspectos, principalmente na maneira que rege cada lei e como isso impacta nos cálculos de benefícios. ',
+					'Com o passar do tempo, ocorre muitas mudanças na Previdência Social que impacta diretamente a você contribuinte.',
+					'São alterações em vários aspectos, principalmente na maneira que rege cada lei e como isso impacta nos cálculos de benefícios.',
 				],
 			},
 		},
@@ -105,7 +105,7 @@ const areas: IExpertiseArea[] = [
 			hero: {
 				title: 'Direito Civil',
 				description:
-					'Conte com a nossa vasta experiência na áreas de cobranças, inventários, divórcios, indenizações e direitos do consumidor',
+					'Conte com a nossa vasta experiência na áreas de inventários, divórcios, indenizações, cobranças e direitos do consumidor',
 			},
 			subExpertises: [
 				'Direito à heranças e inventários',
@@ -117,10 +117,10 @@ const areas: IExpertiseArea[] = [
 			fullDescription: {
 				beginningTexts: [
 					'Você tem todo direito de exigir os cumprimentos dos seus direitos como civil!',
-					'Ricardo Calil & Advogados Associados , pode amparar você judicialmente e fazer com que você encontre reparação.',
+					'Ricardo Calil & Advogados Associados, pode amparar você judicialmente e fazer com que você encontre reparação.',
 				],
 				endingTexts: [
-					'A Advocacia Cível é uma área de atuação que engloba todas as questões de relacionamento civil. Nossa equipe está constantemente buscando soluções para trazer o devido amparo para nossos clientes.',
+					'A Advocacia Civil é uma área de atuação que engloba todas as questões de relacionamento civil. Nossa equipe está constantemente buscando soluções para trazer o devido amparo para nossos clientes.',
 					'O escritório de advocacia Ricardo Calil & Advogados Associados atua mais de 30 anos e conta com uma grande expertise e estratégias em soluções legais que contribuem para o desenvolvimento de seus clientes.',
 				],
 			},
@@ -152,10 +152,10 @@ const areas: IExpertiseArea[] = [
 			fullDescription: {
 				beginningTexts: [
 					'Visamos uma defesa ampla, contínua e comprometida em todas as fases do processo!',
-					'Ricardo Calil & Advogados Associados , pode amparar você judicialmente e fazer com que você encontre reparação.',
+					'Ricardo Calil & Advogados Associados, pode amparar você judicialmente e fazer com que você encontre reparação.',
 				],
 				endingTexts: [
-					'A área de Direito Criminal ou Direito Penal, tem como objetivo principal à realização de defesas contra acusações de prática de crime contra pessoa física e/ou jurídicas, tanto na esfera Estadual quando federal.',
+					'A área de Direito Criminal ou Direito Penal, tem como objetivo principal a realização de defesas contra acusações de prática de crime contra pessoa física e/ou jurídicas, tanto na esfera Estadual quando federal.',
 					'Além da defesa, nosso escritório também tem forte atuação na representação de vítimas de crimes.',
 					'Para maiores informações, entre em contato com nossos advogados.',
 				],
