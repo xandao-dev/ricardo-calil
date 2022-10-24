@@ -30,7 +30,6 @@
 	import { areas } from '~/utils/data/expertise';
 
 	export default Vue.extend({
-		name: 'Expertise',
 		components: { FullExpertise, DifferentialCards, CompactLawyers, CompactOffice },
 		data: () => ({
 			area: areas[0],

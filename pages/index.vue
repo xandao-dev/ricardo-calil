@@ -11,7 +11,6 @@
 
 <script>
 	export default {
-		name: 'Home',
 		head() {
 			return {
 				title: 'Advogado em Itaberaí | Ricardo Calil',

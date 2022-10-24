@@ -33,7 +33,6 @@
 <script>
 	import Vue from 'vue';
 	export default Vue.extend({
-		name: 'Post',
 		async asyncData({ $prismic, params, error }) {
 			try {
 				const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
