@@ -48,6 +48,11 @@ jobs:
             #  run: pnpm run test
 
             - name: Generate 📦
+              env:
+                GTM_ID: ${{ secrets.GTM_ID }}
+                PRISMIC_ENDPOINT: ${{ secrets.PRISMIC_ENDPOINT }}
+                WEBSITE_HOME_DOMAIN: ${{ secrets.WEBSITE_HOME_DOMAIN }}
+                CONTACT_FORM_ENDPOINT: ${{ secrets.CONTACT_FORM_ENDPOINT }}
               run: pnpm run generate
 
             - name: Deploy 🚀
