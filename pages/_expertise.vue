@@ -40,8 +40,8 @@
 			};
 		},
 		created() {
-			const target = this.$route?.path || '';
-			this.area = areas.find((area) => area.target === target) || areas[0];
+			const target = this.$route.params?.expertise;
+			this.area = areas.find((area) => area.target.includes(target)) || areas[0];
 		},
 	});
 </script>

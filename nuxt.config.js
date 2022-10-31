@@ -98,8 +98,10 @@ export default {
 	},
 
 	// Generate: https://nuxtjs.org/docs/directory-structure/nuxt-config/#generate
+	// https://nuxtjs.org/docs/configuration-glossary/configuration-generate
 	generate: {
 		fallback: '404.html',
+		routes: ['/trabalhista', '/previdenciario', '/civil', '/criminal'],
 	},
 
 	gtm: {
