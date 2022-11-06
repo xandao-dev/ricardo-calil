@@ -1,5 +1,8 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+	// ssr: false,
+	// target: 'static',
+
 	typescript: {
 		shim: false,
 		/**
@@ -20,6 +23,12 @@ export default defineNuxtConfig({
 		// https://prismic.nuxtjs.org/
 		// '@nuxtjs/prismic',
 	],
+
+	nitro: {
+		prerender: {
+			routes: ['/trabalhista', '/previdenciario', '/civil', '/criminal'],
+		},
+	},
 
 	/*
 	BY HAND
@@ -44,17 +53,4 @@ export default defineNuxtConfig({
 	},
 	plugins: [{ src: '~/plugins/prismicLinks', mode: 'client' }],
 	*/
-
-	/* NUXT 2 */
-	// Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-	ssr: false,
-	// Target: https://go.nuxtjs.dev/config-target
-	target: 'static',
-
-	// Generate: https://nuxtjs.org/docs/directory-structure/nuxt-config/#generate
-	// https://nuxtjs.org/docs/configuration-glossary/configuration-generate
-	generate: {
-		fallback: '404.html',
-		routes: ['/trabalhista', '/previdenciario', '/civil', '/criminal'],
-	},
 });

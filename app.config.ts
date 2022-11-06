@@ -1,9 +1,4 @@
 export default defineAppConfig({
-	contactFormEndpoint: process.env.CONTACT_FORM_ENDPOINT,
-	gtm: {
-		id: process.env.GTM_ID,
-	},
-
 	GTM_ID: 'GTM-P7H2764',
 	WEBSITE_HOME_DOMAIN: 'https://ricardocalil.com',
 	CONTACT_FORM_ENDPOINT: 'https://usebasin.com/f/e40dbe79fbce',

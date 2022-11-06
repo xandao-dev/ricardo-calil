@@ -2,7 +2,9 @@
 	<section id="contato" class="px-8 py-12 lg:grid lg:grid-cols-12 lg:px-12 lg:gap-10">
 		<h2 class="text-3xl font-bold mb-10 lg:hidden">Contato</h2>
 		<div class="flex flex-col relative lg:col-span-6">
-			<div class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10">
+			<div
+				class="bg-gray-50 flex flex-wrap py-6 rounded shadow-md mb-10 lg:order-2 lg:mb-16 lg:z-10"
+			>
 				<div class="px-6 flex flex-col justify-between lg:w-1/2">
 					<div>
 						<h3 class="title-font font-semibold tracking-widest text-xs">ENDEREÇO</h3>
@@ -54,7 +56,9 @@
 					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="Nome"
 				/>
-				<div v-if="!$v.contactForm.name.required" class="error-message">Nome obrigatório</div>
+				<div v-if="!$v.contactForm.name.required" class="error-message">
+					Nome obrigatório
+				</div>
 				<div v-if="!$v.contactForm.name.minLength" class="error-message">
 					No mínimo {{ $v.contactForm.name.$params.minLength.min }} letras.
 				</div>
@@ -82,7 +86,9 @@
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="(99) 99999-9999"
 				/>
-				<div v-if="!$v.contactForm.phone.required" class="error-message">Telefone ou email obrigatório</div>
+				<div v-if="!$v.contactForm.phone.required" class="error-message">
+					Telefone ou email obrigatório
+				</div>
 			</div>
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.email.$error }">
 				<label for="email" class="leading-7 text-sm">Email</label>
@@ -93,7 +99,9 @@
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
 					placeholder="nome@gmail.com"
 				/>
-				<div v-if="!$v.contactForm.email.required" class="error-message">Email ou telefone obrigatório</div>
+				<div v-if="!$v.contactForm.email.required" class="error-message">
+					Email ou telefone obrigatório
+				</div>
 				<div v-if="!$v.contactForm.email.email" class="error-message">Email inválido</div>
 			</div>
 			<div class="relative mb-4" :class="{ 'input-error': $v.contactForm.message.$error }">
@@ -104,7 +112,9 @@
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary h-32 text-base py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
-				<div v-if="!$v.contactForm.message.required" class="error-message">Mensagem obrigatório</div>
+				<div v-if="!$v.contactForm.message.required" class="error-message">
+					Mensagem obrigatório
+				</div>
 				<div v-if="!$v.contactForm.message.maxLength" class="error-message">
 					No máximo {{ $v.contactForm.message.$params.maxLength.max }} letras.
 				</div>
@@ -120,124 +130,125 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import { validationMixin } from 'vuelidate';
-	import { required, minLength, maxLength, email, requiredIf } from 'vuelidate/lib/validators';
-	import { contacts } from '~/utils/data/contacts';
+import Vue from 'vue';
+import { validationMixin } from 'vuelidate';
+import { required, minLength, maxLength, email, requiredIf } from 'vuelidate/lib/validators';
+import { contacts } from '~/utils/data/contacts';
+const appConfig = useAppConfig();
 
-	export default Vue.extend({
-		mixins: [validationMixin],
-		data: () => ({
-			street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
-			social: contacts,
-			contactForm: {
-				name: '',
-				surname: '',
-				phone: '',
-				email: '',
-				message: '',
-			},
-			contactFormSent: false,
-		}),
-		mounted() {},
-		methods: {
-			async submitContactForm(e: Event) {
-				e.preventDefault();
+export default Vue.extend({
+	mixins: [validationMixin],
+	data: () => ({
+		street: 'Rua Capitão Caldas, n. 17, Itaberaí - GO, 76630-000',
+		social: contacts,
+		contactForm: {
+			name: '',
+			surname: '',
+			phone: '',
+			email: '',
+			message: '',
+		},
+		contactFormSent: false,
+	}),
+	mounted() {},
+	methods: {
+		async submitContactForm(e: Event) {
+			e.preventDefault();
 
-				this.$v.$touch();
-				if (this.$v.$invalid) {
-					this.$toast.error('Preencha os campos corretamente');
-					return;
-				}
+			this.$v.$touch();
+			if (this.$v.$invalid) {
+				this.$toast.error('Preencha os campos corretamente');
+				return;
+			}
 
-				if (this.contactFormSent) {
-					this.$toast.error('A mensagem já foi enviada');
-					return;
-				}
+			if (this.contactFormSent) {
+				this.$toast.error('A mensagem já foi enviada');
+				return;
+			}
 
-				try {
-					const response = await fetch(this.$config.contactFormEndpoint, {
-						method: 'POST',
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json',
-						},
-						body: JSON.stringify(this.contactForm),
-					});
+			try {
+				const response = await fetch(appConfig.CONTACT_FORM_ENDPOINT, {
+					method: 'POST',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(this.contactForm),
+				});
 
-					if (response.status === 200) {
-						this.$toast.success('Mensagem enviada com sucesso!');
-						this.contactFormSent = true;
-					} else {
-						this.$toast.error('Erro! Tente outro meio de contato.');
-					}
-				} catch (error) {
+				if (response.status === 200) {
+					this.$toast.success('Mensagem enviada com sucesso!');
+					this.contactFormSent = true;
+				} else {
 					this.$toast.error('Erro! Tente outro meio de contato.');
 				}
+			} catch (error) {
+				this.$toast.error('Erro! Tente outro meio de contato.');
+			}
+		},
+	},
+	validations: {
+		contactForm: {
+			name: {
+				required,
+				minLength: minLength(3),
+				maxLength: maxLength(50),
+			},
+			phone: {
+				required: requiredIf(function () {
+					return !this.contactForm.phone && !this.contactForm.email;
+				}),
+			},
+			email: {
+				required: requiredIf(function () {
+					return !this.contactForm.phone && !this.contactForm.email;
+				}),
+				email,
+			},
+			message: {
+				required,
+				maxLength: maxLength(500),
 			},
 		},
-		validations: {
-			contactForm: {
-				name: {
-					required,
-					minLength: minLength(3),
-					maxLength: maxLength(50),
-				},
-				phone: {
-					required: requiredIf(function () {
-						return !this.contactForm.phone && !this.contactForm.email;
-					}),
-				},
-				email: {
-					required: requiredIf(function () {
-						return !this.contactForm.phone && !this.contactForm.email;
-					}),
-					email,
-				},
-				message: {
-					required,
-					maxLength: maxLength(500),
-				},
-			},
-		},
-	});
+	},
+});
 </script>
 
 <style scoped>
-	.input-error {
-		animation-name: shakeError;
-		animation-duration: 0.2s;
-		animation-iteration-count: 3;
-		animation-fill-mode: forwards;
-		animation-timing-function: ease-in-out;
-	}
+.input-error {
+	animation-name: shakeError;
+	animation-duration: 0.2s;
+	animation-iteration-count: 3;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
 
-	.input-error input,
-	.input-error textarea,
-	.input-error pre {
-		border-color: var(--red-600);
-	}
+.input-error input,
+.input-error textarea,
+.input-error pre {
+	border-color: var(--red-600);
+}
 
-	.input-error label,
-	.input-error div.error-message {
-		color: var(--red-600);
-		display: block;
-	}
+.input-error label,
+.input-error div.error-message {
+	color: var(--red-600);
+	display: block;
+}
 
-	.error-message {
-		display: none;
-		font-size: 0.8rem;
-	}
+.error-message {
+	display: none;
+	font-size: 0.8rem;
+}
 
-	@keyframes shakeError {
-		0% {
-			transform: translateX(0);
-		}
-		50% {
-			transform: translateX(0.375rem);
-		}
-		100% {
-			transform: translateX(-0.375rem);
-		}
+@keyframes shakeError {
+	0% {
+		transform: translateX(0);
 	}
+	50% {
+		transform: translateX(0.375rem);
+	}
+	100% {
+		transform: translateX(-0.375rem);
+	}
+}
 </style>
