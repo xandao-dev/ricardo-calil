@@ -39,11 +39,8 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
@@ -62,20 +59,20 @@
 -   Map section with contact information
 -   Contact form
 -   Frequently asked questions section
--   Articles page (blog)
 -   Expertise areas pages
 -   Responsive design
 -   SEO friendly
+-   Articles page (blog)
 -   Dark mode toggle (coming soon)
 -   Calculators for lawyers (coming soon)
 
 ### Built With
 
--   [Nuxt.js](https://nuxtjs.org/) - The intuitive Vue Framework
--   [Vue.js 2](https://vuejs.org/) - A progressive framework for web development
+-   [Nuxt.js 3](https://nuxtjs.org/) - The intuitive Vue Framework
+-   [Vue.js 3](https://vuejs.org/) - A progressive framework for web development
 -   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-
-<!-- GETTING STARTED -->
+-   [TypeScript](https://www.typescriptlang.org/) - strongly typed JavaScript
+-   [eslint](https://github.com/eslint/eslint) & [prettier](https://github.com/prettier/prettier) - code linting and formatting
 
 ## Getting Started
 
@@ -90,13 +87,11 @@ To get a local copy up and running follow these simple steps.
 2. Install dependencies
     ```sh
     cd ricardo-calil
-    npm install # or yarn install
+    yarn install
     ```
-3. Set environment variables. Create a ".env" file based on ".env.example".
-    - GTM_ID for Google Tag Manager
-    - PRISMIC_ENDPOINT for the blog
-    - WEBSITE_HOME_DOMAIN used for some configs
-    - CONTACT_FORM_ENDPOINT endpoint to submit form
+3. Install [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension for VSCode, and disable [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) extension
+
+4. Enable [Takeover Mode](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode)
 
 <!-- USAGE EXAMPLES -->
 
@@ -104,25 +99,21 @@ To get a local copy up and running follow these simple steps.
 
 -   Starts the development server
     ```sh
-    npm run dev # or yarn dev
+    yarn dev
     ```
 -   Launch production server
     ```sh
-    npm run build # or yarn build
-    npm run start # or yarn start
+    yarn build
+    yarn preview
     ```
 -   Generate a static version of the website
     ```sh
-    npm run generate # or yarn generate
+    yarn generate
     ```
-
-<!-- ROADMAP -->
 
 ## Roadmap
 
 See the [open issues](https://github.com/xandao-dev/ricardo-calil/issues) for a list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
 
 ## Contributing
 
@@ -134,27 +125,12 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<!-- LICENSE -->
-
 ## License
 
 All rights reserved.
-
-<!-- CONTACT -->
 
 ## Contact
 
 Alexandre Calil - [Linkedin](https://www.linkedin.com/in/xandao-dev/) - [alexandre@xandao.dev](mailto:alexandre@xandao.dev)
 
 Project Link: [https://github.com/xandao-dev/ricardo-calil](https://github.com/xandao-dev/ricardo-calil)
-
-## Acknowledgements
-
--   [TypeScript](https://www.typescriptlang.org/) - strongly typed JavaScript
--   [eslint](https://github.com/eslint/eslint) - code quality linter
--   [prettier](https://github.com/prettier/prettier) with [eslint plugin](https://github.com/prettier/eslint-plugin-prettier) and [eslint config](https://github.com/prettier/eslint-config-prettier) - formatter linter with eslint integration
--   [stylelint](https://stylelint.io/) - linter for css
--   [mdi](https://materialdesignicons.com/) - icons used in the project
--   [jest](https://jestjs.io/) - unit testing framework
--   [babel](https://babeljs.io/) - converts modern JavaScript into backwards compatible code
--   [dotenv](https://github.com/motdotla/dotenv) - environment variables

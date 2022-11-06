@@ -1,0 +1,16 @@
+{
+	"name": "ricardo-calil",
+	"version": "2.0.0",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+	},
+	"devDependencies": {
+		"nuxt": "3.0.0-rc.13"
+	}
+}
