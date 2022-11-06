@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	// ssr: false,
+	ssr: false,
 	// target: 'static',
 
 	typescript: {
@@ -18,8 +18,8 @@ export default defineNuxtConfig({
 	modules: [
 		// https://github.com/Maronato/vue-toastification
 		// 'vue-toastification/nuxt',
-		// https://go.nuxtjs.dev/tailwindcss
-		// '@nuxtjs/tailwindcss',
+		// https://tailwindcss.nuxtjs.org/
+		'@nuxtjs/tailwindcss',
 		// https://prismic.nuxtjs.org/
 		// '@nuxtjs/prismic',
 	],

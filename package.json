@@ -11,6 +11,9 @@
 		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
 	},
 	"devDependencies": {
+		"@nuxtjs/tailwindcss": "^6.1.3",
+		"@tailwindcss/line-clamp": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.7",
 		"nuxt": "3.0.0-rc.13"
 	}
 }

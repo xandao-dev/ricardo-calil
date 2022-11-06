@@ -1,5 +1,4 @@
 module.exports = {
-	mode: 'jit',
 	theme: {
 		extend: {
 			colors: {
@@ -19,5 +18,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/line-clamp')],
+	plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/typography')],
 };
