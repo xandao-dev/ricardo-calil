@@ -35,10 +35,6 @@ export default defineNuxtConfig({
 	gtm: {
 		pageTracking: false, // Prevent double events when using with GA
 	},
-	toast: {
-		timeout: 5000,
-		position: 'bottom-right',
-	},
 	*/
 
 	/*
