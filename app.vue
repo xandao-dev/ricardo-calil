@@ -51,7 +51,7 @@ useHead({
 		</aside>
 		<main class="overflow-y-auto overflow-x-hidden h-screen-minus-navbar">
 			<div class="max-w-screen-xl mx-auto min-h-full-minus-footbar">
-				<slot />
+				<NuxtPage />
 			</div>
 			<footer class="max-w-screen-xl mx-auto">
 				<Footbar></Footbar>
