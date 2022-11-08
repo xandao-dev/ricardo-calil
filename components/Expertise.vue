@@ -1,3 +1,7 @@
+<script land="ts" setup>
+import { areas } from '~/utils/data/expertise';
+</script>
+
 <template>
 	<section id="atuacao" class="px-8 py-12 lg:px-12">
 		<h2 class="text-3xl font-bold mb-10 lg:text-4xl">Áreas de atuação</h2>
@@ -15,13 +19,3 @@
 		</div>
 	</section>
 </template>
-
-<script land="ts">
-	import Vue from 'vue';
-	import { areas } from '~/utils/data/expertise';
-	export default Vue.extend({
-		data: () => ({
-			areas,
-		}),
-	});
-</script>

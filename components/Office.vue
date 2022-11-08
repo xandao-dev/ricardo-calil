@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import { office } from '~/utils/data/office';
+</script>
+
 <template>
 	<section id="escritorio" class="px-8 py-12 grid sm:grid-cols-12 lg:px-12">
 		<div class="col-span-12 text-left mb-12 sm:mb-0 sm:col-span-4">
@@ -23,14 +27,3 @@
 		</div>
 	</section>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	import { office } from '~/utils/data/office';
-
-	export default Vue.extend({
-		data: () => ({
-			office,
-		}),
-	});
-</script>

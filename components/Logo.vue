@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+const logo = '/logos/logo_sem_fundo2.svg';
+const logoText = '/logos/logo_texto_sem_fundo_black.svg';
+</script>
+
 <template>
 	<div class="contents">
 		<img draggable="false" class="w-8 lg:w-10" :src="logo" alt="logo escritório advocacia" />
@@ -9,13 +14,3 @@
 		/>
 	</div>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	export default Vue.extend({
-		data: () => ({
-			logo: '/logos/logo_sem_fundo2.svg',
-			logoText: '/logos/logo_texto_sem_fundo_black.svg',
-		}),
-	});
-</script>

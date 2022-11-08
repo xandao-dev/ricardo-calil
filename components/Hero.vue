@@ -1,17 +1,32 @@
+<script lang="ts" setup>
+import { contacts } from '~/utils/data/contacts';
+</script>
+
 <template>
 	<section
 		id="inicio"
 		class="before:absolute before:inset-0 before:h-full before:w-full hero-bg relative px-8 py-24 lg:px-12 lg:pb-12 lg:flex lg:justify-between lg:before:hidden"
 	>
-		<div class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
-			<h1 class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0">
-				30 anos de <span class="text-primary-400 lg:text-primary">advocacia</span> para te ajudar
+		<div
+			class="relative flex flex-col justify-center items-center text-center lg:text-left lg:items-start"
+		>
+			<h1
+				class="text-4xl font-bold text-white sm:text-6xl md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0"
+			>
+				30 anos de <span class="text-primary-400 lg:text-primary">advocacia</span> para te
+				ajudar
 			</h1>
-			<p class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-lg md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0">
-				Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e
-				simplificada.
+			<p
+				class="text-gray-200 pt-6 pb-12 sm:px-12 md:text-lg md:px-28 lg:text-primary-900 lg:pr-12 lg:pl-0"
+			>
+				Somos altamente qualificados e estamos prontos para resolver seus problemas de
+				maneira eficiente e simplificada.
 			</p>
-			<NuxtLink class="hidden lg:block" draggable="false" :to="{ path: $route.path, hash: 'contato' }">
+			<NuxtLink
+				class="hidden lg:block"
+				draggable="false"
+				:to="{ path: $route.path, hash: 'contato' }"
+			>
 				<button
 					class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mr-12"
 				>
@@ -21,7 +36,7 @@
 			<a
 				draggable="false"
 				class="flex items-center text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:hidden"
-				:href="social.whatsapp"
+				:href="contacts.whatsapp"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -55,24 +70,13 @@
 	</section>
 </template>
 
-<script lang="ts">
-	import Vue from 'vue';
-	import { contacts } from '~/utils/data/contacts';
-
-	export default Vue.extend({
-		data: () => ({
-			social: contacts,
-		}),
-	});
-</script>
-
 <style scoped>
-	.hero-bg::before {
-		content: '';
-		background-image: url('/hero/hero.webp');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		filter: brightness(0.25);
-	}
+.hero-bg::before {
+	content: '';
+	background-image: url('/hero/hero.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: brightness(0.25);
+}
 </style>

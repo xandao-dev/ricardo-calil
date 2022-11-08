@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+defineProps<{
+	whatsapp: string;
+}>();
+</script>
+
 <template>
 	<a
 		draggable="false"
@@ -19,15 +25,3 @@
 		</svg>
 	</a>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	export default Vue.extend({
-		props: {
-			whatsapp: {
-				type: String,
-				required: true,
-			},
-		},
-	});
-</script>

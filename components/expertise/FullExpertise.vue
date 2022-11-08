@@ -1,16 +1,26 @@
+<script lang="ts" setup>
+import { IExpertiseArea } from '~/utils/data/expertise';
+import { contacts } from '~/utils/data/contacts';
+import SubExpertises from '~/components/expertise/SubExpertises.vue';
+
+defineProps<{
+	area: IExpertiseArea;
+}>();
+</script>
+
 <template>
 	<section id="atuacao" class="px-8 pb-12 lg:px-12 xl:py-12">
 		<p
-			v-for="text in area.pageInfo.fullDescription.beginningTexts"
+			v-for="text in area.pageInfo?.fullDescription.beginningTexts"
 			:key="text"
 			class="text-center font-semibold text-lg pb-5"
 			v-text="text"
 		/>
 
-		<SubExpertises :sub-expertises="area.pageInfo.subExpertises" />
+		<SubExpertises :sub-expertises="area.pageInfo?.subExpertises" />
 
 		<p
-			v-for="text in area.pageInfo.fullDescription.endingTexts"
+			v-for="text in area.pageInfo?.fullDescription.endingTexts"
 			:key="text"
 			class="text-center font-semibold text-lg pb-5"
 			v-text="text"
@@ -19,7 +29,7 @@
 		<a
 			draggable="false"
 			class="flex items-center text-center text-white select-none max-w-max mt-12 bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12"
-			:href="social.whatsapp"
+			:href="contacts.whatsapp"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -45,29 +55,3 @@
 		</a>
 	</section>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	import type { PropType } from 'vue';
-	import { IExpertiseArea } from '~/utils/data/expertise';
-	import { contacts } from '~/utils/data/contacts';
-	import SubExpertises from '~/components/expertise/SubExpertises.vue';
-
-	export default Vue.extend({
-		components: { SubExpertises },
-		props: {
-			area: {
-				type: Object as PropType<IExpertiseArea>,
-				required: true,
-			},
-		},
-		data: () => ({
-			social: contacts,
-		}),
-		computed: {
-			title(): string {
-				return (this as any).area.title;
-			},
-		},
-	});
-</script>

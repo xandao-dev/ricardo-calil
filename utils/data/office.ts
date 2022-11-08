@@ -1,4 +1,10 @@
-const office = {
+interface IOffice {
+	origin: string;
+	association: string;
+	awards: string;
+}
+
+const office: IOffice = {
 	origin: 'Fundado em 1992, pelo advogado Dr. Ricardo Calil Fonseca, o escritório de advocacia atua em diversos segmentos, com foco em causas trabalhistas e previdenciárias. Com sede em Itaberaí, mas atendendo em diversas cidades como a cidade de Goiás, Mossâmedes, Itapuranga, Heitoraí, Itaguaru, Inhumas e Goiânia.',
 	association:
 		'Em janeiro de 2015 iniciou-se a carreira do Dr. Lucilo Fonseca Neto no escritório, atuando ao lado de seu pai, o advogado Dr.Ricardo Calil.',

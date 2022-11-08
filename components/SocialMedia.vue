@@ -1,6 +1,21 @@
+<script lang="ts" setup>
+import { contacts } from '~/utils/data/contacts';
+defineProps<{
+	whatsapp?: boolean;
+	instagram?: boolean;
+	facebook?: boolean;
+}>();
+</script>
+
 <template>
 	<div class="flex items-center gap-6">
-		<a v-if="whatsapp" draggable="false" :href="social.whatsapp" target="_blank" rel="noopener noreferrer">
+		<a
+			v-if="whatsapp"
+			draggable="false"
+			:href="contacts.whatsapp"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,7 +35,13 @@
 				/>
 			</svg>
 		</a>
-		<a v-if="facebook" draggable="false" :href="social.facebook" rel="noopener noreferrer" target="_blank">
+		<a
+			v-if="facebook"
+			draggable="false"
+			:href="contacts.facebook"
+			rel="noopener noreferrer"
+			target="_blank"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -37,7 +58,13 @@
 				<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
 			</svg>
 		</a>
-		<a v-if="instagram" draggable="false" :href="social.instagram" rel="noopener noreferrer" target="_blank">
+		<a
+			v-if="instagram"
+			draggable="false"
+			:href="contacts.instagram"
+			rel="noopener noreferrer"
+			target="_blank"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -58,28 +85,3 @@
 		</a>
 	</div>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	import { contacts } from '~/utils/data/contacts';
-
-	export default Vue.extend({
-		props: {
-			whatsapp: {
-				type: Boolean,
-				default: false,
-			},
-			instagram: {
-				type: Boolean,
-				default: false,
-			},
-			facebook: {
-				type: Boolean,
-				default: false,
-			},
-		},
-		data: () => ({
-			social: contacts,
-		}),
-	});
-</script>

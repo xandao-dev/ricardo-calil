@@ -39,17 +39,15 @@ useHead({
 		{ rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#0C75A7' },
 	],
 });
-
-const social = contacts;
 </script>
 
 <template>
 	<div class="selection:bg-primary selection:text-white">
 		<header class="sticky top-0 z-50">
-			<Navbar></Navbar>
+			<!--Navbar></Navbar-->
 		</header>
 		<aside>
-			<Sidebar></Sidebar>
+			<!--Sidebar></Sidebar-->
 		</aside>
 		<main class="overflow-y-auto overflow-x-hidden h-screen-minus-navbar">
 			<div class="max-w-screen-xl mx-auto min-h-full-minus-footbar">
@@ -59,7 +57,7 @@ const social = contacts;
 				<Footbar></Footbar>
 			</footer>
 		</main>
-		<whatsapp-fab :whatsapp="social.whatsapp"></whatsapp-fab>
+		<whatsapp-fab :whatsapp="contacts.whatsapp"></whatsapp-fab>
 	</div>
 </template>
 
