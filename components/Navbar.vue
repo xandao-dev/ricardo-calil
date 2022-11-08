@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+import { useSidebar } from '~/stores/sidebar';
+const sidebarStore = useSidebar();
+
+const sections = [
+	{ title: 'Início', target: '/#inicio' },
+	{ title: 'Atuação', target: '/#atuacao' },
+	{ title: 'Escritório', target: '/#escritorio' },
+	{ title: 'Advogados', target: '/#advogados' },
+	{ title: 'Contato', target: '/#contato' },
+	{ title: 'Perguntas', target: '/#perguntas' },
+	{ title: 'Artigos', target: '/artigos' },
+];
+</script>
+
 <template>
 	<nav id="navbar" class="bg-white shadow h-navbar">
 		<div
@@ -10,13 +25,13 @@
 					type="button"
 					class="text-gray-700 hover:text-primary-500 active:text-primary focus:outline-none md:hidden"
 					aria-label="Alternar menu lateral"
-					@click="toggleSidebarStatus"
+					@click="sidebarStore.toggleOpen"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						xmlns:xlink="http://www.w3.org/1999/xlink"
 						version="1.1"
-						:class="[!isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
+						:class="[!sidebarStore.isOpen ? 'block' : 'hidden', 'h-6 w-6']"
 						fill="currentColor"
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -32,7 +47,7 @@
 						xmlns="http://www.w3.org/2000/svg"
 						xmlns:xlink="http://www.w3.org/1999/xlink"
 						version="1.1"
-						:class="[isSidebarOpen ? 'block' : 'hidden', 'h-6 w-6']"
+						:class="[sidebarStore.isOpen ? 'block' : 'hidden', 'h-6 w-6']"
 						fill="currentColor"
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -62,35 +77,3 @@
 		</div>
 	</nav>
 </template>
-
-<script lang="ts">
-	import Vue from 'vue';
-	import { sidebarEventBus } from '~/utils/events/sidebarEventBus.js';
-
-	export default Vue.extend({
-		data: () => ({
-			isSidebarOpen: false,
-			sections: [
-				{ title: 'Início', target: '/#inicio' },
-				{ title: 'Atuação', target: '/#atuacao' },
-				{ title: 'Escritório', target: '/#escritorio' },
-				{ title: 'Advogados', target: '/#advogados' },
-				{ title: 'Contato', target: '/#contato' },
-				{ title: 'Perguntas', target: '/#perguntas' },
-				{ title: 'Artigos', target: '/artigos' },
-			],
-			logo: '/logos/logo_sem_fundo2.svg',
-			logoText: '/logos/logo_texto_sem_fundo_black.svg',
-		}),
-		mounted() {
-			sidebarEventBus.$on('isOpen', (isSidebarOpen: boolean) => {
-				this.isSidebarOpen = isSidebarOpen;
-			});
-		},
-		methods: {
-			toggleSidebarStatus() {
-				sidebarEventBus.$emit('isOpen', !this.isSidebarOpen);
-			},
-		},
-	});
-</script>

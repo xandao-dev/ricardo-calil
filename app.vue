@@ -44,10 +44,10 @@ useHead({
 <template>
 	<div class="selection:bg-primary selection:text-white">
 		<header class="sticky top-0 z-50">
-			<!--Navbar></Navbar-->
+			<Navbar></Navbar>
 		</header>
 		<aside>
-			<!--Sidebar></Sidebar-->
+			<Sidebar></Sidebar>
 		</aside>
 		<main class="overflow-y-auto overflow-x-hidden h-screen-minus-navbar">
 			<div class="max-w-screen-xl mx-auto min-h-full-minus-footbar">
