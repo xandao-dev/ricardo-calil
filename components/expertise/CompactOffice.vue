@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" setup>
 import { office } from '~/utils/data/office';
 </script>
 

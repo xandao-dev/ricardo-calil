@@ -5,7 +5,8 @@ import CompactLawyers from '~/components/expertise/CompactLawyers.vue';
 import CompactOffice from '~/components/expertise/CompactOffice.vue';
 import { areas } from '~/utils/data/expertise';
 
-const target = this.$route.params?.expertise;
+const route = useRoute();
+const target = route.params?.expertise;
 const area = areas.find((area) => area.target.includes(target)) || areas[0];
 </script>
 
