@@ -1,10 +1,19 @@
+<script lang="ts" setup>
+interface IError {
+	statusCode: number;
+}
+defineProps<{ error: IError }>();
+</script>
+
 <template>
 	<section
 		v-if="error.statusCode === 404"
 		class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12"
 	>
 		<h2 class="mb-12 font-extrabold text-9xl"><span class="sr-only">Erro</span>404</h2>
-		<p class="text-2xl font-semibold mb-12 md:text-3xl">Desculpe, não encontramos essa página</p>
+		<p class="text-2xl font-semibold mb-12 md:text-3xl">
+			Desculpe, não encontramos essa página
+		</p>
 		<NuxtLink draggable="false" to="/" class="w-full sm:w-auto">
 			<button
 				class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded w-full py-3 mx-auto focus:outline-none sm:px-24 sm:py-4 md:text-xl"
@@ -13,7 +22,10 @@
 			</button>
 		</NuxtLink>
 	</section>
-	<section v-else class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12">
+	<section
+		v-else
+		class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12"
+	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-40 h-40 mb-12">
 			<path
 				fill="currentColor"
@@ -39,16 +51,3 @@
 		</NuxtLink>
 	</section>
 </template>
-
-<script>
-	import Vue from 'vue';
-	export default Vue.extend({
-		layout: 'error',
-		props: {
-			error: {
-				type: Object,
-				required: true,
-			},
-		},
-	});
-</script>
