@@ -4,13 +4,11 @@ const logoText = '/logos/logo_texto_sem_fundo_black.svg';
 </script>
 
 <template>
-	<div class="contents">
-		<img draggable="false" class="w-8 lg:w-10" :src="logo" alt="logo escritório advocacia" />
-		<img
-			draggable="false"
-			class="w-40 min-w-[8rem] md:ml-2 lg:w-48"
-			:src="logoText"
-			alt="título da logo do escritório"
-		/>
-	</div>
+	<img draggable="false" class="w-8 lg:w-10" :src="logo" alt="logo escritório advocacia" />
+	<img
+		draggable="false"
+		class="w-40 min-w-[8rem] md:ml-2 lg:w-48"
+		:src="logoText"
+		alt="título da logo do escritório"
+	/>
 </template>

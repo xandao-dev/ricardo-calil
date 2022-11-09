@@ -1,5 +1,10 @@
 <template>
-	<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+	<Head>
+		<Title>Artigos Jurídicos - Advogado em Itaberaí | Ricardo Calil</Title>
+	</Head>
+	<div
+		class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+	>
 		<div class="back">
 			<nuxt-link to="./">Voltar</nuxt-link>
 		</div>
@@ -31,48 +36,49 @@
 </template>
 
 <script>
-	import Vue from 'vue';
-	export default Vue.extend({
-		async asyncData({ $prismic, params, error }) {
-			try {
-				const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
+import Vue from 'vue';
+export default Vue.extend({
+	async asyncData({ $prismic, params, error }) {
+		try {
+			const post = (await $prismic.api.getByUID('blog_post', params.uid)).data;
 
-				const document = post;
-				const slices = post.body;
-				const formattedDate = Intl.DateTimeFormat('pt-BR', {
-					year: 'numeric',
-					month: 'short',
-					day: '2-digit',
-				}).format(new Date(post.post_date));
-				const category = post.post_category;
-				let author = post.post_author;
-				let authorImageSrc = '';
-				if (author === 'Ricardo Calil') {
-					author = 'Dr. Ricardo Calil';
-					authorImageSrc = '/lawyers/ricardo_small.webp';
-				}
-				if (author === 'Lucilo Neto') {
-					author = 'Dr. Lucilo Neto';
-					authorImageSrc = '/lawyers/lucilo_small.webp';
-				}
-				return {
-					document,
-					slices,
-					formattedDate,
-					category,
-					author,
-					authorImageSrc,
-				};
-			} catch (e) {
-				error({ statusCode: 404, message: 'Artigo não encontrado' });
+			const document = post;
+			const slices = post.body;
+			const formattedDate = Intl.DateTimeFormat('pt-BR', {
+				year: 'numeric',
+				month: 'short',
+				day: '2-digit',
+			}).format(new Date(post.post_date));
+			const category = post.post_category;
+			let author = post.post_author;
+			let authorImageSrc = '';
+			if (author === 'Ricardo Calil') {
+				author = 'Dr. Ricardo Calil';
+				authorImageSrc = '/lawyers/ricardo_small.webp';
 			}
-		},
-		head({ $prismic }) {
-			// Title with 60 characters max, 44 for post and 16 for site name
-			const postTitle = String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo';
+			if (author === 'Lucilo Neto') {
+				author = 'Dr. Lucilo Neto';
+				authorImageSrc = '/lawyers/lucilo_small.webp';
+			}
 			return {
-				title: `${postTitle} | Ricardo Calil`,
+				document,
+				slices,
+				formattedDate,
+				category,
+				author,
+				authorImageSrc,
 			};
-		},
-	});
+		} catch (e) {
+			error({ statusCode: 404, message: 'Artigo não encontrado' });
+		}
+	},
+	/*head({ $prismic }) {
+		// Title with 60 characters max, 44 for post and 16 for site name
+		const postTitle =
+			String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo Jurídico';
+		return {
+			title: `${postTitle} | Ricardo Calil`,
+		};
+	},*/
+});
 </script>

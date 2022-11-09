@@ -1,4 +1,7 @@
 <template>
+	<Head>
+		<Title>Artigos Jurídicos - Advogado em Itaberaí | Ricardo Calil</Title>
+	</Head>
 	<section class="px-8 py-12 lg:px-12 flex flex-col items-center">
 		<div class="relative flex justify-center w-full md:w-1/2">
 			<svg
@@ -22,7 +25,10 @@
 		<div v-if="posts.length !== 0" class="flex flex-col items-center justify-center gap-8">
 			<blog-widget v-for="post in postsFiltered" :key="post.id" :post="post"></blog-widget>
 		</div>
-		<div v-else class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12">
+		<div
+			v-else
+			class="flex flex-col items-center justify-center text-center px-8 py-12 lg:px-12"
+		>
 			<h1 class="text-xl font-semibold mb-12 md:text-2xl">Nenhuma conteúdo disponível</h1>
 			<NuxtLink draggable="false" to="/" class="w-full sm:w-auto">
 				<button
@@ -36,47 +42,45 @@
 </template>
 
 <script>
-	import Vue from 'vue';
-	export default Vue.extend({
-		async asyncData({ $prismic, error }) {
-			try {
-				// Query to get posts content to preview
-				const blogPosts = await $prismic.api.query($prismic.predicates.at('document.type', 'blog_post'), {
+import Vue from 'vue';
+export default Vue.extend({
+	async asyncData({ $prismic, error }) {
+		try {
+			// Query to get posts content to preview
+			const blogPosts = await $prismic.api.query(
+				$prismic.predicates.at('document.type', 'blog_post'),
+				{
 					orderings: '[my.post.date desc]',
-				});
-
-				// Returns data to be used in template
-				return {
-					posts: blogPosts.results,
-				};
-			} catch (e) {
-				// Returns error page
-				console.log(e);
-				error({ statusCode: 404, message: 'Page not found' });
-			}
-		},
-		data: () => ({
-			search: '',
-			posts: [],
-		}),
-		head() {
-			return {
-				title: 'Artigos Jurídicos - Advogado em Itaberaí | Ricardo Calil',
-			};
-		},
-		computed: {
-			postsFiltered() {
-				if (this.search) {
-					try {
-						return this.posts.filter((post) =>
-							post.data.title[0].text.toLowerCase().includes(this.search.toLowerCase()),
-						);
-					} catch (e) {
-						return this.posts;
-					}
 				}
-				return this.posts;
-			},
+			);
+
+			// Returns data to be used in template
+			return {
+				posts: blogPosts.results,
+			};
+		} catch (e) {
+			// Returns error page
+			console.log(e);
+			error({ statusCode: 404, message: 'Page not found' });
+		}
+	},
+	data: () => ({
+		search: '',
+		posts: [],
+	}),
+	computed: {
+		postsFiltered() {
+			if (this.search) {
+				try {
+					return this.posts.filter((post) =>
+						post.data.title[0].text.toLowerCase().includes(this.search.toLowerCase())
+					);
+				} catch (e) {
+					return this.posts;
+				}
+			}
+			return this.posts;
 		},
-	});
+	},
+});
 </script>
