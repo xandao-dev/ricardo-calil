@@ -6,7 +6,7 @@ interface IQuestion {
 	closed: boolean;
 }
 
-const questions: IQuestion[] = [
+const questions = ref<IQuestion[]>([
 	{
 		id: 'faq-question-0',
 		ask: 'O que devo fazer para contratar um advogado?',
@@ -31,7 +31,7 @@ const questions: IQuestion[] = [
 		answer: 'Não é possível prever quando um processo será finalizado, pois cada caso é diferente, mas é possível acompanhar cada etapa do processo para saber seu andamento e qual será a próxima fase.',
 		closed: true,
 	},
-];
+]);
 
 function toggleQuestion(question: IQuestion) {
 	question.closed = !question.closed;
