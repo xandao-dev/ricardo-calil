@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useVuelidate } from '@vuelidate/core';
-import { required, minLength, maxLength, email, requiredIf } from '@vuelidate/validators';
+import { required, minLength, maxLength, email, requiredIf, helpers } from '@vuelidate/validators';
 import { useToast } from 'vue-toastification';
 import { contacts } from '~/utils/data/contacts';
 const appConfig = useAppConfig();
@@ -22,24 +22,30 @@ const state = reactive({
 const validations = {
 	contactForm: {
 		name: {
-			required,
-			minLength: minLength(3),
-			maxLength: maxLength(50),
+			required: helpers.withMessage('Nome obrigatório', required),
+			minLength: helpers.withMessage('No mínimo 3 letras', minLength(3)),
+			maxLength: helpers.withMessage('No máximo 50 letras', maxLength(50)),
 		},
 		phone: {
-			required: requiredIf(function () {
-				return !state.contactForm.phone && !state.contactForm.email;
-			}),
+			required: helpers.withMessage(
+				'Telefone ou email obrigatório',
+				requiredIf(function () {
+					return !state.contactForm.phone && !state.contactForm.email;
+				})
+			),
 		},
 		email: {
-			required: requiredIf(function () {
-				return !state.contactForm.phone && !state.contactForm.email;
-			}),
-			email,
+			required: helpers.withMessage(
+				'Email ou telefone obrigatório',
+				requiredIf(function () {
+					return !state.contactForm.phone && !state.contactForm.email;
+				})
+			),
+			email: helpers.withMessage('Email inválido', email),
 		},
 		message: {
-			required,
-			maxLength: maxLength(500),
+			required: helpers.withMessage('Mensagem obrigatória', required),
+			maxLength: helpers.withMessage('No máximo 500 letras', maxLength(500)),
 		},
 	},
 };
@@ -48,9 +54,8 @@ const v$ = useVuelidate(validations, state);
 
 async function submitContactForm(e: Event) {
 	e.preventDefault();
-
-	v$.$touch();
-	if (v$.$invalid) {
+	v$.value.$touch();
+	if (v$.value.$invalid) {
 		toast.error('Preencha os campos corretamente');
 		return;
 	}
@@ -138,17 +143,14 @@ async function submitContactForm(e: Event) {
 					type="text"
 					name="name"
 					class="w-full bg-white rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					:class="{ 'focus:ring-red-600': v$.contactForm.name.$error }"
 					placeholder="Nome"
 				/>
-				<div v-if="!v$.contactForm.name.required" class="error-message">
-					Nome obrigatório
-				</div>
-				<div v-if="!v$.contactForm.name.minLength" class="error-message">
-					No mínimo {{ v$.contactForm.name.$params.minLength.min }} letras.
-				</div>
-				<div v-if="!v$.contactForm.name.maxLength" class="error-message">
-					No máximo {{ v$.contactForm.name.$params.maxLength.max }} letras.
-				</div>
+				<div
+					v-if="v$.contactForm.name.$error"
+					class="error-message"
+					v-text="v$.contactForm.name.$errors?.[0]?.$message"
+				></div>
 			</div>
 
 			<div class="hidden relative mb-4">
@@ -168,11 +170,14 @@ async function submitContactForm(e: Event) {
 					type="tel"
 					name="phone"
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					:class="{ 'focus:ring-red-600': v$.contactForm.phone.$error }"
 					placeholder="(99) 99999-9999"
 				/>
-				<div v-if="!v$.contactForm.phone.required" class="error-message">
-					Telefone ou email obrigatório
-				</div>
+				<div
+					v-if="v$.contactForm.phone.$error"
+					class="error-message"
+					v-text="v$.contactForm.phone.$errors?.[0]?.$message"
+				></div>
 			</div>
 			<div class="relative mb-4" :class="{ 'input-error': v$.contactForm.email.$error }">
 				<label for="email" class="leading-7 text-sm">Email</label>
@@ -181,12 +186,14 @@ async function submitContactForm(e: Event) {
 					type="email"
 					name="email"
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary text-base py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+					:class="{ 'focus:ring-red-600': v$.contactForm.email.$error }"
 					placeholder="nome@gmail.com"
 				/>
-				<div v-if="!v$.contactForm.email.required" class="error-message">
-					Email ou telefone obrigatório
-				</div>
-				<div v-if="!v$.contactForm.email.email" class="error-message">Email inválido</div>
+				<div
+					v-if="v$.contactForm.email.$error"
+					class="error-message"
+					v-text="v$.contactForm.email.$errors?.[0]?.$message"
+				></div>
 			</div>
 			<div class="relative mb-4" :class="{ 'input-error': v$.contactForm.message.$error }">
 				<label for="message" class="leading-7 text-sm">Mensagem</label>
@@ -194,14 +201,14 @@ async function submitContactForm(e: Event) {
 					v-model.trim="v$.contactForm.message.$model"
 					name="message"
 					class="w-full rounded border focus:outline-none focus:ring-1 focus:ring-primary h-32 text-base py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+					:class="{ 'focus:ring-red-600': v$.contactForm.message.$error }"
 					placeholder="Gostaria de saber mais sobre ..."
 				></textarea>
-				<div v-if="!v$.contactForm.message.required" class="error-message">
-					Mensagem obrigatório
-				</div>
-				<div v-if="!v$.contactForm.message.maxLength" class="error-message">
-					No máximo {{ v$.contactForm.message.$params.maxLength.max }} letras.
-				</div>
+				<div
+					v-if="v$.contactForm.message.$error"
+					class="error-message"
+					v-text="v$.contactForm.message.$errors?.[0]?.$message"
+				></div>
 			</div>
 			<button
 				class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 py-2 px-8 focus:outline-none rounded text-lg self-end w-48"
