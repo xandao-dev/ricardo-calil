@@ -25,7 +25,7 @@ import { contacts } from '~/utils/data/contacts';
 			<NuxtLink
 				class="hidden lg:block"
 				draggable="false"
-				:to="{ path: $route.path, hash: 'contato' }"
+				:to="{ path: $route.path, hash: '#contato' }"
 			>
 				<button
 					class="text-white select-none bg-primary hover:bg-primary-700 active:bg-primary-800 font-semibold rounded px-6 py-3 mx-auto whitespace-nowrap focus:outline-none sm:px-8 sm:py-4 sm:text-xl md:px-12 lg:mr-12"
