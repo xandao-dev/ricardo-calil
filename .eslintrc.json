@@ -1,0 +1,28 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    // Do not change extends order without understanding the consequences.
+    "extends": [
+        "eslint:recommended", // https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js
+        "plugin:vue/vue3-recommended", // https://eslint.vuejs.org/rules/
+        "plugin:@typescript-eslint/recommended", // https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
+        "@nuxtjs/eslint-config-typescript", // https://www.npmjs.com/package/@nuxtjs/eslint-config-typescript
+        "prettier" // https://github.com/prettier/eslint-config-prettier
+    ],
+    "overrides": [],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["vue", "@typescript-eslint"],
+    "rules": {
+        "complexity": ["warn", 10], // Cyclomatic Complexity
+        "vue/multi-word-component-names": "off"
+    },
+    "ignorePatterns": ["node_modules", ".git", ".vscode", ".nuxt", ".output", ".nitro"]
+}

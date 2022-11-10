@@ -1,12 +1,18 @@
 {
 	"editor.formatOnSave": true,
 	"editor.tabSize": 4,
-	"editor.insertSpaces": false,
+	"editor.insertSpaces": true,
 	"editor.detectIndentation": true,
 	"editor.rulers": [
-		80,
 		120
 	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"[vue]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -27,14 +33,12 @@
 		"javascript",
 		"typescript",
 		"html",
-		"css",
 	],
 	"eslint.probe": [
 		"vue",
 		"javascript",
 		"typescript",
 		"html",
-		"css",
 	],
 	"tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
 	"files.associations": {
