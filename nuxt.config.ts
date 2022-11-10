@@ -3,18 +3,14 @@ export default defineNuxtConfig({
     ssr: false,
     // target: 'static',
 
+    runtimeConfig: {
+        public: {
+            dev: process.env.NODE_ENV !== 'production',
+        },
+    },
     typescript: {
         shim: false,
-        /**
-         * !! WARN !!
-         * Dangerously allow production builds to successfully complete even if
-         * your project has type errors.
-         *
-         * This will show us errors on dev, but not stop builds for production
-         */
-        // typeCheck: process.env.NODE_ENV !== 'production',
     },
-
     modules: [
         // https://tailwindcss.nuxtjs.org/
         '@nuxtjs/tailwindcss',
@@ -23,20 +19,11 @@ export default defineNuxtConfig({
         // https://pinia.vuejs.org/
         '@pinia/nuxt',
     ],
-
     nitro: {
         prerender: {
             routes: ['/trabalhista', '/previdenciario', '/civil', '/criminal'],
         },
     },
-
-    /*
-	BY HAND
-	gtm: {
-		pageTracking: false, // Prevent double events when using with GA
-	},
-	*/
-
     /*
 	LATER
 	https://v3.nuxtjs.org/migration/plugins-and-middleware

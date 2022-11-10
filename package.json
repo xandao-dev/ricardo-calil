@@ -33,6 +33,7 @@
         "vue-eslint-parser": "^9.1.0"
     },
     "dependencies": {
+        "@gtm-support/vue-gtm": "^2.0.0",
         "@pinia/nuxt": "^0.4.3",
         "@vuelidate/core": "^2.0.0",
         "@vuelidate/validators": "^2.0.0",
