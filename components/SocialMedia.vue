@@ -1,15 +1,29 @@
 <script lang="ts" setup>
+import { useGtm } from '@gtm-support/vue-gtm';
+import { whatsappEvent, facebookEvent, instagramEvent } from '~/utils/gtmEvents';
 import { contacts } from '~/utils/data/contacts';
 defineProps<{
     whatsapp?: boolean;
     instagram?: boolean;
     facebook?: boolean;
 }>();
+
+const gtm = useGtm();
+const trackWhatsappClick = () => gtm?.trackEvent(whatsappEvent);
+const trackFacebookClick = () => gtm?.trackEvent(facebookEvent);
+const trackInstagramClick = () => gtm?.trackEvent(instagramEvent);
 </script>
 
 <template>
     <div class="flex items-center gap-6">
-        <a v-if="whatsapp" draggable="false" :href="contacts.whatsapp" target="_blank" rel="noopener noreferrer">
+        <a
+            v-if="whatsapp"
+            draggable="false"
+            :href="contacts.whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="trackWhatsappClick"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -29,7 +43,14 @@ defineProps<{
                 />
             </svg>
         </a>
-        <a v-if="facebook" draggable="false" :href="contacts.facebook" rel="noopener noreferrer" target="_blank">
+        <a
+            v-if="facebook"
+            draggable="false"
+            :href="contacts.facebook"
+            rel="noopener noreferrer"
+            target="_blank"
+            @click="trackFacebookClick"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -46,7 +67,14 @@ defineProps<{
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg>
         </a>
-        <a v-if="instagram" draggable="false" :href="contacts.instagram" rel="noopener noreferrer" target="_blank">
+        <a
+            v-if="instagram"
+            draggable="false"
+            :href="contacts.instagram"
+            rel="noopener noreferrer"
+            target="_blank"
+            @click="trackInstagramClick"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"

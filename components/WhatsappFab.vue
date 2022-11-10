@@ -1,7 +1,13 @@
 <script lang="ts" setup>
+import { useGtm } from '@gtm-support/vue-gtm';
+import { whatsappEvent } from '~/utils/gtmEvents';
+
 defineProps<{
     whatsapp: string;
 }>();
+
+const gtm = useGtm();
+const trackWhatsappClick = () => gtm?.trackEvent(whatsappEvent);
 </script>
 
 <template>
@@ -11,6 +17,7 @@ defineProps<{
         :href="whatsapp"
         target="_blank"
         rel="noopener noreferrer"
+        @click="trackWhatsappClick"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"

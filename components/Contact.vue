@@ -2,7 +2,10 @@
 import { useVuelidate } from '@vuelidate/core';
 import { required, minLength, maxLength, email, requiredIf, helpers } from '@vuelidate/validators';
 import { useToast } from 'vue-toastification';
+import { useGtm } from '@gtm-support/vue-gtm';
+import { emailEvent, phoneEvent, contactFormEvent } from '~/utils/gtmEvents';
 import { contacts } from '~/utils/data/contacts';
+
 const appConfig = useAppConfig();
 const toast = useToast();
 
@@ -49,8 +52,12 @@ const validations = {
         },
     },
 };
-
 const v$ = useVuelidate(validations, state);
+
+const gtm = useGtm();
+const emailClickEvent = () => gtm?.trackEvent(emailEvent);
+const phoneClickEvent = () => gtm?.trackEvent(phoneEvent);
+const contactFormSubmitEvent = () => gtm?.trackEvent(contactFormEvent);
 
 async function submitContactForm(e: Event) {
     e.preventDefault();
@@ -78,6 +85,7 @@ async function submitContactForm(e: Event) {
         if (response.status === 200) {
             toast.success('Mensagem enviada com sucesso!');
             state.contactFormSent = true;
+            contactFormSubmitEvent();
         } else {
             toast.error('Erro! Tente outro meio de contato.');
         }
@@ -106,6 +114,7 @@ async function submitContactForm(e: Event) {
                         :href="'mailto:' + social.email"
                         rel="noopener noreferrer"
                         target="_blank"
+                        @click="emailClickEvent"
                         v-text="social.email"
                     ></a>
                     <h3 class="title-font mt-4 text-xs font-semibold tracking-widest">TELEFONE</h3>
@@ -113,6 +122,7 @@ async function submitContactForm(e: Event) {
                         class="leading-relaxed underline"
                         :href="'tel:' + social.phone"
                         rel="noopener noreferrer"
+                        @click="phoneClickEvent"
                         v-text="social.phone"
                     ></a>
                     <SocialMedia class="mt-4 self-end lg:hidden" whatsapp facebook instagram />
