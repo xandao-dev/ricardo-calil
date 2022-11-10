@@ -7,14 +7,16 @@ import { areas } from '~/utils/data/expertise';
 
 const route = useRoute();
 const target = route.params?.expertise;
-const area = areas.find((area) => area.target.includes(target)) || areas[0];
+const area = areas.find((area) => area.target?.includes(target));
+if (!area) {
+    showError(createError({ statusCode: 404, statusMessage: 'Page Not Found' }));
+}
 </script>
 
 <template>
     <Head>
         <Title>Advogado {{ area.title }} em Itaberaí | Ricardo Calil</Title>
     </Head>
-
     <ExpertiseHero :info="area.pageInfo.hero" />
     <DifferentialCards />
     <FullExpertise :area="area" />
