@@ -72,13 +72,13 @@ export default Vue.extend({
 			error({ statusCode: 404, message: 'Artigo não encontrado' });
 		}
 	},
-	/*head({ $prismic }) {
+	/* head({ $prismic }) {
 		// Title with 60 characters max, 44 for post and 16 for site name
 		const postTitle =
 			String($prismic.asText(this.document.title)).slice(0, 44) ?? 'Artigo Jurídico';
 		return {
 			title: `${postTitle} | Ricardo Calil`,
 		};
-	},*/
+	}, */
 });
 </script>

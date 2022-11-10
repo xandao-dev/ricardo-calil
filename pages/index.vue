@@ -1,12 +1,12 @@
 <template>
-	<Head>
-		<Title>Advogado em Itaberaí | Ricardo Calil</Title>
-	</Head>
+    <Head>
+        <Title>Advogado em Itaberaí | Ricardo Calil</Title>
+    </Head>
 
-	<Hero></Hero>
-	<Expertise></Expertise>
-	<Office></Office>
-	<Lawyers></Lawyers>
-	<Contact></Contact>
-	<FAQ></FAQ>
+    <Hero></Hero>
+    <Expertise></Expertise>
+    <Office></Office>
+    <Lawyers></Lawyers>
+    <Contact></Contact>
+    <FAQ></FAQ>
 </template>
