@@ -1,10 +1,18 @@
 {
 	"editor.formatOnSave": true,
 	"editor.tabSize": 4,
-	"editor.insertSpaces": false,
+	"editor.insertSpaces": true,
 	"editor.detectIndentation": true,
-	"editor.rulers": [80, 120],
-
+	"editor.rulers": [
+		120
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"[vue]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -20,7 +28,16 @@
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-
-	"eslint.validate": ["vue", "javascript", "typescript", "html", "css", "markdown"],
-	"eslint.probe": ["vue", "javascript", "typescript", "html", "css", "markdown"]
+	"eslint.validate": [
+		"vue",
+		"javascript",
+		"typescript",
+		"html",
+	],
+	"eslint.probe": [
+		"vue",
+		"javascript",
+		"typescript",
+		"html",
+	],
 }

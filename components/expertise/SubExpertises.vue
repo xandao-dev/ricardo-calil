@@ -1,7 +1,15 @@
-<template>
+<script lang="ts" setup>
+defineProps<{
+	subExpertises: string[];
+}>();
+</script>
+
+<template v-if="subExpertises?.length">
 	<div class="flex flex-col items-center justify-center">
 		<p class="text-center font-semibold">Veja como podemos te ajudar:</p>
-		<div class="grid xs-grid-cols-1 auto-rows-fr gap-2 py-8 grid-cols-2 md:grid-cols-4 md-grid-cols-5">
+		<div
+			class="grid xs-grid-cols-1 auto-rows-fr gap-2 py-8 grid-cols-2 md:grid-cols-4 md-grid-cols-5"
+		>
 			<div
 				v-for="subExpertise in subExpertises"
 				:key="subExpertise"
@@ -13,39 +21,25 @@
 	</div>
 </template>
 
-<script lang="ts">
-	import Vue from 'vue';
-
-	export default Vue.extend({
-		props: {
-			subExpertises: {
-				type: Array,
-				required: true,
-			},
-		},
-		data: () => ({}),
-	});
-</script>
-
 <style scoped>
-	@media (max-width: 400px) {
-		.xs-grid-cols-1 {
-			grid-template-columns: minmax(0, 1fr);
-		}
-		.xs-max-6-rows:nth-child(n + 7) {
-			display: none;
-		}
+@media (max-width: 400px) {
+	.xs-grid-cols-1 {
+		grid-template-columns: minmax(0, 1fr);
 	}
-	@media (min-width: 400.01px) and (max-width: 768px) {
-		.last-row-uncompleted-hidden:nth-child(2n):nth-last-child(-n + 3)
-			~ .last-row-uncompleted-hidden:nth-child(odd):last-child {
-			display: none;
-		}
+	.xs-max-6-rows:nth-child(n + 7) {
+		display: none;
 	}
+}
+@media (min-width: 400.01px) and (max-width: 768px) {
+	.last-row-uncompleted-hidden:nth-child(2n):nth-last-child(-n + 3)
+		~ .last-row-uncompleted-hidden:nth-child(odd):last-child {
+		display: none;
+	}
+}
 
-	@media (min-width: 870px) {
-		.md-grid-cols-5 {
-			grid-template-columns: repeat(5, minmax(0, 1fr));
-		}
+@media (min-width: 870px) {
+	.md-grid-cols-5 {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}
+}
 </style>
