@@ -29,6 +29,7 @@ useHead({
         { name: 'twitter:card', content: 'summary_large_image' },
         { property: 'og:image', content: `${appConfig.WEBSITE_HOME_DOMAIN}/logo-og.png` },
         { name: 'twitter:image', content: `${appConfig.WEBSITE_HOME_DOMAIN}/logo-og.png` },
+        { name: 'facebook-domain-verification', content: appConfig.FACEBOOK_VERIFICATION },
     ],
     link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

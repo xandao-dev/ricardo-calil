@@ -7,4 +7,5 @@ export default defineAppConfig({
     PAGE_TITLE: 'Advogado em Itaberaí | Ricardo Calil',
     PAGE_DESCRIPTION:
         'Somos altamente qualificados e estamos prontos para resolver seus problemas de maneira eficiente e simplificada.',
+    FACEBOOK_VERIFICATION: '8hr99luk3l6d52o31f0o3kzuwlbd5r',
 });
