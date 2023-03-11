@@ -30,6 +30,7 @@
         "nuxt": "3.0.0-rc.13",
         "prettier": "2.7.1",
         "prettier-plugin-tailwindcss": "^0.1.13",
+        "push-dir": "^0.4.1",
         "typescript": "^4.8.4",
         "vue-eslint-parser": "^9.1.0"
     },
